@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, FirstTime.class);
             startActivity(intent);
         }
-
     }
     //henrin oksan tapahtuma
     public void newGymActivity(View v){
