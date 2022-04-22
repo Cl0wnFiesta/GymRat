@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
     //henrin oksan tapahtuma
     public void newGymActivity(View v){
-        Intent startGym = new Intent();
+        Intent startGym = new Intent(this, GymActivity.class);
         startActivity(startGym);
     }
 }
