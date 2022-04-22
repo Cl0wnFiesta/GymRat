@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/Android studio lab/GymRat/app/src/main/res/drawable/line_box.xml" value="0.162" />
         <entry key="..\:/Android studio lab/GymRat/app/src/main/res/drawable/rounded_corner.xml" value="0.1995" />
+        <entry key="..\:/Android studio lab/GymRat/app/src/main/res/layout/activity_gym.xml" value="0.2796296296296296" />
         <entry key="..\:/Android studio lab/GymRat/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Android studio lab/GymRat/app/src/main/res/layout/first_setup_page.xml" value="0.33" />
         <entry key="..\:/Android studio lab/GymRat/app/src/main/res/layout/first_time_layout.xml" value="0.33" />
         <entry key="..\:/Android studio lab/GymRat/app/src/main/res/layout/pick_gender.xml" value="0.36102564102564105" />
         <entry key="..\:/Android studio lab/GymRat/app/src/main/res/layout/rounded_corner.xml" value="0.36102564102564105" />

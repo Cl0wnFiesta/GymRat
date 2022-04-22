@@ -10,4 +10,7 @@
     <string name="man">Mies</string>
     <string name="woman">Nainen</string>
     <string name="next">Seuraava</string>
+    <string name="textview">TextView</string>
+    <string name="tervehdys">Tervetuloa</string>
+    <string name="aloitetaan">Aloitetaan!</string>
 </resources>

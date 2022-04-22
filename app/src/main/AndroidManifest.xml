@@ -15,7 +15,7 @@
         <activity
             android:name=".SetupPage"
             android:exported="true"
-            android:parentActivityName=".Create_User"/>
+            />
 
         <activity
             android:name=".MainActivity"
