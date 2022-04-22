@@ -66,11 +66,6 @@ public class Create_User extends AppCompatActivity {
         editor.commit();
     }
 
-    public void loadRadioButtons(){
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        male.setChecked(sharedPreferences.getBoolean("Mies", false));
-        female.setChecked(sharedPreferences.getBoolean("Nainen", false));
-    }
     public void saveUserName(){
         Log.d("TAG", "Saved username");
         String value = nameText.getText().toString().trim();
