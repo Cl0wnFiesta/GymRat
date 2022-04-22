@@ -10,8 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GymRat">
         <activity
-            android:name=".FirstTime"
+            android:name=".Create_User"
             android:exported="false"/>
+        <activity
+            android:name=".SetupPage"
+            android:exported="true"
+            android:parentActivityName=".Create_User"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

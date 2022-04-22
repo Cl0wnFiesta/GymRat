@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">GymRat</string>
     <string name="logo">Logo</string>
+    <string name="gymrat">GymRat</string>
+    <string name="welcometext">Tervetuloa GymRat:iin</string>
+    <string name="start">Aloita</string>
+    <string name="luokäyttäjä">Luo Käyttäjä</string>
+    <string name="luoprofiili">Luo itsellesi profiili</string>
+    <string name="kayttajatunnus">Käyttäjätunnus*</string>
+    <string name="man">Mies</string>
+    <string name="woman">Nainen</string>
+    <string name="next">Seuraava</string>
 </resources>
