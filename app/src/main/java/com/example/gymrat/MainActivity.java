@@ -2,7 +2,9 @@ package com.example.gymrat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,5 +14,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //this is a comment
         //henrin oksan tapahtuma
+    }
+
+    public void newGymActivity(View v){
+        Intent startGym = new Intent();
+        startActivity(startGym);
     }
 }
