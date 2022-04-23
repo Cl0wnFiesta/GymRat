@@ -50,11 +50,10 @@ public class SetupPageActivity extends AppCompatActivity {
         Intent TestActivity = new Intent(this, TestActivity.class);
         saveInformation();
         startActivity(TestActivity);
-       /* SharedPreferences settings = getSharedPreferences("hasRunBefore", 0);
+        /* SharedPreferences settings = getSharedPreferences("hasRunBefore", 0);
         SharedPreferences.Editor edit = settings.edit();
         edit.putBoolean("hasRun", true);
         edit.apply(); //apply
-
         */
 
     }
