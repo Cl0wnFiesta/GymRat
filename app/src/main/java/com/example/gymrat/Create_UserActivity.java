@@ -13,7 +13,7 @@ import android.widget.RadioGroup;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class Create_User extends AppCompatActivity {
+public class Create_UserActivity extends AppCompatActivity {
 
     private EditText nameText;
 
@@ -28,7 +28,7 @@ public class Create_User extends AppCompatActivity {
         setContentView(R.layout.pick_gender);
     }
     public void nextPage(View v){
-        Intent intent = new Intent(this, SetupPage.class);
+        Intent intent = new Intent(this, SetupPageActivity.class);
         nameText = (EditText) findViewById(R.id.kayttajatunnus);
         String name = nameText.getText().toString();
 
@@ -37,7 +37,7 @@ public class Create_User extends AppCompatActivity {
 
 
         if(name.matches("" ) | !male.isChecked() & !female.isChecked()) {
-            Log.d("TAG", "Nullissa");
+            Log.d("TAG", "empty");
         }else{
             saveGenderInPreference();
             saveUserName();
@@ -63,10 +63,4 @@ public class Create_User extends AppCompatActivity {
         editor.apply();
     }
 
-
-      /*  SharedPreferences settings = getSharedPreferences("hasRunBefore", 0);
-        SharedPreferences.Editor edit = settings.edit();
-        edit.putBoolean("hasRun", true);
-        edit.commit(); //apply
-       */
 }

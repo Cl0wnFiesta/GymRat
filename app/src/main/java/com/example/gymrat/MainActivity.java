@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,9 +20,10 @@ public class MainActivity extends AppCompatActivity {
         Boolean firstTime = prefs.getBoolean("hasRun", false);
 
         if(!firstTime){
-            Intent intent = new Intent(this, Create_User.class);
+            Intent intent = new Intent(this, Create_UserActivity.class);
             startActivity(intent);
         }
+
     }
     //henrin oksan tapahtuma
     public void newGymActivity(View v){
