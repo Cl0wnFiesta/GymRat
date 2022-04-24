@@ -1,5 +1,7 @@
-package com.example.gymrat;
+package Classes;
 
+
+import com.example.gymrat.SetupPageActivity;
 
 public class maxWeight extends SetupPageActivity {
 
