@@ -16,6 +16,8 @@ public class StartedWorkoutActivity extends AppCompatActivity {
     private TextView toistot, paino, nimi;
     private Button seuraavaNappi;
 
+    private boolean secondPhase = false;
+
     private int treeniPos = 0;
 
     @Override
@@ -68,6 +70,11 @@ public class StartedWorkoutActivity extends AppCompatActivity {
             treeniPos++;
             Log.d("Paino",Double.toString(treeni.getPaino(treeniPos)) );
             setTreeniTiedot();
+        }
+        if(treeniPos == treeni.getPituus()-1 && !secondPhase){
+            treeniPos = 0;
+            treeni.secondWorkout();
+            secondPhase = true;
         }
 
     }

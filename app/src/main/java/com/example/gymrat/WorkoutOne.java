@@ -18,6 +18,10 @@ public class WorkoutOne extends Workout {
 
     }
 
+    public void secondWorkout(){
+        super.startWorkout(tokatSetit, tokaPainokerroin, tokaSettiNimi);
+    }
+
     public String getCurrentSet() {
         return currentSet;
     }
