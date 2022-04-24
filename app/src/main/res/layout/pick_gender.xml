@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:background="#ffff"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/luoProfiili"
+        android:layout_width="171dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="224dp"
+        android:text="@string/luoprofiili"
+        android:textColor="#30475E"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/kayttajatunnus"
+        android:layout_width="347dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/rounded_corner"
+        android:ems="10"
+        android:hint="@string/kayttajatunnus"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/luoProfiili" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="266dp"
+
+        android:layout_height="128dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="113dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kayttajatunnus">
+
+        <RadioButton
+            android:id="@+id/man"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_box"
+
+            android:text="@string/man" />
+
+        <RadioButton
+            android:id="@+id/woman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1sp"
+
+            android:background="@drawable/line_box"
+            android:text="@string/woman" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="241dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginBottom="46dp"
+        android:onClick="nextPage"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,8 +15,22 @@
         <activity
             android:name=".FirstTime"
             android:exported="false" />
+            android:name=".Fragment.Settings"
+            android:exported="false" />
         <activity
-            android:name=".GymActivity"
+            android:name=".TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Create_UserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SetupPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment.Favorites"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment.Notification"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
