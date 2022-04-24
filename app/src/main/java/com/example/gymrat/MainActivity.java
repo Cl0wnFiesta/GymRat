@@ -22,10 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
     }
-        //this is a comment
-
 
     @Override
     protected void onStart() {
@@ -45,11 +42,13 @@ public class MainActivity extends AppCompatActivity {
         if(!firstTime){
             Intent intent = new Intent(this, Create_UserActivity.class);
             startActivity(intent);
+        }else{
+            TextView mtext = findViewById(R.id.UserNameM);
+            SharedPreferences sharedPreferences = getSharedPreferences("myKey", MODE_PRIVATE);
+            String value = sharedPreferences.getString("value","");
+            mtext.setText("Hei " + value);
         }
-        TextView mtext = findViewById(R.id.UserNameM);
-        SharedPreferences sharedPreferences = getSharedPreferences("myKey", MODE_PRIVATE);
-        String value = sharedPreferences.getString("value","");
-        mtext.setText("Hei " + value);
+
     }
 
 }
