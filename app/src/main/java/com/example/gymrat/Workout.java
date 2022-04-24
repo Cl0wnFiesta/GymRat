@@ -51,6 +51,7 @@ abstract class Workout {
     public int getPituus(){
         return liikkeita.length;
     }
+
     //palauttaa treenin nimen
     public String getTreeniNimi(){
         return treeniNimi;
