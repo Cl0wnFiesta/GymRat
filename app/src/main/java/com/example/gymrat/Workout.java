@@ -5,7 +5,7 @@ import java.lang.Math;
 abstract class Workout {
 
 
-    private double maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus;
+    private final double maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus;
     private int plusKierros;
     private String treeniNimi;
     private int[] liikkeita;
@@ -33,17 +33,39 @@ abstract class Workout {
         return liikkeita[kohta];
     }
 
+    public double getPaino( int kohta){
+
+        double paino;
+        String liike = getTreeniNimi();
+        switch (liike){
+            case "penkki":
+                paino = getPenkki(kohta);
+                return paino;
+            case "kyykky":
+                paino = getKyykky(kohta);
+                return paino;
+            case "maastaveto":
+                paino = getMaastaveto(kohta);
+                return paino;
+            case "pystypunnerrus":
+                paino = getPystypunnerrus(kohta);
+                return paino;
+        }
+        return 420.69;
+    }
+
+
     //hakee treenimaksimin maksimista ja pyöristää lähimpään 2.5kg:seen
-    public double getPenkki(int kohta){
+    private double getPenkki(int kohta){
         return Math.round(painokerroin[kohta]*maxPenkki / 2.5) * 2.5;
     }
-    public double getKyykky(int kohta){
+    private double getKyykky(int kohta){
         return Math.round(painokerroin[kohta]*maxKyykky / 2.5) * 2.5;
     }
-    public double getMaastaveto(int kohta){
+    private double getMaastaveto(int kohta){
         return Math.round(painokerroin[kohta]*maxMaastaveto / 2.5) * 2.5;
     }
-    public double getPystypunnerrus(int kohta){
+    private double getPystypunnerrus(int kohta){
         return Math.round(painokerroin[kohta]*maxPystypunnerrus / 2.5) * 2.5;
     }
 

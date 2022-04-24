@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     //henrin oksan tapahtuma
     public void newGymActivity(View v){
-        Intent startGym = new Intent(this, GymActivity.class);
+        Intent startGym = new Intent(this, StartedWorkoutActivity.class);
         startActivity(startGym);
     }
 

@@ -27,6 +27,7 @@
         android:layout_marginStart="149dp"
         android:layout_marginEnd="149dp"
         android:layout_marginBottom="60dp"
+        android:onClick="buttonLogic"
         android:text="@string/seuraava"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
