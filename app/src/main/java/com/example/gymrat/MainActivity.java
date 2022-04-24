@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
@@ -40,10 +42,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkFirstTime(Boolean firstTime) {
-        if(firstTime){
+        if(!firstTime){
             Intent intent = new Intent(this, Create_UserActivity.class);
             startActivity(intent);
         }
+        TextView mtext = findViewById(R.id.UserNameM);
+        SharedPreferences sharedPreferences = getSharedPreferences("myKey", MODE_PRIVATE);
+        String value = sharedPreferences.getString("value","");
+        mtext.setText("Hei " + value);
     }
 
 }

@@ -17,13 +17,12 @@ public class Create_UserActivity extends AppCompatActivity {
 
     private EditText nameText;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_time_layout);
     }
-
+        //Avaa käyttäjälle Käyttäjänimen ja sukupuolen valinnan
     public void startButton(View v){
         setContentView(R.layout.pick_gender);
     }
@@ -31,11 +30,10 @@ public class Create_UserActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SetupPageActivity.class);
         nameText = (EditText) findViewById(R.id.kayttajatunnus);
         String name = nameText.getText().toString();
-
         RadioButton male = (RadioButton) findViewById(R.id.man);
         RadioButton female = (RadioButton) findViewById(R.id.woman);
 
-
+        //Tarkistaa onko Käyttäjänimen valinta tyhjä vai täytetty
         if(name.matches("" ) | !male.isChecked() & !female.isChecked()) {
             Log.d("TAG", "empty");
         }else{
@@ -44,7 +42,7 @@ public class Create_UserActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
+        //tallentaa käyttäjän sukupuoli valinnan
     private void saveGenderInPreference() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -53,7 +51,7 @@ public class Create_UserActivity extends AppCompatActivity {
         editor.putBoolean("is_male", selectedId == R.id.man);
         editor.apply();
     }
-
+        //tallentaa käyttäjän Käyttäjänimen
     public void saveUserName(){
         Log.d("TAG", "Saved username");
         String value = nameText.getText().toString().trim();

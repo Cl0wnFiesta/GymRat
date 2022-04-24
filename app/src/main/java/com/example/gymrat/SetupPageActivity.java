@@ -29,6 +29,7 @@ public class SetupPageActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("myKey", MODE_PRIVATE);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         maxWeight = new maxWeight();
+
         if(sharedPreferences.getBoolean("is_male", true)) {
             maxPenkki.setText(maxWeight.Mpenkki());
             maxKyykky.setText(maxWeight.Mkyykky());
@@ -47,14 +48,14 @@ public class SetupPageActivity extends AppCompatActivity {
         mtext.setText("Kerro meille itsestäsi " + value + ".");
     }
     public void toMainMenu(View v){
-        Intent TestActivity = new Intent(this, TestActivity.class);
+        Intent TestActivity = new Intent(this, MainActivity.class);
         saveInformation();
         startActivity(TestActivity);
-        /* SharedPreferences settings = getSharedPreferences("hasRunBefore", 0);
+        SharedPreferences settings = getSharedPreferences("hasRunBefore", 0);
         SharedPreferences.Editor edit = settings.edit();
         edit.putBoolean("hasRun", true);
         edit.apply(); //apply
-        */
+
 
     }
     public void saveInformation(){
