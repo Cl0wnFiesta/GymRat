@@ -1,24 +1,30 @@
 package com.example.gymrat;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 
 public class MainActivity extends AppCompatActivity {
 
-
+    BottomNavigationView bottomNavigationView;
     private SharedPreferences prefs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //this is a comment
+
 
     }
+        //this is a comment
+
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -34,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkFirstTime(Boolean firstTime) {
-        if(!firstTime){
+        if(firstTime){
             Intent intent = new Intent(this, Create_UserActivity.class);
             startActivity(intent);
         }
