@@ -16,6 +16,7 @@
             android:name=".FirstTime"
             android:exported="false" />
             android:name=".Fragment.Settings"
+            android:name=".NavBar_Activities.Settings"
             android:exported="false" />
         <activity
             android:name=".TestActivity"
@@ -27,10 +28,10 @@
             android:name=".SetupPageActivity"
             android:exported="false" />
         <activity
-            android:name=".Fragment.Favorites"
+            android:name=".NavBar_Activities.Favorites"
             android:exported="false" />
         <activity
-            android:name=".Fragment.Notification"
+            android:name=".NavBar_Activities.Notification"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

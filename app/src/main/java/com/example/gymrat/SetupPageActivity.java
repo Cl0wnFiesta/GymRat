@@ -11,12 +11,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.BreakIterator;
+import Classes.maxWeight;
 
 public class SetupPageActivity extends AppCompatActivity {
 
     private EditText maxPenkki, maxKyykky, maxMaastaveto, maxPystyPunnerrus;
-    private maxWeight maxWeight;
+    private Classes.maxWeight maxWeight;
 
     @SuppressLint("SetTextI18n")
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,8 @@ public class SetupPageActivity extends AppCompatActivity {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         maxWeight = new maxWeight();
 
+        //Jos käyttäjä on edellisessä valikossa valinnut miehen, hakee ohjelma miehelle oletusarvot, joita käyttäjä voi muokata
+        //Else jos käyttäjä on valinnut naisen -||-
         if(sharedPreferences.getBoolean("is_male", true)) {
             maxPenkki.setText(maxWeight.Mpenkki());
             maxKyykky.setText(maxWeight.Mkyykky());
@@ -42,11 +44,13 @@ public class SetupPageActivity extends AppCompatActivity {
             maxMaastaveto.setText(maxWeight.Nmaastaveto());
             maxPystyPunnerrus.setText(maxWeight.Npystypunnerrus());
         }
+        //Hakee käyttäjän käyttäjänimen jonka hän on valinnut
         TextView mtext = findViewById(R.id.UserName);
         sharedPreferences = getSharedPreferences("myKey", MODE_PRIVATE);
         String value = sharedPreferences.getString("value","");
         mtext.setText("Kerro meille itsestäsi " + value + ".");
     }
+    //Laittaa boolean FirstTime trueksi, jolloin MainActivity ei tule tänne enään, vaa näkymäksi avautuu aina MainMenu
     public void toMainMenu(View v){
         Intent TestActivity = new Intent(this, MainActivity.class);
         saveInformation();

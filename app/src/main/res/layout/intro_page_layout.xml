@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
+    android:background="#ffff"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -26,6 +27,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="176dp"
         android:text="@string/gymrat"
+        android:textColor="#000"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -40,6 +42,7 @@
         android:layout_height="28dp"
         android:layout_marginStart="133dp"
         android:layout_marginTop="55dp"
+        android:textColor="#000"
         android:layout_marginEnd="133dp"
         android:text="@string/welcometext"
         app:layout_constraintEnd_toEndOf="parent"

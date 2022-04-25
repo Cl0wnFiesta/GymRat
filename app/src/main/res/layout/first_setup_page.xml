@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout3"
+    android:background="#ffff"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -29,6 +30,7 @@
         android:layout_marginEnd="83dp"
         android:layout_marginBottom="50dp"
         android:onClick="toMainMenu"
+
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,14 +41,18 @@
         android:layout_width="115dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/line_box"
         android:ems="10"
-        android:hint="@string/maxPenkki"
+
         android:inputType="numberDecimal"
         android:minHeight="48dp"
-        android:textColorHint="#757575"
+        android:textColor="#000"
+
         app:layout_constraintStart_toEndOf="@+id/maxPenkkiText"
-        app:layout_constraintTop_toBottomOf="@+id/inffo" />
+        app:layout_constraintTop_toBottomOf="@+id/inffo"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/maxKyykky"
@@ -54,12 +60,16 @@
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/line_box"
         android:ems="10"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
-        android:textColorHint="#757575"
+        android:textColor="#000"
+
         app:layout_constraintStart_toEndOf="@+id/maxPenkkiText2"
-        app:layout_constraintTop_toBottomOf="@+id/maxPenkki" />
+        app:layout_constraintTop_toBottomOf="@+id/maxPenkki"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/maxMaastaveto"
@@ -67,111 +77,129 @@
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/line_box"
         android:ems="10"
+
         android:inputType="numberDecimal"
         android:minHeight="48dp"
-        android:textColorHint="#757575"
+        android:textColor="#000"
+
         app:layout_constraintStart_toEndOf="@+id/maxPenkkiText3"
-        app:layout_constraintTop_toBottomOf="@+id/maxKyykky" />
+        app:layout_constraintTop_toBottomOf="@+id/maxKyykky"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/maxPystyPunnerrus"
         android:layout_width="115dp"
-        android:layout_height="48dp"
+        android:layout_height="58dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/line_box"
         android:ems="10"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
-        android:textColorHint="#757575"
-        app:layout_constraintEnd_toStartOf="@+id/maxPenkkiText8"
+        android:textColor="#000"
         app:layout_constraintStart_toEndOf="@+id/maxPenkkiText4"
-        app:layout_constraintTop_toBottomOf="@+id/maxMaastaveto" />
+        app:layout_constraintTop_toBottomOf="@+id/maxMaastaveto"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/maxPenkkiText"
-        android:layout_width="115dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="169dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="1dp"
-        android:gravity="center"
+        android:gravity="center_vertical"
+
         android:text="@string/maxPenkki"
-        android:textAlignment="center"
+        android:textAlignment="gravity"
+        android:textColor="#000"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/maxPenkki"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inffo" />
 
     <TextView
         android:id="@+id/maxPenkkiText5"
-        android:layout_width="115dp"
+        android:layout_width="0dp"
         android:layout_height="47dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="42dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="26dp"
         android:gravity="center_vertical"
         android:text="@string/KG"
+        android:textColor="#000"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/maxPenkki"
         app:layout_constraintTop_toBottomOf="@+id/inffo" />
 
     <TextView
         android:id="@+id/maxPenkkiText6"
-        android:layout_width="115dp"
+        android:layout_width="0dp"
         android:layout_height="47dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="42dp"
+        android:layout_marginEnd="26dp"
         android:gravity="center_vertical"
         android:text="@string/KG"
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/maxKyykky"
         app:layout_constraintTop_toBottomOf="@+id/maxPenkkiText5" />
 
     <TextView
         android:id="@+id/maxPenkkiText7"
-        android:layout_width="115dp"
+        android:layout_width="0dp"
         android:layout_height="47dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="41dp"
+        android:layout_marginEnd="25dp"
         android:gravity="center_vertical"
         android:text="@string/KG"
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/maxMaastaveto"
         app:layout_constraintTop_toBottomOf="@+id/maxPenkkiText6" />
 
     <TextView
         android:id="@+id/maxPenkkiText8"
-        android:layout_width="115dp"
+        android:layout_width="0dp"
         android:layout_height="47dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="41dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="25dp"
         android:gravity="center_vertical"
         android:text="@string/KG"
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/maxPystyPunnerrus"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/maxMaastaveto"
         app:layout_constraintTop_toBottomOf="@+id/maxPenkkiText7" />
 
     <TextView
         android:id="@+id/maxPenkkiText2"
-        android:layout_width="115dp"
+        android:layout_width="169dp"
         android:layout_height="44dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="12dp"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:text="@string/maxKyykky"
-        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/maxPenkkiText" />
 
     <TextView
         android:id="@+id/maxPenkkiText3"
-        android:layout_width="116dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="1dp"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:text="@string/maxMaastaveto"
-        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/maxPenkki"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -179,17 +207,14 @@
 
     <TextView
         android:id="@+id/maxPenkkiText4"
-        android:layout_width="116dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="170dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="1dp"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:text="@string/maxPystypunnerrus"
-        android:textAlignment="center"
-
-        app:layout_constraintEnd_toStartOf="@+id/maxPenkki"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textColor="#000"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/maxPenkkiText3" />
 
