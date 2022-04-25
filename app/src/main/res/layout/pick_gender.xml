@@ -4,18 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
-    android:background="#ffff"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/luoProfiili"
         android:layout_width="171dp"
         android:layout_height="122dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="108dp"
         android:layout_marginEnd="224dp"
         android:text="@string/luoprofiili"
-        android:textColor="#30475E"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +24,7 @@
         android:id="@+id/kayttajatunnus"
         android:layout_width="347dp"
         android:layout_height="48dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="48dp"
         android:background="@drawable/rounded_corner"

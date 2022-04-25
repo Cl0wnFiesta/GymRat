@@ -10,15 +10,4 @@
     <string name="man">Mies</string>
     <string name="woman">Nainen</string>
     <string name="next">Seuraava</string>
-    <string name="textview">TextView</string>
-    <string name="tervehdys">Tervetuloa</string>
-    <string name="aloitetaan">Aloitetaan!</string>
-    <string name="maxPenkki">Penkki:</string>
-    <string name="maxKyykky">Kyykky:</string>
-    <string name="maxMaastaveto">Maastaveto:</string>
-    <string name="maxPystypunnerrus">Pystypunnerrus:</string>
-    <string name="KG">kg</string>
-    <string name="paino_inffo_teksti">Anna oma yhen toiston maksimiarvio (paino jonka saisit varmasti vähintään kerran tai kaksi nostettua)</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
