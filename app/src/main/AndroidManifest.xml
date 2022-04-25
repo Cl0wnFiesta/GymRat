@@ -9,21 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GymRat">
-        <activity
-            android:name=".Create_User"
-            android:exported="false"/>
-        <activity
-            android:name=".SetupPage"
-            android:exported="true"
-            android:parentActivityName=".Create_User"/>
 
         <activity
             android:name=".StartedWorkoutActivity"
             android:exported="false" />
         <activity
-            android:name=".FirstTime"
-            android:exported="false" />
-            android:name=".Fragment.Settings"
             android:name=".NavBar_Activities.Settings"
             android:exported="false" />
         <activity

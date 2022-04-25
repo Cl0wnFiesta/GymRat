@@ -50,7 +50,7 @@ public class SetupPageActivity extends AppCompatActivity {
         String value = sharedPreferences.getString("value","");
         mtext.setText("Kerro meille itsestäsi " + value + ".");
     }
-    //Laittaa boolean FirstTime trueksi, jolloin MainActivity ei tule tänne enään, vaa näkymäksi avautuu aina MainMenu
+    //Laittaa boolean FirstTime trueksi, jolloin Notes_Activity ei tule tänne enään, vaa näkymäksi avautuu aina MainMenu
     public void toMainMenu(View v){
         Intent TestActivity = new Intent(this, MainActivity.class);
         saveInformation();
