@@ -101,7 +101,6 @@ public class Database extends SQLiteOpenHelper {
 
     public Cursor getUpcomingTask() {
         SQLiteDatabase db = this.getReadableDatabase();
-
         Cursor res = db.rawQuery("select * from " + TABLE_NAME + " WHERE date(task_at) > date('now', '+1 day', 'localtime') order by id desc", null);
         Log.d("TAG", "Tulevat");
         return res;

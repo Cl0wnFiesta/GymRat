@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">GymRat</string>
     <string name="logo">Logo</string>
     <string name="gymrat">GymRat</string>
@@ -8,6 +8,7 @@
     <string name="luoprofiili">Luo itsellesi profiili</string>
     <string name="kayttajatunnus">Käyttäjätunnus*</string>
     <string name="man">Mies</string>
+    <string name="tallenna" tools:ignore="ExtraTranslation">Tallenna</string>
     <string name="woman">Nainen</string>
     <string name="gymNext">Seuraava</string>
     <string name="textview">TextView</string>
@@ -33,4 +34,7 @@
     <string name="seuraava">Seuraava</string>
     <string name="painolla">Painolla</string>
     <string name="toistom_r">Toistomäärä</string>
+    <string name="poista_muistutus">Poista muistutus</string>
+
+
 </resources>

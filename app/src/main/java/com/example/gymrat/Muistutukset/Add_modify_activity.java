@@ -47,10 +47,7 @@ public class Add_modify_activity extends AppCompatActivity {
         edit_text = findViewById(R.id.edit_text);
         dateText = findViewById(R.id.dateText);
         save_btn = findViewById(R.id.save_btn);
-
-
         dateText.setText(new SimpleDateFormat("E, dd MMMM yyyy").format(calendar.getTime()));
-
 
         Intent intent = getIntent();
         if (intent.hasExtra("isModify")) {
@@ -58,31 +55,23 @@ public class Add_modify_activity extends AppCompatActivity {
             task_id = intent.getStringExtra("id");
             init_modify();
         }
-
-
     }
 
     public void init_modify() {
-        toolbar_title.setText("Modify Task");
-        save_btn.setText("Update");
+        toolbar_title.setText("Muokkaa muistutusta");
+        save_btn.setText("Päivitä");
         LinearLayout deleteTask = findViewById(R.id.deleteTask);
         deleteTask.setVisibility(View.VISIBLE);
         Cursor task = mydb.getSingleTask(task_id);
         if (task != null) {
             task.moveToFirst();
-
-
             edit_text.setText(task.getString(1));
-
-            SimpleDateFormat iso8601Format = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat Format = new SimpleDateFormat("yyyy-MM-dd");
             try {
-                calendar.setTime(iso8601Format.parse(task.getString(2)));
+                calendar.setTime(Format.parse(task.getString(2)));
             } catch (ParseException e) {
             }
-
             dateText.setText(new SimpleDateFormat("E, dd MMMM yyyy").format(calendar.getTime()));
-
-
         }
 
     }
@@ -94,23 +83,23 @@ public class Add_modify_activity extends AppCompatActivity {
 
             if (isModify) {
                 mydb.updateTask(task_id, edit_text.getText().toString(), new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime()));
-                Toast.makeText(getApplicationContext(), "Task Updated.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Muistutus päivitetty", Toast.LENGTH_SHORT).show();
             } else {
                 mydb.insertTask(edit_text.getText().toString(), new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime()));
-                Toast.makeText(getApplicationContext(), "Task Added.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Muistutus luotu.", Toast.LENGTH_SHORT).show();
 
             }
             finish();
 
         } else {
-            Toast.makeText(getApplicationContext(), "Empty task can't be saved.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Et voi tallennaa tyhjää sivua!", Toast.LENGTH_SHORT).show();
         }
 
     }
 
     public void deleteTask(View v) {
         mydb.deleteTask(task_id);
-        Toast.makeText(getApplicationContext(), "Task Removed", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Poistu onnistui", Toast.LENGTH_SHORT).show();
         finish();
     }
 
@@ -119,19 +108,14 @@ public class Add_modify_activity extends AppCompatActivity {
         final View dialogView = View.inflate(this, R.layout.date_picker, null);
         final DatePicker datePicker = dialogView.findViewById(R.id.date_picker);
         datePicker.updateDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
-
-
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(dialogView);
-        builder.setTitle("Choose Date");
-        builder.setNegativeButton("Cancel", null);
-        builder.setPositiveButton("Set", new DialogInterface.OnClickListener() {
+        builder.setTitle("Valitse päivä");
+        builder.setNegativeButton("Peruuta", null);
+        builder.setPositiveButton("Valitse", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-
-
                 calendar = new GregorianCalendar(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth());
                 dateText.setText(new SimpleDateFormat("E, dd MMMM yyyy").format(calendar.getTime()));
-
             }
         });
         builder.show();
