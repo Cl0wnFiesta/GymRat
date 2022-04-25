@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartedWorkoutActivity">
+
+    <TextView
+        android:id="@+id/WorkoutNimi"
+        android:layout_width="257dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="177dp"
+        android:text="Lorem ipsum"
+        android:textAlignment="center"
+        android:textSize="38sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/NextPhase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="149dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="60dp"
+        android:onClick="buttonLogic"
+        android:text="@string/seuraava"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/PainoText"
+        android:layout_width="210dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="111dp"
+        android:text="@string/painolla"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WorkoutNimi" />
+
+    <TextView
+        android:id="@+id/PainoNum"
+        android:layout_width="120dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="20dp"
+        android:text="420.69"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PainoText" />
+
+    <TextView
+        android:id="@+id/ToistotText"
+        android:layout_width="210dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="111dp"
+        android:text="@string/toistom_r"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PainoNum" />
+
+    <TextView
+        android:id="@+id/ToistotNum"
+        android:layout_width="120dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="24dp"
+        android:text="696.96"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ToistotText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

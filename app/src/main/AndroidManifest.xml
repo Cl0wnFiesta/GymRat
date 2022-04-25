@@ -10,13 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GymRat">
         <activity
-            android:name=".Create_User"
-            android:exported="false"/>
+            android:name=".StartedWorkoutActivity"
+            android:exported="false" />
         <activity
-            android:name=".SetupPage"
-            android:exported="true"
-            android:parentActivityName=".Create_User"/>
-
+            android:name=".FirstTime"
+            android:exported="false" />
+            android:name=".Fragment.Settings"
+            android:exported="false" />
+        <activity
+            android:name=".TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Create_UserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SetupPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment.Favorites"
+            android:exported="false" />
+        <activity
+            android:name=".Fragment.Notification"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
