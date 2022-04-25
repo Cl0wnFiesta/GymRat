@@ -22,6 +22,13 @@
         <entry key="..\:/Android studio lab/GymRat/app/src/main/res/layout/rounded_corner.xml" value="0.36102564102564105" />
         <entry key="..\:/Android studio lab/GymRat/app/src/main/res/menu/menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Android studio lab/GymRat/app/src/main/res/menu/nav_menu.xml" value="0.1" />
+        <entry key="..\:/Android/GymRat/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.196" />
+        <entry key="..\:/Android/GymRat/app/src/main/res/drawable/ic_launcher_background.xml" value="0.196" />
+        <entry key="..\:/Android/GymRat/app/src/main/res/layout/activity_gym.xml" value="0.33" />
+        <entry key="..\:/Android/GymRat/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Android/GymRat/app/src/main/res/layout/activity_started_workout.xml" value="0.27708333333333335" />
+        <entry key="..\:/Android/GymRat/app/src/main/res/layout/activity_started_workout2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/GymRat/app/src/main/res/layout/first_time_layout.xml" value="0.16983695652173914" />
       </map>
     </option>
   </component>
