@@ -11,13 +11,19 @@
         android:theme="@style/Theme.GymRat">
 
         <activity
-            android:name=".StartedWorkoutActivity"
+            android:name=".Muistutukset.Add_modify_activity"
+            android:exported="false" />
+        <activity
+            android:name=".Muistutukset.Notes_Activity"
             android:exported="false" />
         <activity
             android:name=".NavBar_Activities.Settings"
             android:exported="false" />
         <activity
             android:name=".TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StartedWorkoutActivity"
             android:exported="false" />
         <activity
             android:name=".Create_UserActivity"

@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 
-import com.example.gymrat.NavBar_Activities.Notification;
+import com.example.gymrat.Muistutukset.Notes_Activity;
 import com.example.gymrat.NavBar_Activities.Favorites;
 
 import com.example.gymrat.NavBar_Activities.Settings;
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.home:
                         return true;
                     case R.id.notication:
-                        startActivity(new Intent(getApplicationContext(), Notification.class));
+                        startActivity(new Intent(getApplicationContext(), Notes_Activity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.settings:

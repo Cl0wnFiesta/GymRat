@@ -1,4 +1,4 @@
-package Muistutukset;
+package com.example.gymrat.Muistutukset;
 
 
 import android.app.Activity;
@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
-
+import com.example.gymrat.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -44,7 +44,7 @@ public class ListTaskAdapter extends BaseAdapter {
             holder = new ListTaskViewHolder();
             convertView = LayoutInflater.from(activity).inflate(R.layout.task_list_row, parent, false);
             holder.task_name = convertView.findViewById(R.id.task_name);
-            holder.checkBtn = convertView.findViewById(R.id.checkBtn);
+            holder.checkbar = convertView.findViewById(R.id.checkbar);
             convertView.setTag(holder);
         } else {
             holder = (ListTaskViewHolder) convertView.getTag();
@@ -52,30 +52,30 @@ public class ListTaskAdapter extends BaseAdapter {
 
 
         final HashMap<String, String> singleTask = data.get(position);
-        final ListTaskViewHolder tmpHolder = holder;
+        final ListTaskViewHolder Holder = holder;
 
         holder.task_name.setId(position);
-        holder.checkBtn.setId(position);
+        holder.checkbar.setId(position);
 
         try {
-            holder.checkBtn.setOnCheckedChangeListener(null);
+            holder.checkbar.setOnCheckedChangeListener(null);
             if (singleTask.get("status").contentEquals("1")) {
                 holder.task_name.setText(Html.fromHtml("<strike>" + singleTask.get("task") + "</strike>"));
-                holder.checkBtn.setChecked(true);
+                holder.checkbar.setChecked(true);
             } else {
                 holder.task_name.setText(singleTask.get("task"));
-                holder.checkBtn.setChecked(false);
+                holder.checkbar.setChecked(false);
             }
 
-            holder.checkBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            holder.checkbar.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (isChecked) {
                         database.updateTaskStatus(singleTask.get("id"), 1);
-                        tmpHolder.task_name.setText(Html.fromHtml("<strike>" + singleTask.get("task") + "</strike>"));
+                        Holder.task_name.setText(Html.fromHtml("<strike>" + singleTask.get("task") + "</strike>"));
                     } else {
                         database.updateTaskStatus(singleTask.get("id"), 0);
-                        tmpHolder.task_name.setText(singleTask.get("task"));
+                        Holder.task_name.setText(singleTask.get("task"));
                     }
 
                 }
@@ -90,5 +90,5 @@ public class ListTaskAdapter extends BaseAdapter {
 
 class ListTaskViewHolder {
     TextView task_name;
-    CheckBox checkBtn;
+    CheckBox checkbar;
 }

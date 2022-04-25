@@ -1,4 +1,4 @@
-package Muistutukset;
+package com.example.gymrat.Muistutukset;
 
 
 import android.content.Context;

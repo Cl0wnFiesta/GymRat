@@ -1,4 +1,4 @@
-package Muistutukset;
+package com.example.gymrat.Muistutukset;
 
 
 import android.content.DialogInterface;
@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.gymrat.R;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,7 +26,7 @@ import java.util.GregorianCalendar;
 public class Add_modify_activity extends AppCompatActivity {
 
     Calendar calendar;
-    com.example.todo.Database mydb;
+    Database mydb;
 
     Boolean isModify = false;
     String task_id;
@@ -32,14 +34,14 @@ public class Add_modify_activity extends AppCompatActivity {
     EditText edit_text;
     TextView dateText;
     Button save_btn;
-
+    Notes_Activity notes_activity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_add_modify_task);
 
-        mydb = new com.example.todo.Database(getApplicationContext());
+        mydb = new Database(getApplicationContext());
         calendar = new GregorianCalendar();
         toolbar_title = findViewById(R.id.toolbar_title);
         edit_text = findViewById(R.id.edit_text);
@@ -87,7 +89,6 @@ public class Add_modify_activity extends AppCompatActivity {
 
 
     public void saveTask(View v) {
-
         /*Checking for Empty Task*/
         if (edit_text.getText().toString().trim().length() > 0) {
 
@@ -97,6 +98,7 @@ public class Add_modify_activity extends AppCompatActivity {
             } else {
                 mydb.insertTask(edit_text.getText().toString(), new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime()));
                 Toast.makeText(getApplicationContext(), "Task Added.", Toast.LENGTH_SHORT).show();
+
             }
             finish();
 

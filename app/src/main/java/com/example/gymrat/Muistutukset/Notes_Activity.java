@@ -1,17 +1,23 @@
-package Muistutukset;
+package com.example.gymrat.Muistutukset;
 
 
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.NestedScrollView;
 
+import com.example.gymrat.MainActivity;
+import com.example.gymrat.NavBar_Activities.Favorites;
+import com.example.gymrat.NavBar_Activities.Settings;
 import com.example.gymrat.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,8 +44,42 @@ public class Notes_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_note);
 
+
+        // Initialize and assign variable
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+
+        // Set Home selected
+        bottomNavigationView.setSelectedItemId(R.id.notication);
+
+        // Perform item selected listener
+        //Tutorial video link https://www.youtube.com/watch?v=Q9Xwyfor-kQ&ab_channel=GurkanUcar
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                //Tarkistaa missä navbarin valikossa käyttäjä on, ja avaa valikon Activityn
+                switch(item.getItemId())
+                {
+                    case R.id.favorites:
+                        startActivity(new Intent(getApplicationContext(), Favorites.class));
+                        //Poistaa avaus animaation
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0,0);
+                    case R.id.notication:
+                        return true;
+                    case R.id.settings:
+                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
         mydatabase = new Database(this);
         empty = findViewById(R.id.empty);
         scrollView = findViewById(R.id.scrollView);
@@ -55,13 +95,11 @@ public class Notes_Activity extends AppCompatActivity {
         startActivity(new Intent(this, Add_modify_activity.class));
     }
 
-
     @Override
     public void onResume() {
         super.onResume();
         populateData();
     }
-
 
     public void populateData() {
         mydatabase = new Database(this);
@@ -72,7 +110,6 @@ public class Notes_Activity extends AppCompatActivity {
             }
         });
     }
-
 
     public void fetchDataFromDB() {
         todayLista.clear();
@@ -136,7 +173,7 @@ public class Notes_Activity extends AppCompatActivity {
     }
 
     public void loadListView(NoScrollListView listView, final ArrayList<HashMap<String, String>> dataList) {
-        com.example.todo.ListTaskAdapter adapter = new com.example.todo.ListTaskAdapter(this, dataList, mydatabase);
+        ListTaskAdapter adapter = new ListTaskAdapter(this, dataList, mydatabase);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,

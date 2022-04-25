@@ -1,4 +1,4 @@
-package Muistutukset;
+package com.example.gymrat.Muistutukset;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -66,6 +66,7 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public boolean updateTaskStatus(String id, Integer status) {
+        Log.d("TAG", "updatettu??");
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -86,6 +87,7 @@ public class Database extends SQLiteOpenHelper {
         Log.d("TAG", "Tän päivän");
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("select * from " + TABLE_NAME + " WHERE date(task_at) = date('now', 'localtime') order by id desc", null);
+        Log.d("TAG", "lopuessa??");
         return res;
     }
 
