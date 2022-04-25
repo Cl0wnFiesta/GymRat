@@ -10,21 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GymRat">
         <activity
+            android:name=".Workout.StartedWorkoutTwoActivity"
+            android:exported="false" />
+        <activity
             android:name=".Create_User"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".SetupPage"
             android:exported="true"
-            android:parentActivityName=".Create_User"/>
-
+            android:parentActivityName=".Create_User" />
         <activity
-            android:name=".StartedWorkoutActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FirstTime"
-            android:exported="false" />
-            android:name=".Fragment.Settings"
-            android:name=".NavBar_Activities.Settings"
+            android:name=".Workout.StartedWorkoutOneActivity"
             android:exported="false" />
         <activity
             android:name=".TestActivity"
