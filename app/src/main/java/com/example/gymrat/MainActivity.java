@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
     }
     //Tarkistaa aina kun activity aukeaa onko avaus kerta first time
     @Override
