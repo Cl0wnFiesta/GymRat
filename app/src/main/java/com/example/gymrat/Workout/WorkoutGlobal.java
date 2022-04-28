@@ -33,7 +33,7 @@ public class WorkoutGlobal {
                 workoutTwoSettiYksi = {5, 3, 1, 3, 3, 3, 5, 5, 5},
                 workoutTwoSettiKaksi = {5, 5, 3, 5, 7, 4, 6, 8};
        double[]
-                workoutTwoPainokerroinYksi = {1, 0.75, 0.85, 0.85, 0.85, 0.8, 0.75, 0.7, 0.65},
+                workoutTwoPainokerroinYksi = {0.75, 0.85, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65},
                 workoutTwoPainokerroinKaksi = {0.5,0.6,0.7,0.7,0.7,0.7,0.7,0.7};
         //kolmannen treenin tiedot
         String tunnisteKolme = "WorkoutThree";
@@ -41,16 +41,16 @@ public class WorkoutGlobal {
                 workoutThreeSettiYksi = {5, 3, 1, 3, 5, 3, 5, 3, 5},
                 workoutThreeSettiKaksi = {5, 5, 3, 5, 7, 4, 6, 8};
         double[]
-                workoutThreePainokerroinYksi = {0.65, 0.75, 0.85, 0.85, 0.85, 0.8, 0.75, 0.7, 0.65},
-                workoutThreePainokerroinKaksi = {0.5,0.6,0.7,0.7,0.7,0.7,0.7,0.7};
+                workoutThreePainokerroinYksi = {0.75, 0.85, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65},
+                workoutThreePainokerroinKaksi = {0.4,0.5,0.6,0.6,0.6,0.6,0.6,0.6};
         //Neljännen treenin tiedot
         String tunnisteNelja = "WorkoutFour";
         int[]
                 workoutFourSettiYksi = {5, 3, 1, 3, 3, 3, 3, 3, 3},
                 workoutFourSettiKaksi = {5, 5, 3, 5, 7, 4, 6, 8};
         double[]
-                workoutFourPainokerroinYksi = {0.65, 0.75, 0.85, 0.85, 0.85, 0.8, 0.75, 0.7, 0.65},
-                workoutFourPainokerroinKaksi = {0.5,0.6,0.7,0.7,0.7,0.7,0.7,0.7};
+                workoutFourPainokerroinYksi = {0.75, 0.85, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65},
+                workoutFourPainokerroinKaksi = {0.35,0.45,0.55,0.55,0.55,0.55,0.55,0.55};
 
 
         workoutData.add(new WorkoutData(workoutOneSettiYksi, workoutOnePainokerroinYksi,"Penkki", tunnisteYksi, 1));
