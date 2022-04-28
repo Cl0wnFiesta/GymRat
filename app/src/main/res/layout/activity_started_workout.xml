@@ -13,7 +13,6 @@
         android:layout_marginStart="176dp"
         android:layout_marginTop="112dp"
         android:layout_marginEnd="177dp"
-        android:text="Lorem ipsum"
         android:textAlignment="center"
         android:textSize="38sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +25,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="696.96"
         android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +51,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="420.69"
         android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,17 +74,14 @@
 
     <Button
         android:id="@+id/NextPhase"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="149dp"
-        android:layout_marginEnd="149dp"
-        android:layout_marginBottom="60dp"
-        android:onClick="buttonLogic"
+        android:layout_marginBottom="52dp"
         android:text="@string/seuraava"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toEndOf="@+id/prevPhase" />
 
     <TextView
         android:id="@+id/nytSetti"
@@ -95,7 +89,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="4dp"
-        android:text="1"
         android:textAlignment="textStart"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -109,7 +102,6 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="4dp"
-        android:text="10"
         android:textAlignment="textStart"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -124,9 +116,49 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="60dp"
-        android:text="/"
+        android:text="@string/Slash"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/plusButton"
+        android:layout_width="52dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="120dp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ToistotNum" />
+
+    <Button
+        android:id="@+id/minusButton"
+        android:layout_width="52dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="36dp"
+        android:text="-"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/plusButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ToistotNum" />
+
+    <Button
+        android:id="@+id/prevPhase"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="44dp"
+        android:text="Edellinen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/NextPhase"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
