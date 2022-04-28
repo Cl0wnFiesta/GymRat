@@ -6,7 +6,6 @@ public class Workout {
 
 
     private final double maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus;
-    private int plusKierros;
     private String treeniNimi;
     private int[] liikkeita;
     private double[] painokerroin;
@@ -82,7 +81,7 @@ public class Workout {
     }
 
     //Jos painot menee tiettyjen rajojen yli, niin ehdota lisäpainoja
-    public double suggestIncrease(){
+    public double suggestIncrease(int plusKierros){
         double suggestNumber = 0;
         if (plusKierros > 1 && plusKierros <= 3){
             suggestNumber = 2.5;
@@ -94,9 +93,5 @@ public class Workout {
             suggestNumber = 7.5;
         }
         return suggestNumber;
-    }
-
-    public void setPlusKierros(int plusKierros) {
-        this.plusKierros = plusKierros;
     }
 }

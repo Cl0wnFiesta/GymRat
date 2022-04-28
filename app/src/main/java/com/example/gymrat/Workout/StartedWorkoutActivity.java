@@ -34,6 +34,7 @@ public class StartedWorkoutActivity extends AppCompatActivity {
 
     public static final String EXTRA_INT = "com.example.gymrat.extraint";
     private int yksPlusKierros = 1;
+    public static final String EXTRA_SUOSITTELE = "com.example.gymrat.recommend";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +99,7 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         fetchPreferences();
     }
 
+//Asettaa näytölle treenin nimen, painot ja toistomäärän riippuen missä kohtaa treeniä ollaan.
     private void setTreeniTiedot() {
         setButtonVisibility(false);
         nimi.setText(treeni.getTreeniNimi());
@@ -140,7 +142,7 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         if (treeniPos + 1 <= liikeCount && !secondPhase){
             treeniPos++;
         }
-        if (treeniPos + 1 < liikeCount && secondPhase){
+        if (treeniPos < liikeCount && secondPhase){
             treeniPos++;
         }
         if(treeniPos == liikeCount && !secondPhase){
@@ -152,17 +154,26 @@ public class StartedWorkoutActivity extends AppCompatActivity {
             Log.d("kohta",Integer.toString(treeniPos) );
         }
 
-        if(treeniPos + 1 == liikeCount && secondPhase){
-            Intent endWorkout = new Intent(this, WorkoutEndActivity.class);
-            endWorkout.putExtra(EXTRA_INT, yksPlusKierros);
-            startActivity(endWorkout);
+        if(treeniPos == liikeCount && secondPhase){
+            endWorkout();
         }
 
-
-        setTreeniTiedot();
-        setCounter();
+        if(treeniPos < liikeCount){
+            setTreeniTiedot();
+            setCounter();
+        }
     }
 
+//Lopettaa treenin ja antaa tarvittavat tiedot eteenpäin tallennettavaksi
+    private void endWorkout() {
+        double suositteluNousu = treeni.suggestIncrease(yksPlusKierros);
+        Intent endWorkout = new Intent(this, WorkoutEndActivity.class);
+        endWorkout.putExtra(EXTRA_INT, yksPlusKierros);
+        endWorkout.putExtra(EXTRA_SUOSITTELE, suositteluNousu);
+        startActivity(endWorkout);
+    }
+
+//Logiikka näppäimelle joka menee taaksepäin.
     private void backButtonLogic(){
         int liikeCount = treeni.getPituus();
         if (treeniPos -1 >= 0){
@@ -181,14 +192,14 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         setCounter();
     }
 
-
+ //asettaa luvut näytön oikeaan yläreunaan treenin kestosta
     public void setCounter(){
         TextView nytSetti = findViewById(R.id.nytSetti), setinLoppu = findViewById(R.id.setinLoppu);
         nytSetti.setText(Integer.toString(treeniPos + 1));
         setinLoppu.setText(Integer.toString(treeni.getPituus()));
 
     }
-
+//näyttää tai piilottaa plus minus näppäimet
     private void setButtonVisibility(boolean plusKierros){
         if(plusKierros){
             plusButton.setVisibility(View.VISIBLE);
