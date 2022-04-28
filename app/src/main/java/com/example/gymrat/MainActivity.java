@@ -15,7 +15,7 @@ import com.example.gymrat.NavBar_Activities.Notification;
 import com.example.gymrat.NavBar_Activities.Favorites;
 
 import com.example.gymrat.NavBar_Activities.Settings;
-import com.example.gymrat.Workout.StartedWorkoutOneActivity;
+import com.example.gymrat.Workout.StartedWorkoutActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
     //henrin oksan tapahtuma
     public void newGymActivity(View v){
-        Intent startGym = new Intent(this, StartedWorkoutOneActivity.class);
+        Intent startGym = new Intent(this, StartedWorkoutActivity.class);
         startActivity(startGym);
     }
     //Tarkistaa onko sovelluksen käynnistäminen ensimmäinen kerta. Jos on, avaa sovellus käyttäjä luomis Activityn

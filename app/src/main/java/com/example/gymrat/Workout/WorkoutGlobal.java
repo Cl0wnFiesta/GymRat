@@ -3,7 +3,7 @@ package com.example.gymrat.Workout;
 import java.util.ArrayList;
 
 public class WorkoutGlobal {
-    private ArrayList<WorkoutInfo> workoutInfos;
+    private ArrayList<WorkoutData> workoutData;
     private static final WorkoutGlobal ourInstance = new WorkoutGlobal();
 
 
@@ -13,11 +13,11 @@ public class WorkoutGlobal {
     }
 
     private WorkoutGlobal(){
-        workoutInfos = new ArrayList<>();
-        addWorkoutInfo();
+        workoutData = new ArrayList<>();
+        addWorkoutData();
     }
 
-    private void addWorkoutInfo(){
+    private void addWorkoutData(){
         //Ensimmäisen treenin tiedot
         String tunnisteYksi = "WorkoutOne";
         int[]
@@ -53,24 +53,24 @@ public class WorkoutGlobal {
                 workoutFourPainokerroinKaksi = {0.5,0.6,0.7,0.7,0.7,0.7,0.7,0.7};
 
 
-        workoutInfos.add(new WorkoutInfo(workoutOneSettiYksi, workoutOnePainokerroinYksi,"Penkki", tunnisteYksi, 1));
-        workoutInfos.add(new WorkoutInfo(workoutOneSettiKaksi, workoutOnePainokerroinKaksi,"Pystypunnerrus", tunnisteYksi, 2));
+        workoutData.add(new WorkoutData(workoutOneSettiYksi, workoutOnePainokerroinYksi,"Penkki", tunnisteYksi, 1));
+        workoutData.add(new WorkoutData(workoutOneSettiKaksi, workoutOnePainokerroinKaksi,"Pystypunnerrus", tunnisteYksi, 2));
 
-        workoutInfos.add(new WorkoutInfo(workoutTwoSettiYksi, workoutTwoPainokerroinYksi, "Kyykky", tunnisteKaksi, 1));
-        workoutInfos.add(new WorkoutInfo(workoutTwoSettiKaksi, workoutTwoPainokerroinKaksi, "Sumo-maastaveto", tunnisteKaksi, 2));
+        workoutData.add(new WorkoutData(workoutTwoSettiYksi, workoutTwoPainokerroinYksi, "Kyykky", tunnisteKaksi, 1));
+        workoutData.add(new WorkoutData(workoutTwoSettiKaksi, workoutTwoPainokerroinKaksi, "Sumo-maastaveto", tunnisteKaksi, 2));
 
-        workoutInfos.add(new WorkoutInfo(workoutThreeSettiYksi, workoutThreePainokerroinYksi, "Penkki", tunnisteKolme, 1));
-        workoutInfos.add(new WorkoutInfo(workoutThreeSettiKaksi, workoutThreePainokerroinKaksi, "Kapea penkki", tunnisteKolme, 2));
+        workoutData.add(new WorkoutData(workoutThreeSettiYksi, workoutThreePainokerroinYksi, "Penkki", tunnisteKolme, 1));
+        workoutData.add(new WorkoutData(workoutThreeSettiKaksi, workoutThreePainokerroinKaksi, "Kapea penkki", tunnisteKolme, 2));
 
-        workoutInfos.add(new WorkoutInfo(workoutFourSettiYksi, workoutFourPainokerroinYksi, "Maastaveto", tunnisteNelja, 1));
-        workoutInfos.add(new WorkoutInfo(workoutFourSettiKaksi, workoutFourPainokerroinKaksi, "Etukyykky", tunnisteNelja, 2));
+        workoutData.add(new WorkoutData(workoutFourSettiYksi, workoutFourPainokerroinYksi, "Maastaveto", tunnisteNelja, 1));
+        workoutData.add(new WorkoutData(workoutFourSettiKaksi, workoutFourPainokerroinKaksi, "Etukyykky", tunnisteNelja, 2));
     }
 
     public int[] getWorkoutToistot(String tunniste, int tunnisteNumero){
         int[] returnArray = {};
-        for ( WorkoutInfo workoutInfo:workoutInfos) {
-            if (workoutInfo.getTunniste().equals(tunniste) && workoutInfo.getTunnistenumero() == tunnisteNumero) {
-                returnArray = workoutInfo.getSetti();
+        for ( WorkoutData workoutData: workoutData) {
+            if (workoutData.getTunniste().equals(tunniste) && workoutData.getTunnistenumero() == tunnisteNumero) {
+                returnArray = workoutData.getSetti();
             }
         }
         return returnArray;
@@ -78,9 +78,9 @@ public class WorkoutGlobal {
 
     public double[] getWorkoutPainokerroin(String tunniste, int tunnisteNumero){
         double[] returnArray = {};
-        for ( WorkoutInfo workoutInfo:workoutInfos) {
-            if (workoutInfo.getTunniste().equals(tunniste) && workoutInfo.getTunnistenumero() == tunnisteNumero) {
-                returnArray = workoutInfo.getPainokerroin();
+        for ( WorkoutData workoutData: workoutData) {
+            if (workoutData.getTunniste().equals(tunniste) && workoutData.getTunnistenumero() == tunnisteNumero) {
+                returnArray = workoutData.getPainokerroin();
             }
         }
         return returnArray;
@@ -88,9 +88,9 @@ public class WorkoutGlobal {
 
     public String getWorkoutName(String tunniste, int tunnisteNumero){
         String returnNimi = "";
-        for ( WorkoutInfo workoutInfo:workoutInfos) {
-            if (workoutInfo.getTunniste().equals(tunniste) && workoutInfo.getTunnistenumero() == tunnisteNumero) {
-                returnNimi = workoutInfo.getNimi();
+        for ( WorkoutData workoutData: workoutData) {
+            if (workoutData.getTunniste().equals(tunniste) && workoutData.getTunnistenumero() == tunnisteNumero) {
+                returnNimi = workoutData.getNimi();
             }
         }
         return returnNimi;

@@ -12,9 +12,8 @@ import android.widget.TextView;
 
 import com.example.gymrat.R;
 
-import java.util.ArrayList;
 
-public class StartedWorkoutOneActivity extends AppCompatActivity {
+public class StartedWorkoutActivity extends AppCompatActivity {
     private double maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus;
     private Workout treeni;
     private SharedPreferences sp;
@@ -33,6 +32,7 @@ public class StartedWorkoutOneActivity extends AppCompatActivity {
 
     private int treeniPos = 0;
 
+    public static final String EXTRA_INT = "com.example.gymrat.extraint";
     private int yksPlusKierros = 1;
 
     @Override
@@ -151,13 +151,14 @@ public class StartedWorkoutOneActivity extends AppCompatActivity {
         if (treeniPos <= liikeCount){
             Log.d("kohta",Integer.toString(treeniPos) );
         }
-        /*
-        if(treeniPos == liikeCount && secondPhase){
-            Intent endWorkout = new Intent();
+
+        if(treeniPos + 1 == liikeCount && secondPhase){
+            Intent endWorkout = new Intent(this, WorkoutEndActivity.class);
+            endWorkout.putExtra(EXTRA_INT, yksPlusKierros);
             startActivity(endWorkout);
         }
 
-         */
+
         setTreeniTiedot();
         setCounter();
     }

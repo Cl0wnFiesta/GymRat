@@ -2,13 +2,13 @@ package com.example.gymrat.Workout;
 
 import java.util.ArrayList;
 
-public class WorkoutInfo {
+public class WorkoutData {
     private int[] ekaSetti;
     private double[] ekaPainokerroin;
     private String ekaNimi, tunniste;
     private int tunnistenumero;
 
-    public WorkoutInfo(int[] ekaSetti, double[] ekaPainokerroin, String nimi, String tunnisteNimi, int tunnistenumero) {
+    public WorkoutData(int[] ekaSetti, double[] ekaPainokerroin, String nimi, String tunnisteNimi, int tunnistenumero) {
         this.ekaSetti = ekaSetti;
         this.ekaPainokerroin = ekaPainokerroin;
         this.ekaNimi = nimi;
