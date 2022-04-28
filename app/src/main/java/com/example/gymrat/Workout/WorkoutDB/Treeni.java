@@ -21,5 +21,9 @@ public class Treeni {
         public int toistot;
         @ColumnInfo(name = "Korotus")
         public double korotus;
+
+        public String toString(){
+          return treeninNimi + "   -   " + paiva;
+        }
 }
 

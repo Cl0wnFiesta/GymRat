@@ -6,6 +6,9 @@ import androidx.room.Delete;
 import androidx.room.Update;
 import androidx.room.Insert;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Dao
 public interface TreeniDAO {
 
@@ -14,4 +17,9 @@ public interface TreeniDAO {
 
     @Delete
     void deleteTreeni(Treeni... treeni);
+
+    @Query("SELECT * FROM TREENI")
+    List<Treeni> getAllTreeni();
+
+
 }

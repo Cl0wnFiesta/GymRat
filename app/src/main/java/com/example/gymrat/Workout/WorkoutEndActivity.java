@@ -33,7 +33,7 @@ public class WorkoutEndActivity extends AppCompatActivity {
     TextView setitTxt, suositteluTxt, salipaivaTxt;
     boolean tallennettu = false;
     private Date date = new Date();
-    private SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+    private SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yy");
     private String treenipaiva;
 
     @Override
