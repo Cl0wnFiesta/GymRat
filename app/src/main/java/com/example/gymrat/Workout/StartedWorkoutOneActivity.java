@@ -19,7 +19,7 @@ public class StartedWorkoutOneActivity extends AppCompatActivity {
     private Workout treeni;
     private SharedPreferences sp;
     private TextView toistot, paino, nimi;
-    private Button seuraavaNappi, plusButton, minusButton;
+    private Button seuraavaNappi, plusButton, minusButton, takaisinNappi;
 
     //Tunnistenimellä hallitaan mikä treeni on käynnissä. Tunnistenimeen otetaan tieto intentistä, ja ohjelma hakee singleton luokasta tiedot treeniä varten
 
@@ -46,6 +46,7 @@ public class StartedWorkoutOneActivity extends AppCompatActivity {
         seuraavaNappi = findViewById(R.id.NextPhase);
         plusButton = findViewById(R.id.plusButton);
         minusButton = findViewById(R.id.minusButton);
+        takaisinNappi = findViewById(R.id.prevPhase);
 
         fetchPreferences();
         treeni = new Workout(maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus);
@@ -58,22 +59,33 @@ public class StartedWorkoutOneActivity extends AppCompatActivity {
             }
         });
 
+        takaisinNappi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                backButtonLogic();
+            }
+        });
+
         plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 yksPlusKierros++;
                 toistot.setText(Integer.toString(yksPlusKierros) + "+");
+
             }
         });
         minusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(yksPlusKierros >= 0){
-                    yksPlusKierros--;
-                }
-                toistot.setText(Integer.toString(yksPlusKierros) + "+");
+
+                    if(yksPlusKierros -1 >= 0){
+                        yksPlusKierros--;
+                        toistot.setText(Integer.toString(yksPlusKierros) + "+");
+                    }
             }
         });
+
 
         setTreeniTiedot();
 
@@ -91,7 +103,7 @@ public class StartedWorkoutOneActivity extends AppCompatActivity {
         nimi.setText(treeni.getTreeniNimi());
         print(paino, treeni.getPaino(treeniPos));
         if(treeni.getLiikkeita(treeniPos) == 1){
-            toistot.setText("1+");
+            toistot.setText(Integer.toString(yksPlusKierros) + "+");
             setButtonVisibility(true);
         }
         if(treeni.getLiikkeita(treeniPos) > 1 && treeni.getPituus() != treeniPos){
@@ -138,32 +150,33 @@ public class StartedWorkoutOneActivity extends AppCompatActivity {
         }
         if (treeniPos <= liikeCount){
             Log.d("kohta",Integer.toString(treeniPos) );
-            setTreeniTiedot();
         }
+        /*
         if(treeniPos == liikeCount && secondPhase){
             Intent endWorkout = new Intent();
             startActivity(endWorkout);
         }
+
+         */
+        setTreeniTiedot();
         setCounter();
     }
 
     private void backButtonLogic(){
         int liikeCount = treeni.getPituus();
-        if (treeniPos + 1 >= liikeCount && !secondPhase){
+        if (treeniPos -1 >= 0){
             treeniPos--;
         }
-        if (treeniPos + 1 > liikeCount && secondPhase){
-            treeniPos--;
-        }
-        if(treeniPos -1 < 0 && !secondPhase){
-            treeniPos = 0;
+        if(treeniPos -1 < 0 && secondPhase){
             treeni.startWorkout(ekatSetit, ekaPainokerroin, ekaSettiNimi);
+            treeniPos = treeni.getPituus() -1;
             secondPhase = false;
         }
         if (treeniPos <= liikeCount){
             Log.d("kohta",Integer.toString(treeniPos) );
-            setTreeniTiedot();
         }
+
+        setTreeniTiedot();
         setCounter();
     }
 

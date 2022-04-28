@@ -57,13 +57,13 @@ public class WorkoutGlobal {
         workoutInfos.add(new WorkoutInfo(workoutOneSettiKaksi, workoutOnePainokerroinKaksi,"Pystypunnerrus", tunnisteYksi, 2));
 
         workoutInfos.add(new WorkoutInfo(workoutTwoSettiYksi, workoutTwoPainokerroinYksi, "Kyykky", tunnisteKaksi, 1));
-        workoutInfos.add(new WorkoutInfo(workoutTwoSettiYksi, workoutTwoPainokerroinYksi, "Kyykky", tunnisteKaksi, 2));
+        workoutInfos.add(new WorkoutInfo(workoutTwoSettiKaksi, workoutTwoPainokerroinKaksi, "Sumo-maastaveto", tunnisteKaksi, 2));
 
-        workoutInfos.add(new WorkoutInfo(workoutThreeSettiYksi, workoutThreePainokerroinYksi, "Kyykky", tunnisteKolme, 1));
-        workoutInfos.add(new WorkoutInfo(workoutThreeSettiYksi, workoutThreePainokerroinYksi, "Kyykky", tunnisteKolme, 2));
+        workoutInfos.add(new WorkoutInfo(workoutThreeSettiYksi, workoutThreePainokerroinYksi, "Penkki", tunnisteKolme, 1));
+        workoutInfos.add(new WorkoutInfo(workoutThreeSettiKaksi, workoutThreePainokerroinKaksi, "Kapea penkki", tunnisteKolme, 2));
 
-        workoutInfos.add(new WorkoutInfo(workoutFourSettiYksi, workoutFourPainokerroinYksi, "Kyykky", tunnisteNelja, 1));
-        workoutInfos.add(new WorkoutInfo(workoutFourSettiYksi, workoutFourPainokerroinYksi, "Kyykky", tunnisteNelja, 2));
+        workoutInfos.add(new WorkoutInfo(workoutFourSettiYksi, workoutFourPainokerroinYksi, "Maastaveto", tunnisteNelja, 1));
+        workoutInfos.add(new WorkoutInfo(workoutFourSettiKaksi, workoutFourPainokerroinKaksi, "Etukyykky", tunnisteNelja, 2));
     }
 
     public int[] getWorkoutToistot(String tunniste, int tunnisteNumero){
