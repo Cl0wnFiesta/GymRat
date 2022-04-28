@@ -2,6 +2,7 @@ package com.example.gymrat;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,7 +12,7 @@ import android.view.View;
 import android.widget.TextView;
 
 
-import com.example.gymrat.NavBar_Activities.Notification;
+import com.example.gymrat.Muistutukset.Notes_Activity;
 import com.example.gymrat.NavBar_Activities.Favorites;
 
 import com.example.gymrat.NavBar_Activities.Settings;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.home:
                         return true;
                     case R.id.notication:
-                        startActivity(new Intent(getApplicationContext(), Notification.class));
+                        startActivity(new Intent(getApplicationContext(), Notes_Activity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.settings:
@@ -61,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
     }
     //Tarkistaa aina kun activity aukeaa onko avaus kerta first time
     @Override
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             overridePendingTransition(0,0);
         }else{
-           TextView mtext = findViewById(R.id.UserNameM);
+            TextView mtext = findViewById(R.id.UserNameM);
             SharedPreferences sharedPreferences = getSharedPreferences("myKey", MODE_PRIVATE);
             String value = sharedPreferences.getString("value","");
             mtext.setText("Hei " + value);

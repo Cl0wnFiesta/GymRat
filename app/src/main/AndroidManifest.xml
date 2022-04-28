@@ -9,11 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GymRat">
+
         <activity
             android:name=".Workout.WorkoutEndActivity"
             android:exported="false" />
         <activity
             android:name=".Create_User"
+            android:exported="false" />
+            android:name=".Muistutukset.Add_modify_activity"
             android:exported="false" />
         <activity
             android:name=".SetupPage"
@@ -21,9 +24,16 @@
             android:parentActivityName=".Create_User" />
         <activity
             android:name=".Workout.StartedWorkoutActivity"
+            android:name=".Muistutukset.Notes_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".NavBar_Activities.Settings"
             android:exported="false" />
         <activity
             android:name=".TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StartedWorkoutActivity"
             android:exported="false" />
         <activity
             android:name=".Create_UserActivity"
