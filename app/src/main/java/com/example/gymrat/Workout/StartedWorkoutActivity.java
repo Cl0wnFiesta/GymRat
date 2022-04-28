@@ -20,21 +20,25 @@ public class StartedWorkoutActivity extends AppCompatActivity {
     private TextView toistot, paino, nimi;
     private Button seuraavaNappi, plusButton, minusButton, takaisinNappi;
 
-    //Tunnistenimellä hallitaan mikä treeni on käynnissä. Tunnistenimeen otetaan tieto intentistä, ja ohjelma hakee singleton luokasta tiedot treeniä varten
+    //Muuttujat nappien toimintaan
+    private boolean secondPhase = false;
+    private int treeniPos = 0;
 
+    //Tunnistenimellä hallitaan mikä treeni on käynnissä. Tunnistenimeen otetaan tieto intentistä, ja ohjelma hakee singleton luokasta tiedot treeniä varten
     WorkoutGlobal workoutGlobal = WorkoutGlobal.getInstance();
     String tunnisteNimi = "WorkoutTwo";
+
+    //Asetetaan arrayhin arvot joita käytetään treenissä
     private int[] ekatSetit = workoutGlobal.getWorkoutToistot(tunnisteNimi, 1), tokatSetit = workoutGlobal.getWorkoutToistot(tunnisteNimi, 2);
     private double[] ekaPainokerroin = workoutGlobal.getWorkoutPainokerroin(tunnisteNimi, 1), tokaPainokerroin = workoutGlobal.getWorkoutPainokerroin(tunnisteNimi, 2);
     private String ekaSettiNimi = workoutGlobal.getWorkoutName(tunnisteNimi, 1), tokaSettiNimi = workoutGlobal.getWorkoutName(tunnisteNimi, 2);
 
-    private boolean secondPhase = false;
-
-    private int treeniPos = 0;
-
-    public static final String EXTRA_INT = "com.example.gymrat.extraint";
+    //Tietoa bundlen pakkausta varten seuraavalle activitylle
     private int yksPlusKierros = 1;
-    public static final String EXTRA_SUOSITTELE = "com.example.gymrat.recommend";
+    double suositteluNousu = 0;
+    public static final String EXTRA_YKSPLUS = "EXTRA_YKSPLUS";
+    public static final String EXTRA_SUOSITTELE = "EXTRA_SUOSITTELE";
+    public static final String EXTRA_TUNNISTENIMI = "EXTRA_TUNNISTENIMI";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,7 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         minusButton = findViewById(R.id.minusButton);
         takaisinNappi = findViewById(R.id.prevPhase);
 
+        //Hakee preferenssit ja aloittaa ensimmäisen treenin
         fetchPreferences();
         treeni = new Workout(maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus);
         treeni.startWorkout(ekatSetit, ekaPainokerroin, ekaSettiNimi);
@@ -59,27 +64,22 @@ public class StartedWorkoutActivity extends AppCompatActivity {
                 buttonLogic();
             }
         });
-
         takaisinNappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 backButtonLogic();
             }
         });
-
         plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 yksPlusKierros++;
                 toistot.setText(Integer.toString(yksPlusKierros) + "+");
-
             }
         });
         minusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                     if(yksPlusKierros -1 >= 0){
                         yksPlusKierros--;
                         toistot.setText(Integer.toString(yksPlusKierros) + "+");
@@ -87,9 +87,8 @@ public class StartedWorkoutActivity extends AppCompatActivity {
             }
         });
 
-
+        //asettaa ensimmäisen treenin alkutiedot ja luvut
         setTreeniTiedot();
-
         setCounter();
     }
 
@@ -127,7 +126,8 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         maxMaastaveto = Double.parseDouble(sp.getString("maastaveto", "0"));
         maxPystypunnerrus = Double.parseDouble(sp.getString("pystypunnerrus", "0"));
     }
-
+    // Omat metodit numeroiden näyttämiselle näytöllä.
+    // Ei tarpeellinen pienessä skaalassa mutta halusin kokeilla
     private void print(TextView tv, double luku){
         tv.setText(Double.toString(luku));
     }
@@ -135,12 +135,14 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         tv.setText(Integer.toString(luku));
     }
 
-    //aina kun painaa nappia, niin edistää treeniä askeleella.
-    //jos ollaan treenin vikassa kohdassa, asettaa luvun nollaan ja aloittaa toisen vaiheen treeniä
+    //Aina kun painaa nappia, niin edistää treeniä askeleella.
+    //Jos ollaan treenin vikassa kohdassa, asettaa luvun nollaan ja aloittaa toisen vaiheen treeniä
     private void buttonLogic(){
         int liikeCount = treeni.getPituus();
         if (treeniPos + 1 <= liikeCount && !secondPhase){
             treeniPos++;
+            suositteluNousu = treeni.suggestIncrease(yksPlusKierros);
+            Log.d("treenisuggest", Double.toString(suositteluNousu));
         }
         if (treeniPos < liikeCount && secondPhase){
             treeniPos++;
@@ -151,7 +153,8 @@ public class StartedWorkoutActivity extends AppCompatActivity {
             secondPhase = true;
         }
         if (treeniPos <= liikeCount){
-            Log.d("kohta",Integer.toString(treeniPos) );
+            Log.d("treenipos",Integer.toString(treeniPos) );
+            Log.d("treenilop",Integer.toString(liikeCount) );
         }
 
         if(treeniPos == liikeCount && secondPhase){
@@ -166,10 +169,14 @@ public class StartedWorkoutActivity extends AppCompatActivity {
 
 //Lopettaa treenin ja antaa tarvittavat tiedot eteenpäin tallennettavaksi
     private void endWorkout() {
-        double suositteluNousu = treeni.suggestIncrease(yksPlusKierros);
+        suositteluNousu = treeni.suggestIncrease(yksPlusKierros);
+        Log.d("treenisuggest", Double.toString(suositteluNousu));
         Intent endWorkout = new Intent(this, WorkoutEndActivity.class);
-        endWorkout.putExtra(EXTRA_INT, yksPlusKierros);
-        endWorkout.putExtra(EXTRA_SUOSITTELE, suositteluNousu);
+        Bundle bundle = new Bundle();
+        bundle.putInt(EXTRA_YKSPLUS, yksPlusKierros);
+        bundle.putDouble(EXTRA_SUOSITTELE, suositteluNousu);
+        bundle.putString(EXTRA_TUNNISTENIMI, tunnisteNimi);
+        endWorkout.putExtras(bundle);
         startActivity(endWorkout);
     }
 
@@ -187,19 +194,17 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         if (treeniPos <= liikeCount){
             Log.d("kohta",Integer.toString(treeniPos) );
         }
-
         setTreeniTiedot();
         setCounter();
     }
 
- //asettaa luvut näytön oikeaan yläreunaan treenin kestosta
+    //asettaa luvut näytön oikeaan yläreunaan treenin kestosta
     public void setCounter(){
         TextView nytSetti = findViewById(R.id.nytSetti), setinLoppu = findViewById(R.id.setinLoppu);
         nytSetti.setText(Integer.toString(treeniPos + 1));
         setinLoppu.setText(Integer.toString(treeni.getPituus()));
-
     }
-//näyttää tai piilottaa plus minus näppäimet
+    //näyttää tai piilottaa plus minus näppäimet
     private void setButtonVisibility(boolean plusKierros){
         if(plusKierros){
             plusButton.setVisibility(View.VISIBLE);
@@ -213,8 +218,5 @@ public class StartedWorkoutActivity extends AppCompatActivity {
             minusButton.setVisibility(View.INVISIBLE);
             minusButton.setFocusableInTouchMode(true);
         }
-
     }
-
-
 }
