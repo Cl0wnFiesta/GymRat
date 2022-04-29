@@ -9,6 +9,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
@@ -16,12 +18,19 @@ import com.example.gymrat.Muistutukset.Notes_Activity;
 import com.example.gymrat.NavBar_Activities.Favorites;
 
 import com.example.gymrat.NavBar_Activities.Settings;
+import com.example.gymrat.Workout.StartedWorkoutActivity;
+import com.example.gymrat.Workout.WorkoutDB.Treeni;
+import com.example.gymrat.Workout.WorkoutDB.WorkoutDatabase;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private SharedPreferences prefs;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
@@ -33,6 +42,17 @@ public class MainActivity extends AppCompatActivity {
 
         // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.home);
+
+        //Load all workouts
+        WorkoutDatabase db = WorkoutDatabase.getDBInstance(this.getApplicationContext());
+
+        List<Treeni> treeniList = db.treeniDAO().getAllTreeni();
+
+        ListView lv =findViewById(R.id.Treenilist);
+        lv.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, treeniList));
+
+
+
 
         // Perform item selected listener
         //Tutorial video link https://www.youtube.com/watch?v=Q9Xwyfor-kQ&ab_channel=GurkanUcar
@@ -91,6 +111,15 @@ public class MainActivity extends AppCompatActivity {
             mtext.setText("Hei " + value);
         }
 
+    }
+
+    //pakottaa taaksepäin nuolen palauttamaan kotiruutuun
+    @Override
+    public void onBackPressed() {
+        Intent startMain = new Intent(Intent.ACTION_MAIN);
+        startMain.addCategory(Intent.CATEGORY_HOME);
+        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(startMain);
     }
 
 }
