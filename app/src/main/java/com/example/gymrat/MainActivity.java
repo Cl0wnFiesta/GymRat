@@ -21,6 +21,7 @@ import com.example.gymrat.NavBar_Activities.Settings;
 import com.example.gymrat.Workout.StartedWorkoutActivity;
 import com.example.gymrat.Workout.WorkoutDB.Treeni;
 import com.example.gymrat.Workout.WorkoutDB.WorkoutDatabase;
+import com.example.gymrat.Workout.Workout_selection_activity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -51,9 +52,6 @@ public class MainActivity extends AppCompatActivity {
         ListView lv =findViewById(R.id.Treenilist);
         lv.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, treeniList));
 
-
-
-
         // Perform item selected listener
         //Tutorial video link https://www.youtube.com/watch?v=Q9Xwyfor-kQ&ab_channel=GurkanUcar
 
@@ -83,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    //Tarkistaa aina kun activity aukeaa onko avaus kerta first time
+    //Tarkistaa aina kun activity aukeaa onko avauskerta first time
     @Override
     protected void onStart() {
         super.onStart();
@@ -94,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
     //henrin oksan tapahtuma
     public void newGymActivity(View v){
-        Intent startGym = new Intent(this, StartedWorkoutActivity.class);
+        Intent startGym = new Intent(this, Workout_selection_activity.class);
         startActivity(startGym);
     }
     //Tarkistaa onko sovelluksen käynnistäminen ensimmäinen kerta. Jos on, avaa sovellus käyttäjä luomis Activityn

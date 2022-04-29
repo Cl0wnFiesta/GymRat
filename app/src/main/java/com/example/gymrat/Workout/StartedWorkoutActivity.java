@@ -19,6 +19,7 @@ public class StartedWorkoutActivity extends AppCompatActivity {
     private SharedPreferences sp;
     private TextView toistot, paino, nimi;
     private Button seuraavaNappi, plusButton, minusButton, takaisinNappi;
+    Intent intent;
 
     //Muuttujat nappien toimintaan
     private boolean secondPhase = false;
@@ -26,12 +27,12 @@ public class StartedWorkoutActivity extends AppCompatActivity {
 
     //Tunnistenimellä hallitaan mikä treeni on käynnissä. Tunnistenimeen otetaan tieto intentistä, ja ohjelma hakee singleton luokasta tiedot treeniä varten
     WorkoutGlobal workoutGlobal = WorkoutGlobal.getInstance();
-    String tunnisteNimi = "WorkoutTwo";
+    String tunnisteNimi;
 
     //Asetetaan arrayhin arvot joita käytetään treenissä
-    private int[] ekatSetit = workoutGlobal.getWorkoutToistot(tunnisteNimi, 1), tokatSetit = workoutGlobal.getWorkoutToistot(tunnisteNimi, 2);
-    private double[] ekaPainokerroin = workoutGlobal.getWorkoutPainokerroin(tunnisteNimi, 1), tokaPainokerroin = workoutGlobal.getWorkoutPainokerroin(tunnisteNimi, 2);
-    private String ekaSettiNimi = workoutGlobal.getWorkoutName(tunnisteNimi, 1), tokaSettiNimi = workoutGlobal.getWorkoutName(tunnisteNimi, 2);
+    private int[] ekatSetit, tokatSetit;
+    private double[] ekaPainokerroin ,tokaPainokerroin;
+    private String ekaSettiNimi ,tokaSettiNimi;
 
     //Tietoa bundlen pakkausta varten seuraavalle activitylle
     private int yksPlusKierros = 1;
@@ -40,10 +41,22 @@ public class StartedWorkoutActivity extends AppCompatActivity {
     public static final String EXTRA_SUOSITTELE = "EXTRA_SUOSITTELE";
     public static final String EXTRA_TUNNISTENIMI = "EXTRA_TUNNISTENIMI";
 
+    public void workoutCode() {
+        ekatSetit = workoutGlobal.getWorkoutToistot(tunnisteNimi, 1);
+        tokatSetit = workoutGlobal.getWorkoutToistot(tunnisteNimi, 2);
+        ekaPainokerroin  = workoutGlobal.getWorkoutPainokerroin(tunnisteNimi, 1);
+        tokaPainokerroin = workoutGlobal.getWorkoutPainokerroin(tunnisteNimi, 2);
+        ekaSettiNimi = workoutGlobal.getWorkoutName(tunnisteNimi, 1);
+        tokaSettiNimi = workoutGlobal.getWorkoutName(tunnisteNimi, 2);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_started_workout);
+        intent = getIntent();
+        tunnisteNimi = intent.getStringExtra("workoutCode");
+        workoutCode();
 
         toistot = findViewById(R.id.ToistotNum);
         paino = findViewById(R.id.PainoNum);
