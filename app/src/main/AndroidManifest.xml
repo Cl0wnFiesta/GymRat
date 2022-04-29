@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GymRat">
         <activity
+            android:name=".OldWorkoutActivity"
+            android:exported="false"
+            />
+        <activity
             android:name=".Workout.Workout_selection_activity"
             android:exported="false"
-            android:label="@string/title_activity_workout_selection"
-            android:theme="@style/Theme.GymRat.NoActionBar" />
+             />
         <activity
             android:name=".Muistutukset.Add_modify_activity"
             android:exported="false" />
