@@ -23,7 +23,27 @@ public class Treeni {
         public double korotus;
 
         public String toString(){
-          return treeninNimi + "   -   " + paiva;
+          return Integer.toString(id) + " -  " + treeninNimi + "   -   " + paiva;
+        }
+
+        public int getId() {
+                return id;
+        }
+
+        public String getTreeninNimi() {
+                return treeninNimi;
+        }
+
+        public String getPaiva() {
+                return paiva;
+        }
+
+        public int getToistot() {
+                return toistot;
+        }
+
+        public double getKorotus() {
+                return korotus;
         }
 }
 

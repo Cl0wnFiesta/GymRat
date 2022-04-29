@@ -19,6 +19,9 @@ import com.example.gymrat.Workout.WorkoutDB.WorkoutDatabase;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * @author Henri
+ */
 public class WorkoutEndActivity extends AppCompatActivity {
     SharedPreferences sp;
     private double maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus;

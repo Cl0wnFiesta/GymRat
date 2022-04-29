@@ -21,5 +21,8 @@ public interface TreeniDAO {
     @Query("SELECT * FROM TREENI")
     List<Treeni> getAllTreeni();
 
+    @Query("SELECT * FROM TREENI WHERE id like :abba")
+    List<Treeni> getIdTreeni(int abba);
+
 
 }
