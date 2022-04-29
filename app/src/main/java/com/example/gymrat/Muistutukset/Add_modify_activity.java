@@ -22,11 +22,19 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-
+/*Tuturialit SQLiten käyttöön ja ohjelman pöyrittämiseen:
+https://www.youtube.com/watch?v=312RhjfetP8&ab_channel=freeCodeCamp.org
+https://www.youtube.com/watch?v=hJPk50p7xwA&t=17s&ab_channel=Stevdza-San
+https://www.youtube.com/watch?v=9t8VVWebRFM&ab_channel=AllCodingTutorials
+https://www.youtube.com/watch?v=d-vdKSbXT4E&t=4517s
+https://www.youtube.com/watch?v=or_pH92l-IQ&ab_channel=EasyTuto
+https://www.youtube.com/watch?v=ASQIvPwQffg&ab_channel=PenguinCoders
+https://www.youtube.com/watch?v=Udk6iaR-RXA&list=PLrnPJCHvNZuCfAe7QK2BoMPkv2TGM_b0E&ab_channel=CodinginFlow
+*/
 public class Add_modify_activity extends AppCompatActivity {
 
     Calendar calendar;
-    Database mydb;
+    Database mydatabase;
 
     Boolean isModify = false;
     String task_id;
@@ -41,7 +49,7 @@ public class Add_modify_activity extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_add_modify_task);
 
-        mydb = new Database(getApplicationContext());
+        mydatabase = new Database(getApplicationContext());
         calendar = new GregorianCalendar();
         toolbar_title = findViewById(R.id.toolbar_title);
         edit_text = findViewById(R.id.edit_text);
@@ -53,16 +61,16 @@ public class Add_modify_activity extends AppCompatActivity {
         if (intent.hasExtra("isModify")) {
             isModify = intent.getBooleanExtra("isModify", false);
             task_id = intent.getStringExtra("id");
-            init_modify();
+            modify();
         }
     }
 
-    public void init_modify() {
+    public void modify() {
         toolbar_title.setText("Muokkaa muistutusta");
         save_btn.setText("Päivitä");
         LinearLayout deleteTask = findViewById(R.id.deleteTask);
         deleteTask.setVisibility(View.VISIBLE);
-        Cursor task = mydb.getSingleTask(task_id);
+        Cursor task = mydatabase.getSingleTask(task_id);
         if (task != null) {
             task.moveToFirst();
             edit_text.setText(task.getString(1));
@@ -76,33 +84,29 @@ public class Add_modify_activity extends AppCompatActivity {
 
     }
 
-
     public void saveTask(View v) {
         /*Checking for Empty Task*/
         if (edit_text.getText().toString().trim().length() > 0) {
 
             if (isModify) {
-                mydb.updateTask(task_id, edit_text.getText().toString(), new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime()));
+                mydatabase.updateTask(task_id, edit_text.getText().toString(), new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime()));
                 Toast.makeText(getApplicationContext(), "Muistutus päivitetty", Toast.LENGTH_SHORT).show();
             } else {
-                mydb.insertTask(edit_text.getText().toString(), new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime()));
+                mydatabase.insertTask(edit_text.getText().toString(), new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime()));
                 Toast.makeText(getApplicationContext(), "Muistutus luotu.", Toast.LENGTH_SHORT).show();
-
             }
             finish();
 
         } else {
             Toast.makeText(getApplicationContext(), "Et voi tallennaa tyhjää sivua!", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     public void deleteTask(View v) {
-        mydb.deleteTask(task_id);
+        mydatabase.deleteTask(task_id);
         Toast.makeText(getApplicationContext(), "Poistu onnistui", Toast.LENGTH_SHORT).show();
         finish();
     }
-
 
     public void chooseDate(View view) {
         final View dialogView = View.inflate(this, R.layout.date_picker, null);

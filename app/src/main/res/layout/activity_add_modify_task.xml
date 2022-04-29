@@ -10,17 +10,13 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:elevation="0dp"
-        >
-
+        app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#22577E"
-
-
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:contentInsetStart="0dp">
             <LinearLayout
@@ -38,7 +34,6 @@
                     android:textColor="#FAFFAF"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
-
 
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
@@ -62,7 +57,6 @@
             android:padding="20dp"
             android:textColor="#000"
             android:textColorHint="#757575" />
-
 
         <LinearLayout
             android:id="@+id/custom_config"
@@ -125,7 +119,6 @@
                 android:text="@string/poista_muistutus"/>
 
         </LinearLayout>
-
 
         <Button
             android:id="@+id/save_btn"

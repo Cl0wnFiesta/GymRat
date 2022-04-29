@@ -35,6 +35,8 @@
     <string name="painolla">Painolla</string>
     <string name="toistom_r">Toistomäärä</string>
     <string name="poista_muistutus">Poista muistutus</string>
+    <string name="tanaan">Tänään</string>
+    <string name="hei_user">Hei henkilön username</string>
 
 
 </resources>
