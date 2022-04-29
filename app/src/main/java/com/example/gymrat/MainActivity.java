@@ -30,6 +30,7 @@ import com.example.gymrat.NavBar_Activities.Settings;
 import com.example.gymrat.Workout.StartedWorkoutActivity;
 import com.example.gymrat.Workout.WorkoutDB.Treeni;
 import com.example.gymrat.Workout.WorkoutDB.WorkoutDatabase;
+import com.example.gymrat.Workout.Workout_selection_activity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -138,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    //Tarkistaa aina kun activity aukeaa onko avaus kerta first time
+    //Tarkistaa aina kun activity aukeaa onko avauskerta first time
     @Override
     protected void onStart() {
         super.onStart();
@@ -149,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
     //henrin oksan tapahtuma
     public void newGymActivity(View v){
-        Intent startGym = new Intent(this, StartedWorkoutActivity.class);
+        Intent startGym = new Intent(this, Workout_selection_activity.class);
         startActivity(startGym);
     }
     //Tarkistaa onko sovelluksen käynnistäminen ensimmäinen kerta. Jos on, avaa sovellus käyttäjä luomis Activityn

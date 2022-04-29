@@ -19,6 +19,7 @@ public class WorkoutGlobal {
 
     private void addWorkoutData(){
         //Ensimmäisen treenin tiedot
+        //Pystypunnerrus
         String tunnisteYksi = "WorkoutOne";
         int[]
                 workoutOneSettiYksi = {8, 6, 4, 4, 4, 5, 6, 7, 8},
@@ -28,6 +29,7 @@ public class WorkoutGlobal {
                 workoutOnePainokerroinKaksi = {0.5,0.6,0.8,0.7,0.7,0.7,0.7,0.7};
 
         //toisen treenin tiedot
+        //Kyykky
         String tunnisteKaksi = "WorkoutTwo";
         int[]
                 workoutTwoSettiYksi = {5, 3, 1, 3, 3, 3, 5, 5, 5},
@@ -36,6 +38,7 @@ public class WorkoutGlobal {
                 workoutTwoPainokerroinYksi = {0.75, 0.85, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65},
                 workoutTwoPainokerroinKaksi = {0.5,0.6,0.7,0.7,0.7,0.7,0.7,0.7};
         //kolmannen treenin tiedot
+        //Penkki
         String tunnisteKolme = "WorkoutThree";
         int[]
                 workoutThreeSettiYksi = {5, 3, 1, 3, 5, 3, 5, 3, 5},
@@ -44,6 +47,7 @@ public class WorkoutGlobal {
                 workoutThreePainokerroinYksi = {0.75, 0.85, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65},
                 workoutThreePainokerroinKaksi = {0.4,0.5,0.6,0.6,0.6,0.6,0.6,0.6};
         //Neljännen treenin tiedot
+        //Maastaveto
         String tunnisteNelja = "WorkoutFour";
         int[]
                 workoutFourSettiYksi = {5, 3, 1, 3, 3, 3, 3, 3, 3},

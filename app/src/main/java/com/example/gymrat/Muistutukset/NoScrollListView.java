@@ -6,7 +6,15 @@ import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-// creates a list view with scrolling disabled
+/*Tuturialit SQLiten käyttöön ja ohjelman pöyrittämiseen:
+https://www.youtube.com/watch?v=312RhjfetP8&ab_channel=freeCodeCamp.org
+https://www.youtube.com/watch?v=hJPk50p7xwA&t=17s&ab_channel=Stevdza-San
+https://www.youtube.com/watch?v=9t8VVWebRFM&ab_channel=AllCodingTutorials
+https://www.youtube.com/watch?v=d-vdKSbXT4E&t=4517s
+https://www.youtube.com/watch?v=or_pH92l-IQ&ab_channel=EasyTuto
+https://www.youtube.com/watch?v=ASQIvPwQffg&ab_channel=PenguinCoders
+https://www.youtube.com/watch?v=Udk6iaR-RXA&list=PLrnPJCHvNZuCfAe7QK2BoMPkv2TGM_b0E&ab_channel=CodinginFlow
+*/
 public class NoScrollListView extends ListView {
 
     public NoScrollListView(Context context) {

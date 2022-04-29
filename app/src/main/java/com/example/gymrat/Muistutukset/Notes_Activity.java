@@ -30,6 +30,8 @@ https://www.youtube.com/watch?v=hJPk50p7xwA&t=17s&ab_channel=Stevdza-San
 https://www.youtube.com/watch?v=9t8VVWebRFM&ab_channel=AllCodingTutorials
 https://www.youtube.com/watch?v=d-vdKSbXT4E&t=4517s
 https://www.youtube.com/watch?v=or_pH92l-IQ&ab_channel=EasyTuto
+https://www.youtube.com/watch?v=ASQIvPwQffg&ab_channel=PenguinCoders
+https://www.youtube.com/watch?v=Udk6iaR-RXA&list=PLrnPJCHvNZuCfAe7QK2BoMPkv2TGM_b0E&ab_channel=CodinginFlow
 */
 public class Notes_Activity extends AppCompatActivity {
 
@@ -111,12 +113,12 @@ public class Notes_Activity extends AppCompatActivity {
 
         runOnUiThread(new Runnable() {
             public void run() {
-                fetchDataFromDB();
+                fetchDataFromDataBase();
             }
         });
     }
 
-    public void fetchDataFromDB() {
+    public void fetchDataFromDataBase() {
         todayLista.clear();
         tomorrowLista.clear();
         upcomingLista.clear();
@@ -181,8 +183,7 @@ public class Notes_Activity extends AppCompatActivity {
         ListTaskAdapter adapter = new ListTaskAdapter(this, dataList, mydatabase);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(Notes_Activity.this, Add_modify_activity.class);
                 i.putExtra("isModify", true);
                 i.putExtra("id", dataList.get(+position).get("id"));
