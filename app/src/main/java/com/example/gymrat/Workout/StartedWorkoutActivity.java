@@ -183,6 +183,10 @@ public class StartedWorkoutActivity extends AppCompatActivity {
 //Logiikka näppäimelle joka menee taaksepäin.
     private void backButtonLogic(){
         int liikeCount = treeni.getPituus();
+
+        if (treeniPos -1 < 0 && !secondPhase){
+            onBackPressed();
+        }
         if (treeniPos -1 >= 0){
             treeniPos--;
         }
@@ -194,6 +198,7 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         if (treeniPos <= liikeCount){
             Log.d("kohta",Integer.toString(treeniPos) );
         }
+
         setTreeniTiedot();
         setCounter();
     }
