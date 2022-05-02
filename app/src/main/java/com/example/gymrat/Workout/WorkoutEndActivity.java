@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -50,7 +51,8 @@ public class WorkoutEndActivity extends AppCompatActivity {
         intent = getIntent();
         extras = intent.getExtras();
         treenipaiva = formatter.format(date);
-        Button palaaKotiinBtn, hyvaksyKorotusBtn;
+        Button hyvaksyKorotusBtn;
+        ImageView  palaaKotiinBtn;
 
         fetchPreferences(); //haetaan käyttäjän preferenssit suorituksen tietokantaan tallennusta varten
          tunniste = extras.getString("EXTRA_TUNNISTENIMI");

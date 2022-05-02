@@ -40,6 +40,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     List<Treeni> treeniList;
+    TextView Suoritus;
     private SharedPreferences prefs;
     public static final String EXTRA_OLD_WORKOUT = "gymrat.extra_old_workout";
     @Override
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Suoritus = findViewById(R.id.suoritusName);
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
@@ -63,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
         ListView lv =findViewById(R.id.Treenilist);
         lv.setAdapter(adapter);
         lv.setLongClickable(true);
+        if(treeniList.isEmpty()){
+            Suoritus.setText("Ei suorituksia!");
+        }else {
+            Suoritus.setText("Suorituksesi!");
+        }
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -85,16 +91,21 @@ public class MainActivity extends AppCompatActivity {
                 boolean focusable = true;
                 final PopupWindow popupIkkuna = new PopupWindow(popupNakyma, leveys, pituus, focusable);
                 popupIkkuna.showAtLocation(view, Gravity.CENTER, 0, 0);
+
                 Button yesButton = popupNakyma.findViewById(R.id.deleteYes), noButton= popupNakyma.findViewById(R.id.deleteNo);
                 //poistaa tietokannasta valitun ja päivittää tiedot listviewiin
                 yesButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
                         db.treeniDAO().deleteTreeni(treeniList.get(pos));
                         treeniList.remove(pos);
                         adapter.notifyDataSetChanged();
                         popupIkkuna.dismiss();
+                        if(treeniList.isEmpty()){
+                            Suoritus.setText("Ei suorituksia");
+                        }else {
+                            Suoritus.setText("Suorituksesi!");
+                        }
                     }
                 });
 
@@ -139,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    //Tarkistaa aina kun activity aukeaa onko avauskerta first time
+    //Tarkistaa aina kun activity aukeaa onko avaus kerta first time
     @Override
     protected void onStart() {
         super.onStart();
