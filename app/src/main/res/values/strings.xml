@@ -33,4 +33,21 @@
     <string name="seuraava">Seuraava</string>
     <string name="painolla">Painolla</string>
     <string name="toistom_r">Toistomäärä</string>
+    <string name="darkmode">DarkMode</string>
+    <string name="tallenna">Tallenna</string>
+    <string name="muokkaa_tietoja">Muokkaaksesi tietoja paina tästä</string>
+    <string name="name_info">Muokkaa käyttäjätunnusta painamalla</string>
+    <string name="trophy_name1">Suutu jo!</string>
+    <string name="trophy_info1">Nosta rautaa tarpeeks :D</string>
+    <string name="trophy_pvm">Palkinto avattu:</string>
+    <string name="trophy_info2">Nosta penkistä 100kg</string>
+    <string name="trophy_name3">Treeniviikko</string>
+    <string name="trophy_name2">Rauta nousee</string>
+    <string name="trophy_info3">Treenaa viikon jokaisena päivänä</string>
+    <string name="trophy_name4">Ensimmäinen treeni</string>
+    <string name="trophy_info4">Suorita harjoitus ensimmäisen kerran</string>
+    <string name="trophy_name5">Suutu jo!</string>
+    <string name="trophy_info5">Nosta rautaa tarpeeks :D</string>
+    <string name="muokkaa">Muokkaa tietoja</string>
+    <string name="valmis_btn">Valmis</string>
 </resources>
