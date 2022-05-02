@@ -49,9 +49,12 @@
         <activity
             android:name=".NavBar_Activities.Notification"
             android:exported="false" />
+        <activity android:name=".TrophyActivity"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

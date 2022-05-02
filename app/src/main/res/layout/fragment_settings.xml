@@ -5,7 +5,7 @@
     android:id="@+id/FrameLayoutP"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.Settings">
+    tools:context=".NavBar_Activities.Settings">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
