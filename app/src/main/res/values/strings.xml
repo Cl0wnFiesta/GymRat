@@ -37,4 +37,5 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_workout_selection">Workout_selection_activity</string>
+    <string name="valitse_treeni_valikosta_nohjelma_on_nelip_iv_inen_niin_suosittelemme_valitsemaan_jokaisella_urheilukerralla_eri_ohjelman_kuin_viimeksi_n_tekem_ll_tasaisesti_jokaista_ohjelman_treeni_saat_tasaisimman_kehityksen">Valitse treeni valikosta. \nOhjelma on nelipäiväinen, niin suosittelemme valitsemaan jokaisella urheilukerralla eri ohjelman kuin viimeksi. \n Tekemällä tasaisesti jokaista ohjelman treeniä, saat tasaisimman kehityksen.</string>
 </resources>
