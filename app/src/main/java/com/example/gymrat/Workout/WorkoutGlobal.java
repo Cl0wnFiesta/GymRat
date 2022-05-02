@@ -1,3 +1,7 @@
+/**
+ * @author Henri
+ * Singleton luokka joka sisältää treenin tunnisteen ja tiedot.
+ */
 package com.example.gymrat.Workout;
 
 import java.util.ArrayList;
@@ -16,7 +20,7 @@ public class WorkoutGlobal {
         workoutData = new ArrayList<>();
         addWorkoutData();
     }
-
+    //Lisää treenin tiedot singleton luokkaan
     private void addWorkoutData(){
         //Ensimmäisen treenin tiedot
         //Pystypunnerrus
@@ -69,7 +73,7 @@ public class WorkoutGlobal {
         workoutData.add(new WorkoutData(workoutFourSettiYksi, workoutFourPainokerroinYksi, "Maastaveto", tunnisteNelja, 1));
         workoutData.add(new WorkoutData(workoutFourSettiKaksi, workoutFourPainokerroinKaksi, "Etukyykky", tunnisteNelja, 2));
     }
-
+    //Palauttaa treenin tiedot tunnistetta ja tunistenumeroa vastaan.
     public int[] getWorkoutToistot(String tunniste, int tunnisteNumero){
         int[] returnArray = {};
         for ( WorkoutData workoutData: workoutData) {
@@ -79,7 +83,7 @@ public class WorkoutGlobal {
         }
         return returnArray;
     }
-
+    //Palauttaa treenin painokertoimen tunnistetta ja tunistenumeroa vastaan.
     public double[] getWorkoutPainokerroin(String tunniste, int tunnisteNumero){
         double[] returnArray = {};
         for ( WorkoutData workoutData: workoutData) {
@@ -89,7 +93,7 @@ public class WorkoutGlobal {
         }
         return returnArray;
     }
-
+    //Palauttaa treenin nimen tunnistetta ja tunistenumeroa vastaan.
     public String getWorkoutName(String tunniste, int tunnisteNumero){
         String returnNimi = "";
         for ( WorkoutData workoutData: workoutData) {

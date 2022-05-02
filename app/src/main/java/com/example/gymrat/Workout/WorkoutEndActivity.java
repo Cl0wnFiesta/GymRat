@@ -1,5 +1,12 @@
+/**
+ * @author Henri
+ * Activity-luokka joka näyttää käyttäjälle tietoa sen perusteella, mitä treeniä hän on tehnyt ja mitä sen sisällä valinnut
+ * Tallentaa Activityn alussa tiedot tietokantaan treenistä.
+ * Suosittelee treenipainojen nostamista tarvittaessa.
+ */
 package com.example.gymrat.Workout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -19,9 +26,6 @@ import com.example.gymrat.Workout.WorkoutDB.WorkoutDatabase;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * @author Henri
- */
 public class WorkoutEndActivity extends AppCompatActivity {
     SharedPreferences sp;
     private double maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus;
@@ -94,7 +98,7 @@ public class WorkoutEndActivity extends AppCompatActivity {
     }
 
     //muuttaa tunnisteen sitä vastaavaksi salipäiväksi
-    private String muutaTunniste(String tunniste){
+    private String muutaTunniste(@NonNull String tunniste){
         String tulkattuTunniste = "";
         switch (tunniste){
             case "WorkoutOne":
@@ -112,7 +116,7 @@ public class WorkoutEndActivity extends AppCompatActivity {
         }
         return tulkattuTunniste;
     }
-
+    //Tallentaa treenin tietokantaan
     private void saveTreeni(String treenipaiva, String treeniNimi, int toistot, double korotus){
         WorkoutDatabase db = WorkoutDatabase.getDBInstance(this.getApplicationContext());
         Treeni treeni = new Treeni();
@@ -127,13 +131,13 @@ public class WorkoutEndActivity extends AppCompatActivity {
         Log.d("CDA", "onBackPressed Called");
         returnHome();
     }
-
+    //palauttaa kutsuttaessa mainactivityyn
     private void returnHome() {
         Intent setIntent = new Intent(this ,MainActivity.class);
         startActivity(setIntent);
     }
-
-    private void hyvaksyKorotus(String treeniNimi){
+    //Muuttaa preferensseihin treenin pä
+    private void hyvaksyKorotus(@NonNull String treeniNimi){
         String treeni = treeniNimi.toLowerCase();
         double tallennettava;
         sp = getSharedPreferences("myKey", MODE_PRIVATE);

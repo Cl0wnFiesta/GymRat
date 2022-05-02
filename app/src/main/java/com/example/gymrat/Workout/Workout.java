@@ -1,3 +1,8 @@
+/**
+ * @author Henri
+ * Luokka joka laskee toistot ja painot treenille.
+ * Sisältää metodin joka suosittelee painojen korotusta annetun arvon perusteella.
+ */
 package com.example.gymrat.Workout;
 
 import java.lang.Math;
@@ -10,7 +15,7 @@ public class Workout {
     private int[] liikkeita;
     private double[] painokerroin;
 
-
+    //ottaa neljä muuttujaa ja asettaa ne treenin maksimiluvuiksi.
     public Workout(double penkki, double kyykky, double maastaveto, double pystypunnerrus){
         this.maxPenkki = penkki;
         this.maxKyykky = kyykky;
@@ -18,7 +23,7 @@ public class Workout {
         this.maxPystypunnerrus = pystypunnerrus;
     }
 
-    //Asettaa liikkeiden määrän ja painot
+    //Asettaa liikkeiden määrän ja painokertoimet.
     public void startWorkout(int[] liikemaara, double[] painokerroin, String treeniNimi){
         this.liikkeita = liikemaara;
         this.painokerroin = painokerroin;
@@ -52,7 +57,7 @@ public class Workout {
 
 
         }
-        return 420.69;
+        return 0;
     }
 
 

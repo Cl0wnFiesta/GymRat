@@ -1,3 +1,7 @@
+/**
+ * @author Henri
+ * WorkoutDatabase on Roomdatabase joka tallentaa treenin tiedot.
+ */
 package com.example.gymrat.Workout.WorkoutDB;
 
 

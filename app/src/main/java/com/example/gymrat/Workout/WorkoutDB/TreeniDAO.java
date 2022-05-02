@@ -3,12 +3,11 @@ package com.example.gymrat.Workout.WorkoutDB;
 import androidx.room.Dao;
 import androidx.room.Query;
 import androidx.room.Delete;
-import androidx.room.Update;
 import androidx.room.Insert;
 
-import java.util.ArrayList;
 import java.util.List;
 
+// A DAO (Data Access Object) that is used to access the database.
 @Dao
 public interface TreeniDAO {
 
@@ -20,9 +19,5 @@ public interface TreeniDAO {
 
     @Query("SELECT * FROM TREENI")
     List<Treeni> getAllTreeni();
-
-    @Query("SELECT * FROM TREENI WHERE id like :abba")
-    List<Treeni> getIdTreeni(int abba);
-
 
 }

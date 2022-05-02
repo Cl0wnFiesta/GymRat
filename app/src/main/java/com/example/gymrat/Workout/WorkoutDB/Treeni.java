@@ -1,12 +1,15 @@
+/**
+ * @author Henri
+ * Treenin tietokannan pöytä.
+ * Sisältää tietokannassa ID, Päivä, Treenin nimi, Toistot ja Korotus arvot.
+ * Sisältää metodit joilla haetaan tiedot tietokannasta haettavista treeneistä.
+ */
 package com.example.gymrat.Workout.WorkoutDB;
 
 import androidx.room.ColumnInfo;
-import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import androidx.room.Relation;
 
-import java.util.Date;
 
 @Entity(tableName = "Treeni")
 public class Treeni {

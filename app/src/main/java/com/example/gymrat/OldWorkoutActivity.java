@@ -1,3 +1,7 @@
+/**
+ * @author Henri
+ * Luokka joka näyttää vanhan treenin valituista treeneistä
+ */
 package com.example.gymrat;
 
 import androidx.appcompat.app.AppCompatActivity;

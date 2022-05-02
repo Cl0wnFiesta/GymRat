@@ -1,3 +1,8 @@
+/**
+ * @author Henri
+ * Aloitetun treenin Activity luokka.
+ * Treeniohjelma latautuu intentin antaman tunnistenimen perusteella.
+ */
 package com.example.gymrat.Workout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,7 +46,7 @@ public class StartedWorkoutActivity extends AppCompatActivity {
     public static final String EXTRA_SUOSITTELE = "EXTRA_SUOSITTELE";
     public static final String EXTRA_TUNNISTENIMI = "EXTRA_TUNNISTENIMI";
 
-    public void workoutCode() {
+    private void workoutCode() {
         ekatSetit = workoutGlobal.getWorkoutToistot(tunnisteNimi, 1);
         tokatSetit = workoutGlobal.getWorkoutToistot(tunnisteNimi, 2);
         ekaPainokerroin  = workoutGlobal.getWorkoutPainokerroin(tunnisteNimi, 1);
@@ -217,7 +222,7 @@ public class StartedWorkoutActivity extends AppCompatActivity {
     }
 
     //asettaa luvut näytön oikeaan yläreunaan treenin kestosta
-    public void setCounter(){
+    private void setCounter(){
         TextView nytSetti = findViewById(R.id.nytSetti), setinLoppu = findViewById(R.id.setinLoppu);
         nytSetti.setText(Integer.toString(treeniPos + 1));
         setinLoppu.setText(Integer.toString(treeni.getPituus()));
