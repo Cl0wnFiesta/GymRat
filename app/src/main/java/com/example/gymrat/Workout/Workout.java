@@ -1,17 +1,21 @@
-package com.example.gymrat;
+/**
+ * @author Henri
+ * Luokka joka laskee toistot ja painot treenille.
+ * Sisältää metodin joka suosittelee painojen korotusta annetun arvon perusteella.
+ */
+package com.example.gymrat.Workout;
 
 import java.lang.Math;
 
-abstract class Workout {
+public class Workout {
 
 
     private final double maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus;
-    private int plusKierros;
     private String treeniNimi;
     private int[] liikkeita;
     private double[] painokerroin;
 
-
+    //ottaa neljä muuttujaa ja asettaa ne treenin maksimiluvuiksi.
     public Workout(double penkki, double kyykky, double maastaveto, double pystypunnerrus){
         this.maxPenkki = penkki;
         this.maxKyykky = kyykky;
@@ -19,7 +23,7 @@ abstract class Workout {
         this.maxPystypunnerrus = pystypunnerrus;
     }
 
-    //Asettaa liikkeiden määrän ja painot
+    //Asettaa liikkeiden määrän ja painokertoimet.
     public void startWorkout(int[] liikemaara, double[] painokerroin, String treeniNimi){
         this.liikkeita = liikemaara;
         this.painokerroin = painokerroin;
@@ -38,20 +42,22 @@ abstract class Workout {
         double paino;
         String liike = getTreeniNimi();
         switch (liike){
-            case "penkki":
+            case "Kapea Penkki": case "Penkki":
                 paino = getPenkki(kohta);
                 return paino;
-            case "kyykky":
+            case "Etukyykky": case "Kyykky":
                 paino = getKyykky(kohta);
                 return paino;
-            case "maastaveto":
+            case "Maastaveto": case "Sumo-maastaveto":
                 paino = getMaastaveto(kohta);
                 return paino;
-            case "pystypunnerrus":
+            case "Pystypunnerrus" :
                 paino = getPystypunnerrus(kohta);
                 return paino;
+
+
         }
-        return 420.69;
+        return 0;
     }
 
 
@@ -80,7 +86,7 @@ abstract class Workout {
     }
 
     //Jos painot menee tiettyjen rajojen yli, niin ehdota lisäpainoja
-    public double suggestIncrease(){
+    public double suggestIncrease(int plusKierros){
         double suggestNumber = 0;
         if (plusKierros > 1 && plusKierros <= 3){
             suggestNumber = 2.5;
@@ -92,9 +98,5 @@ abstract class Workout {
             suggestNumber = 7.5;
         }
         return suggestNumber;
-    }
-
-    public void setPlusKierros(int plusKierros) {
-        this.plusKierros = plusKierros;
     }
 }

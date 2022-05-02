@@ -20,12 +20,12 @@ public class Create_UserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.first_time_layout);
-    }
-        //Avaa käyttäjälle Käyttäjänimen ja sukupuolen valinnan
+        setContentView(R.layout.intro_page_layout);
+    }//Avaa käyttäjälle Käyttäjänimen ja sukupuolen valinnan kun hän poistoo Introsta Next buttonilla
     public void startButton(View v){
         setContentView(R.layout.pick_gender);
     }
+
     public void nextPage(View v){
         Intent intent = new Intent(this, SetupPageActivity.class);
         nameText = (EditText) findViewById(R.id.kayttajatunnus);

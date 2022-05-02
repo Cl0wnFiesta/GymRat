@@ -1,4 +1,4 @@
-package com.example.gymrat.Fragment;
+package com.example.gymrat.NavBar_Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,14 +16,11 @@ public class Notification extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_alert);
-
+        setContentView(R.layout.activity_notification);
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
-
         // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.notication);
-
         // Perform item selected listener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

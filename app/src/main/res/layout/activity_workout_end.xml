@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Workout.WorkoutEndActivity">
+
+    <TextView
+        android:id="@+id/MainText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="31dp"
+        android:text="Suoritus tallennettu!"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ExtraSetit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="13dp"
+        android:text="Extrasetit:"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SaliPaiva" />
+
+    <TextView
+        android:id="@+id/SaliPaiva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="40dp"
+        android:text="Salipäivä:"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MainText" />
+
+    <TextView
+        android:id="@+id/SuositeltuKorotus"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Suositeltu painon korotus:"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ExtraSetit" />
+
+    <Button
+        android:id="@+id/HyvaksyButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="116dp"
+        android:text="Hyväksy korotus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suositteluValue" />
+
+    <TextView
+        android:id="@+id/suositteluValue"
+        android:layout_width="59dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="176dp"
+        android:text="200"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SuositeltuKorotus" />
+
+    <ImageView
+        android:id="@+id/PalaaButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="181dp"
+        android:layout_marginEnd="181dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/pop_up"
+        android:src="@drawable/ic_baseline_home_24_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/setitValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="13dp"
+        android:text="200"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/ExtraSetit"
+        app:layout_constraintTop_toBottomOf="@+id/SalipaivaValue" />
+
+    <TextView
+        android:id="@+id/SalipaivaValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:text="200"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/SaliPaiva"
+        app:layout_constraintTop_toBottomOf="@+id/MainText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
