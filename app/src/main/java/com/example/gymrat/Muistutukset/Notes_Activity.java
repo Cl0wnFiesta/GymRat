@@ -1,5 +1,8 @@
 package com.example.gymrat.Muistutukset;
-
+/**
+ * @author Jonne
+ * Activity-luokka jossa käyttäjä kirjoittaa itselleen muistutuksen, valitsee päivämäärän ja tallentaa muistutuksen.
+ */
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -44,6 +47,12 @@ public class Notes_Activity extends AppCompatActivity {
     ArrayList<HashMap<String, String>> tomorrowLista = new ArrayList<HashMap<String, String>>();
     ArrayList<HashMap<String, String>> upcomingLista = new ArrayList<HashMap<String, String>>();
 
+    /**
+     * Sets the text of the TextView username to "Hei " + value, which is the value of the
+     * SharedPreferences key "value", and then sets the bottom navigation bar to the notication tab
+     *
+     * @param savedInstanceState A Bundle object containing the activity's previously saved state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +73,7 @@ public class Notes_Activity extends AppCompatActivity {
         //Tutorial video link https://www.youtube.com/watch?v=Q9Xwyfor-kQ&ab_channel=GurkanUcar
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            // A function that is called when the user clicks on an item in the bottom navigation bar.
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 //Tarkistaa missä navbarin valikossa käyttäjä on, ja avaa valikon Activityn
@@ -98,16 +108,28 @@ public class Notes_Activity extends AppCompatActivity {
         taskListUpcoming = findViewById(R.id.taskListUpcoming);
     }
 
+    /**
+     * When the user clicks the button, open the Add_modify_activity activity.
+     *
+     * @param view The view that was clicked.
+     */
     public void openAddModifyTask(View view) {
         startActivity(new Intent(this, Add_modify_activity.class));
     }
 
+    /**
+     * The onResume() function is called when the activity is resumed
+     */
     @Override
     public void onResume() {
         super.onResume();
         populateData();
     }
 
+    /**
+     * It creates a new database object, and then runs a new thread that calls the
+     * fetchDataFromDataBase() function
+     */
     public void populateData() {
         mydatabase = new Database(this);
 
@@ -118,6 +140,9 @@ public class Notes_Activity extends AppCompatActivity {
         });
     }
 
+    /**
+     * It fetches data from the database and loads it into the listviews
+     */
     public void fetchDataFromDataBase() {
         todayLista.clear();
         tomorrowLista.clear();
@@ -163,6 +188,13 @@ public class Notes_Activity extends AppCompatActivity {
     }
 
 
+    /**
+     * It takes a cursor and an arraylist of hashmaps as parameters, and then iterates through the
+     * cursor, adding each row to the arraylist as a hashmap
+     *
+     * @param cursor The cursor object that contains the data to be loaded into the list.
+     * @param dataList This is the ArrayList that will hold the data from the database.
+     */
     public void loadDataList(Cursor cursor, ArrayList<HashMap<String, String>> dataList) {
         if (cursor != null) {
             cursor.moveToFirst();
@@ -179,6 +211,12 @@ public class Notes_Activity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This function is used to load the listview with the data from the database
+     *
+     * @param listView The listview you want to load the data into.
+     * @param dataList The list of data to be displayed in the listview.
+     */
     public void loadListView(NoScrollListView listView, final ArrayList<HashMap<String, String>> dataList) {
         ListTaskAdapter adapter = new ListTaskAdapter(this, dataList, mydatabase);
         listView.setAdapter(adapter);

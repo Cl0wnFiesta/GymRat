@@ -1,5 +1,8 @@
 package com.example.gymrat.Muistutukset;
-
+/**
+ * @author Jonne
+ * Activity-luokka jossa käyttäjä voi tallentaa, muokata tai poistaa omia muistutuksia
+ */
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -44,7 +47,6 @@ public class Add_modify_activity extends AppCompatActivity {
     Button save_btn;
     Notes_Activity notes_activity;
     /**
-     * The above function is the onCreate function. It is called when the activity is created.
      *
      * @param savedInstanceState A Bundle object containing the activity's previously saved state. If
      * the activity has never existed before, the value of the Bundle object is null.
@@ -72,10 +74,8 @@ public class Add_modify_activity extends AppCompatActivity {
     }
 
     /**
-     * It sets the title of the toolbar to "Muokkaa muistutusta" (Edit reminder), sets the text of the
-     * save button to "Päivitä" (Update), makes the delete button visible, gets the reminder from the
-     * database and sets the text of the edit text to the reminder's text, sets the calendar to the
-     * reminder's date and sets the date text to the reminder's date
+     * It sets the title of the toolbar to "Muokkaa muistutusta",
+     * sets the text of the save button to "Päivitä", makes the delete button visible,
      */
     public void modify() {
         toolbar_title.setText("Muokkaa muistutusta");
