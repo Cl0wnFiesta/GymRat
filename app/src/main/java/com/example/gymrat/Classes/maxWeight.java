@@ -2,13 +2,11 @@ package com.example.gymrat.Classes;
 
 
 import com.example.gymrat.SetupPageActivity;
-/**
- * @author Jonne
- */
 
 /**
  * Luokka, joka pitää sisällään oletusarvot miehen ja naisen oletus-aloittelijapainoille,
  * jotka syötetään profiilia luodessa kenttiin valitun sukupuolen perusteella.
+ * @author Jonne
  */
 public class maxWeight extends SetupPageActivity {
 

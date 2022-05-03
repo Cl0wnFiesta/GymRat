@@ -28,9 +28,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Collections;
 import java.util.List;
-/**
 
- */
 
 /**
  * Ohjelman "Kotiruutu" Activity-luokka.
