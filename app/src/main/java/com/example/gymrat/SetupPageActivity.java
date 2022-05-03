@@ -1,5 +1,10 @@
 package com.example.gymrat;
 
+/**
+ * @author Jonne
+ * Activity-luokka jossa käyttäjä kertoo sovellukselle maximi painot joilla hän jaksaa nostaa kerran tai kaksi.
+ * Ohjelma automaattisesti sukupuolen mukaan ehdottaa max painoja, joita käyttäjä voi sitten muokata.
+ */
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,13 +16,18 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import Classes.maxWeight;
+import com.example.gymrat.Classes.maxWeight;
 
 public class SetupPageActivity extends AppCompatActivity {
 
     private EditText maxPenkki, maxKyykky, maxMaastaveto, maxPystyPunnerrus;
-    private Classes.maxWeight maxWeight;
+    private com.example.gymrat.Classes.maxWeight maxWeight;
 
+    /**
+     * The function gets the user's name from the previous activity and sets it to the textview
+     *
+     * @param savedInstanceState A Bundle object containing the activity's previously saved state.
+     */
     @SuppressLint("SetTextI18n")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +61,11 @@ public class SetupPageActivity extends AppCompatActivity {
         mtext.setText("Kerro meille itsestäsi " + value + ".");
     }
     //Laittaa boolean FirstTime trueksi, jolloin Notes_Activity ei tule tänne enään, vaa näkymäksi avautuu aina MainMenu
+    /**
+     * This function saves the information from the current activity and then starts the MainActivity
+     *
+     * @param v The view that was clicked.
+     */
     public void toMainMenu(View v){
         Intent TestActivity = new Intent(this, MainActivity.class);
         saveInformation();
@@ -62,6 +77,9 @@ public class SetupPageActivity extends AppCompatActivity {
 
 
     }
+    /**
+     * It takes the values from the EditText fields and saves them to the SharedPreferences
+     */
     public void saveInformation(){
         String penkki = maxPenkki.getText().toString();
         String kyykky = maxKyykky.getText().toString();

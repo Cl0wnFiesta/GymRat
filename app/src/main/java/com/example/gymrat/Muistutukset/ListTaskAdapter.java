@@ -1,5 +1,8 @@
 package com.example.gymrat.Muistutukset;
-
+/**
+ * @author Jonne
+ *
+ */
 
 import android.app.Activity;
 import android.text.Html;
@@ -20,23 +23,45 @@ public class ListTaskAdapter extends BaseAdapter {
     private ArrayList<HashMap<String, String>> data;
     private Database database;
 
+    // A constructor.
     public ListTaskAdapter(Activity myactivity, ArrayList<HashMap<String, String>> mydata, Database mydatabase) {
         activity = myactivity;
         data = mydata;
         database = mydatabase;
     }
 
+    /**
+     * Returns the number of items in the data set.
+     *
+     * @return The number of items in the data array.
+     */
     public int getCount() {
         return data.size();
     }
 
+    /**
+     * Return the item at the specified position in the data set.
+     *
+     * @param position The position of the item within the adapter's data set of the item whose view we
+     * want.
+     * @return The position of the item in the list.
+     */
     public Object getItem(int position) {
         return position;
     }
 
+    /**
+     * Return the row id associated with the specified position in the list.
+     *
+     * @param position The position of the item within the adapter's data set of the item whose view we
+     * want.
+     * @return The position of the item in the list.
+     */
     public long getItemId(int position) {
         return position;
     }
+
+    // A method that is used to create a new view for each item in the list.
 
     public View getView(int position, View convertView, ViewGroup parent) {
         ListTaskViewHolder holder = null;
@@ -49,7 +74,6 @@ public class ListTaskAdapter extends BaseAdapter {
         } else {
             holder = (ListTaskViewHolder) convertView.getTag();
         }
-
 
         final HashMap<String, String> singleTask = data.get(position);
         final ListTaskViewHolder Holder = holder;
@@ -68,6 +92,12 @@ public class ListTaskAdapter extends BaseAdapter {
             }
 
             holder.checkbar.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                /**
+                 * It updates the status of the task in the database.
+                 *
+                 * @param buttonView The button view whose state has changed.
+                 * @param isChecked The current checked state of the view
+                 */
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (isChecked) {
@@ -88,6 +118,9 @@ public class ListTaskAdapter extends BaseAdapter {
     }
 }
 
+/**
+ * The ListTaskViewHolder class is a class that holds the views that are used in the ListView
+ */
 class ListTaskViewHolder {
     TextView task_name;
     CheckBox checkbar;

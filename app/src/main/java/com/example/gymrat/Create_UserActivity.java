@@ -1,5 +1,9 @@
 package com.example.gymrat;
-
+/**
+ * @author Jonne
+ * Activity-luokka joka avautuu ensimmäisellä sovelluksen avauskerralla.
+ * Activityssä luodaan itselle käyttäjänimi sekä valitaan sukupuoli.
+ */
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,14 +22,22 @@ public class Create_UserActivity extends AppCompatActivity {
     private EditText nameText;
 
     @Override
+    // Setting the layout of the activity.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intro_page_layout);
-    }//Avaa käyttäjälle Käyttäjänimen ja sukupuolen valinnan kun hän poistoo Introsta Next buttonilla
+    }
+    //Avaa käyttäjälle Käyttäjänimen ja sukupuolen valinnan kun hän poistoo Introsta Next buttonilla
     public void startButton(View v){
         setContentView(R.layout.pick_gender);
     }
 
+    /**
+     * If the user has not entered a username or gender, the user will not be able to proceed to the
+     * next page
+     *
+     * @param v The view that was clicked.
+     */
     public void nextPage(View v){
         Intent intent = new Intent(this, SetupPageActivity.class);
         nameText = (EditText) findViewById(R.id.kayttajatunnus);
@@ -42,7 +54,7 @@ public class Create_UserActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
-        //tallentaa käyttäjän sukupuoli valinnan
+    //tallentaa käyttäjän sukupuoli valinnan
     private void saveGenderInPreference() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -51,7 +63,10 @@ public class Create_UserActivity extends AppCompatActivity {
         editor.putBoolean("is_male", selectedId == R.id.man);
         editor.apply();
     }
-        //tallentaa käyttäjän Käyttäjänimen
+    //tallentaa käyttäjän Käyttäjänimen
+    /**
+     * Save the value of the nameText EditText to the SharedPreferences file named myKey.
+     */
     public void saveUserName(){
         Log.d("TAG", "Saved username");
         String value = nameText.getText().toString().trim();

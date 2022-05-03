@@ -1,4 +1,4 @@
-package Classes;
+package com.example.gymrat.Classes;
 
 
 import com.example.gymrat.SetupPageActivity;
