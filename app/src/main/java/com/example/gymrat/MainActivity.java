@@ -29,14 +29,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.Collections;
 import java.util.List;
 /**
- * @author Henri
- * @author Jonne
- * @author Axel
+
  */
 
 /**
  * Ohjelman "Kotiruutu" Activity-luokka.
  * Sisältää navigointipalkin, vanhat treenit ja napin josta aloittaa uusi treeni.
+ * @author Henri
+ * @author Jonne
+ * @author Axel
  */
 public class MainActivity extends AppCompatActivity {
     List<Treeni> treeniList;

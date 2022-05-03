@@ -30,10 +30,8 @@ https://www.youtube.com/watch?v=ASQIvPwQffg&ab_channel=PenguinCoders
 https://www.youtube.com/watch?v=Udk6iaR-RXA&list=PLrnPJCHvNZuCfAe7QK2BoMPkv2TGM_b0E&ab_channel=CodinginFlow
 */
 /**
- * @author Jonne
- */
-/**
  * Activity-luokka jossa käyttäjä kirjoittaa itselleen muistutuksen, valitsee päivämäärän ja tallentaa muistutuksen.
+ * @author Jonne
  */
 
 public class Notes_Activity extends AppCompatActivity {

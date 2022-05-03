@@ -1,7 +1,5 @@
 package com.example.gymrat;
-/**
- * @author Jonne
-*/
+
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 /**
  * Activity-luokka joka avautuu ensimmäisellä sovelluksen avauskerralla.
 * Activityssä luodaan itselle käyttäjänimi sekä valitaan sukupuoli.
+ * @author Jonne
 */
 public class Create_UserActivity extends AppCompatActivity {
 

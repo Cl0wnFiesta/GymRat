@@ -17,6 +17,7 @@ https://www.youtube.com/watch?v=Udk6iaR-RXA&list=PLrnPJCHvNZuCfAe7QK2BoMPkv2TGM_
 /**
  * This class is a subclass of ListView that overrides the onMeasure() method to prevent the ListView
  * from scrolling
+ * @author Jonne
  */
 public class NoScrollListView extends ListView {
 

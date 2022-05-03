@@ -8,10 +8,8 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 /**
- * @author Henri
- */
-/**
  * WorkoutDatabase on Roomdatabase joka tallentaa treenin tiedot.
+ * @author Henri
  */
 @Database(entities = {Treeni.class}, version = 1)
 public abstract class WorkoutDatabase extends RoomDatabase {

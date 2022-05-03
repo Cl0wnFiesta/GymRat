@@ -14,12 +14,10 @@ import android.widget.TextView;
 import com.example.gymrat.Classes.Workout;
 import com.example.gymrat.Classes.WorkoutGlobal;
 
-/**
- * @author Henri
- */
  /**
  * Activity-luokka, jossa näkyy aloitettu treeni. \n
  * Treeniohjelman näkymä latautuu intentin antaman tunnistenimen perusteella.
+  * @author Henri
  */
 public class StartedWorkoutActivity extends AppCompatActivity {
     private double maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus;

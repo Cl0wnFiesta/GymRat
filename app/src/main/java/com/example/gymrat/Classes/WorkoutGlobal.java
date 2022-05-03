@@ -2,11 +2,10 @@
 package com.example.gymrat.Classes;
 
 import java.util.ArrayList;
-/**
- * @author Henri
- */
+
 /**
  * Singleton luokka joka sisältää treenin nimitunnisteen sekä arrayt toistojen määrään ja painokertoimiin.
+ * @author Henri
  */
 public class WorkoutGlobal {
     private ArrayList<WorkoutData> workoutData;

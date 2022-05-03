@@ -16,13 +16,10 @@ import com.example.gymrat.calendarDb.Database;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * @author Jonne
- *
- */
 
 /**
  * Tekee jotain adapterihommia jonne selitä paremmin
+ * @author Jonne
  */
 public class ListTaskAdapter extends BaseAdapter {
     private Activity activity;
@@ -127,6 +124,7 @@ public class ListTaskAdapter extends BaseAdapter {
 
 /**
  * The ListTaskViewHolder class is a class that holds the views that are used in the ListView
+ * @author Jonne
  */
 class ListTaskViewHolder {
     TextView task_name;

@@ -1,12 +1,11 @@
 package com.example.gymrat.Classes;
 
 import java.lang.Math;
-/**
- * @author Henri
- */
+
 /**
  * Luokka joka laskee toistot ja painot treenille.
  * Sisältää metodin joka suosittelee painojen korotusta annetun arvon perusteella.
+ * @author Henri
  */
 public class Workout {
 

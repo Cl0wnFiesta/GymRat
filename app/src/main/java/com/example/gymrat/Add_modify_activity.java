@@ -1,7 +1,5 @@
 package com.example.gymrat;
-/**
- * @author Jonne
- */
+
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -36,6 +34,7 @@ https://www.youtube.com/watch?v=Udk6iaR-RXA&list=PLrnPJCHvNZuCfAe7QK2BoMPkv2TGM_
 
 /**
  * Activity-luokka jossa käyttäjä voi tallentaa, muokata tai poistaa omia muistutuksia
+ * @author Jonne
  */
 public class Add_modify_activity extends AppCompatActivity {
 

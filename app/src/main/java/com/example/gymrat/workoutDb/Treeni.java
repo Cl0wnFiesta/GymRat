@@ -5,13 +5,12 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-/**
- * @author Henri
- */
+
 /**
  * Treenin tietokannan pöytä.
  * Sisältää tietokannassa ID, Päivä, Treenin nimi, Toistot ja Korotus arvot.
  * Sisältää metodit joilla haetaan tiedot tietokannasta haettavista treeneistä.
+ * @author Henri
  */
 @Entity(tableName = "Treeni")
 public class Treeni {

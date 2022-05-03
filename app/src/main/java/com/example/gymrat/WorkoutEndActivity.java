@@ -18,13 +18,12 @@ import com.example.gymrat.workoutDb.WorkoutDatabase;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-/**
- * @author Henri
- */
+
 /**
  * Activity-luokka joka näyttää käyttäjälle tietoa sen perusteella, mitä treeniä hän on tehnyt ja mitä sen sisällä valinnut
  * Tallentaa Activityn alussa tiedot tietokantaan treenistä.
  * Suosittelee treenipainojen nostamista tarvittaessa.
+ * @author Henri
  */
 public class WorkoutEndActivity extends AppCompatActivity {
     SharedPreferences sp;

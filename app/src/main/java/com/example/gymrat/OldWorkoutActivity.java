@@ -13,12 +13,11 @@ import com.example.gymrat.workoutDb.WorkoutDatabase;
 
 import java.util.Collections;
 import java.util.List;
-/**
- * @author Henri
- */
+
 /**
  * Activity-Luokka joka näyttää vanhan treenin valituista treeneistä
  * Lataa tietokannasta treenin valitun ListViewin treenin mukaan
+ * @author Henri
  */
 public class OldWorkoutActivity extends AppCompatActivity {
 

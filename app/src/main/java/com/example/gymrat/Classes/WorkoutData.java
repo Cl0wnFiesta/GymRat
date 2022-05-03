@@ -1,11 +1,10 @@
 
 package com.example.gymrat.Classes;
-/**
- * @author Henri
- */
+
 /**
  * Luokka, joka tallentaa treenin setin tiedot.
  * Metodeina palauttaa treenin setin tiedot.
+ * @author Henri
  */
 public class WorkoutData {
     private int[] toistot;
