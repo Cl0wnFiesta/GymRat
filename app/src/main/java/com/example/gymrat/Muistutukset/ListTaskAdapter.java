@@ -81,6 +81,7 @@ public class ListTaskAdapter extends BaseAdapter {
         holder.task_name.setId(position);
         holder.checkbar.setId(position);
 
+        // Setting the checkbox to checked if the status is 1 and unchecked if the status is 0.
         try {
             holder.checkbar.setOnCheckedChangeListener(null);
             if (singleTask.get("status").contentEquals("1")) {
