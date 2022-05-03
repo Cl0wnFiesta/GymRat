@@ -44,6 +44,9 @@ public class WorkoutEndActivity extends AppCompatActivity {
     private SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yy");
     private String treenipaiva;
 
+    /**
+     * Hakee datan viimeisestä activitystä ja asettaa ne näytölle.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,7 +93,9 @@ public class WorkoutEndActivity extends AppCompatActivity {
 
     }
 
-    //Hakee käyttäjän preferenssit
+    /**
+     * Hakee preferenssit SharedPreferenceistä ja laittaa ne muuttujiin
+     */
     private void fetchPreferences(){
         sp = getSharedPreferences("myKey", MODE_PRIVATE);
         maxPenkki = Double.parseDouble(sp.getString("penkki", "0"));
@@ -99,7 +104,12 @@ public class WorkoutEndActivity extends AppCompatActivity {
         maxPystypunnerrus = Double.parseDouble(sp.getString("pystypunnerrus", "0"));
     }
 
-    //muuttaa tunnisteen sitä vastaavaksi salipäiväksi
+    /**
+     * Ottaa Treenin tunnisteen ja palauttaa liikkeen nimen
+     *
+     * @param tunniste Treenin tunniste
+     * @return Palauttaa liikkeen nimen
+     */
     private String muutaTunniste(@NonNull String tunniste){
         String tulkattuTunniste = "";
         switch (tunniste){
@@ -118,7 +128,14 @@ public class WorkoutEndActivity extends AppCompatActivity {
         }
         return tulkattuTunniste;
     }
-    //Tallentaa treenin tietokantaan
+    /**
+     * Luo uuden Treeni-objektin, asettaa arvot, ja syöttää sen tietokantaan
+     *
+     * @param treenipaiva The date of the workout
+     * @param treeniNimi The name of the exercise
+     * @param toistot number of reps
+     * @param korotus the weight increase in kg
+     */
     private void saveTreeni(String treenipaiva, String treeniNimi, int toistot, double korotus){
         WorkoutDatabase db = WorkoutDatabase.getDBInstance(this.getApplicationContext());
         Treeni treeni = new Treeni();
@@ -128,6 +145,9 @@ public class WorkoutEndActivity extends AppCompatActivity {
         treeni.korotus = korotus;
         db.treeniDAO().insertTreeni(treeni);
     }
+    /**
+     * Jos käyttäjä painaa back buttonia, palauttaa koti-ruutuun
+     */
     @Override
     public void onBackPressed() {
         Log.d("CDA", "onBackPressed Called");
@@ -138,7 +158,10 @@ public class WorkoutEndActivity extends AppCompatActivity {
         Intent setIntent = new Intent(this ,MainActivity.class);
         startActivity(setIntent);
     }
-    //Muuttaa preferensseihin treenin pä
+    /**
+     * Ottaa treenin nimen parametrinä ja tallentaa suositellun painonkorotuksen SharedPreferenceihin.
+     * @param treeniNimi String, Treenin nimi
+     */
     private void hyvaksyKorotus(@NonNull String treeniNimi){
         String treeni = treeniNimi.toLowerCase();
         double tallennettava;

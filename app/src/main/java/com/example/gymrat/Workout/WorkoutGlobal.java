@@ -12,6 +12,12 @@ public class WorkoutGlobal {
 
 
 
+    /**
+     * If ourInstance is null, create a new WorkoutGlobal object and assign it to ourInstance. Then
+     * return ourInstance.
+     *
+     * @return The instance of the WorkoutGlobal class.
+     */
     public static WorkoutGlobal getInstance(){
         return ourInstance;
     }
@@ -20,7 +26,9 @@ public class WorkoutGlobal {
         workoutData = new ArrayList<>();
         addWorkoutData();
     }
-    //Lisää treenin tiedot singleton luokkaan
+    /**
+     * It adds the workout data to the workoutData ArrayList
+     */
     private void addWorkoutData(){
         //Ensimmäisen treenin tiedot
         //Pystypunnerrus
@@ -74,6 +82,13 @@ public class WorkoutGlobal {
         workoutData.add(new WorkoutData(workoutFourSettiKaksi, workoutFourPainokerroinKaksi, "Etukyykky", tunnisteNelja, 2));
     }
     //Palauttaa treenin tiedot tunnistetta ja tunistenumeroa vastaan.
+    /**
+     * If the tunniste and tunnisteNumero match the ones in the workoutData, return the setti array.
+     *
+     * @param tunniste The identifier of the workout
+     * @param tunnisteNumero The number of the workout. For example, the first one would be 1 and the second one would be 2.
+     * @return An array of integers.
+     */
     public int[] getWorkoutToistot(String tunniste, int tunnisteNumero){
         int[] returnArray = {};
         for ( WorkoutData workoutData: workoutData) {
@@ -84,6 +99,14 @@ public class WorkoutGlobal {
         return returnArray;
     }
     //Palauttaa treenin painokertoimen tunnistetta ja tunistenumeroa vastaan.
+    /**
+     * It returns an array of doubles, which is the painokerroin of the workout with the given tunniste
+     * and tunnisteNumero
+     *
+     * @param tunniste The identifier of the workout
+     * @param tunnisteNumero The number of the workout.
+     * @return The method returns an array of doubles.
+     */
     public double[] getWorkoutPainokerroin(String tunniste, int tunnisteNumero){
         double[] returnArray = {};
         for ( WorkoutData workoutData: workoutData) {
@@ -94,6 +117,13 @@ public class WorkoutGlobal {
         return returnArray;
     }
     //Palauttaa treenin nimen tunnistetta ja tunistenumeroa vastaan.
+    /**
+     * If the tunniste and tunnisteNumero match the ones in the workoutData, return the nimi.
+     *
+     * @param tunniste The identifier of the workout.
+     * @param tunnisteNumero The number of the workout.
+     * @return The name of the workout.
+     */
     public String getWorkoutName(String tunniste, int tunnisteNumero){
         String returnNimi = "";
         for ( WorkoutData workoutData: workoutData) {

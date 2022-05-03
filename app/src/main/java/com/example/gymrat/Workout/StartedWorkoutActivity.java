@@ -46,6 +46,10 @@ public class StartedWorkoutActivity extends AppCompatActivity {
     public static final String EXTRA_SUOSITTELE = "EXTRA_SUOSITTELE";
     public static final String EXTRA_TUNNISTENIMI = "EXTRA_TUNNISTENIMI";
 
+    /**
+     * @author Jonne & Henri
+     *Asettaa treenille tunnistenimen perusteella arvot toistoihin, painokertoimeen ja nimeen.
+     */
     private void workoutCode() {
         ekatSetit = workoutGlobal.getWorkoutToistot(tunnisteNimi, 1);
         tokatSetit = workoutGlobal.getWorkoutToistot(tunnisteNimi, 2);
@@ -55,6 +59,9 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         tokaSettiNimi = workoutGlobal.getWorkoutName(tunnisteNimi, 2);
     }
 
+    /**
+     * Hakee aikaisemman näkymän antaman intentin ja asettaa sieltä saadun tunnistenimen treenille.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,7 +123,9 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         fetchPreferences();
     }
 
-//Asettaa näytölle treenin nimen, painot ja toistomäärän riippuen missä kohtaa treeniä ollaan.
+    /**
+     * Asettaa näytölle treenin nimen, painot ja toistomäärän riippuen missä kohtaa treeniä ollaan.
+     */
     private void setTreeniTiedot() {
         setButtonVisibility(false);
         nimi.setText(treeni.getTreeniNimi());
@@ -136,7 +145,9 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         }
     }
 
-    //Hakee käyttäjän preferenssit
+    /**
+     * Hakee käyttäjän preferenssit
+     */
     private void fetchPreferences(){
         sp = getSharedPreferences("myKey", MODE_PRIVATE);
         maxPenkki = Double.parseDouble(sp.getString("penkki", "0"));
@@ -153,8 +164,11 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         tv.setText(Integer.toString(luku));
     }
 
-    //Aina kun painaa nappia, niin edistää treeniä askeleella.
-    //Jos ollaan treenin vikassa kohdassa, asettaa luvun nollaan ja aloittaa toisen vaiheen treeniä
+    /**
+     *Aina kun painaa nappia, niin edistää treeniä askeleella.
+     *Jos ollaan treenin vikassa kohdassa, asettaa luvun nollaan ja aloittaa toisen vaiheen treeniä
+     * Treenin lopussa aloittaa treenin lopettamisen metodin.
+     */
     private void buttonLogic(){
         int liikeCount = treeni.getPituus();
         if (treeniPos + 1 <= liikeCount && !secondPhase){
@@ -185,7 +199,9 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         }
     }
 
-//Lopettaa treenin ja antaa tarvittavat tiedot eteenpäin tallennettavaksi
+    /**
+     *Lopettaa treenin ja antaa tarvittavat tiedot eteenpäin tallennettavaksi
+     */
     private void endWorkout() {
         suositteluNousu = treeni.suggestIncrease(yksPlusKierros);
         Log.d("treenisuggest", Double.toString(suositteluNousu));
@@ -198,7 +214,10 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         startActivity(endWorkout);
     }
 
-//Logiikka näppäimelle joka menee taaksepäin.
+    /**
+     *Logiikka näppäimelle joka menee taaksepäin.
+     * Treenin alussa toimii backbuttonina.
+     */
     private void backButtonLogic(){
         int liikeCount = treeni.getPituus();
 
@@ -221,12 +240,19 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         setCounter();
     }
 
-    //asettaa luvut näytön oikeaan yläreunaan treenin kestosta
+    /**
+     *asettaa luvut näytön oikeaan yläreunaan treenin kestosta
+     */
     private void setCounter(){
         TextView nytSetti = findViewById(R.id.nytSetti), setinLoppu = findViewById(R.id.setinLoppu);
         nytSetti.setText(Integer.toString(treeniPos + 1));
         setinLoppu.setText(Integer.toString(treeni.getPituus()));
     }
+
+    /**
+     * Asettaa plus ja minus näppäimet näkyviin tai piiloon arvon mukaan.
+     * @param plusKierros boolean arvo siitä, pyydetäänkö käyttäjältä syöttöä lisäkierroksia varten.
+     */
     //näyttää tai piilottaa plus minus näppäimet
     private void setButtonVisibility(boolean plusKierros){
         if(plusKierros){

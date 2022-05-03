@@ -27,14 +27,11 @@ import com.example.gymrat.Muistutukset.Notes_Activity;
 import com.example.gymrat.NavBar_Activities.Favorites;
 
 import com.example.gymrat.NavBar_Activities.Settings;
-import com.example.gymrat.Workout.StartedWorkoutActivity;
 import com.example.gymrat.Workout.WorkoutDB.Treeni;
 import com.example.gymrat.Workout.WorkoutDB.WorkoutDatabase;
 import com.example.gymrat.Workout.Workout_selection_activity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -60,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         treeniList = db.treeniDAO().getAllTreeni();
         Collections.reverse(treeniList);
-        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, treeniList);
+        ArrayAdapter<Treeni> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, treeniList);
         ListView lv =findViewById(R.id.Treenilist);
         lv.setAdapter(adapter);
         lv.setLongClickable(true);

@@ -29,22 +29,38 @@ public class Treeni {
           return Integer.toString(id) + " -  " + treeninNimi + "   -   " + paiva;
         }
 
+        /**
+         *
+         * @return palauttaa Treenin id:n
+         */
         public int getId() {
                 return id;
         }
-
+        /**
+         *
+         * @return palauttaa Treenin nimen
+         */
         public String getTreeninNimi() {
                 return treeninNimi;
         }
-
+        /**
+         *
+         * @return palauttaa Treenin päivän
+         */
         public String getPaiva() {
                 return paiva;
         }
-
+        /**
+         *
+         * @return palauttaa Treenin toistot
+         */
         public int getToistot() {
                 return toistot;
         }
-
+        /**
+         *
+         * @return palauttaa Treenin suositellun korotuksen
+         */
         public double getKorotus() {
                 return korotus;
         }
