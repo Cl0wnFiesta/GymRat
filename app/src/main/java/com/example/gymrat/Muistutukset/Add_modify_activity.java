@@ -43,6 +43,12 @@ public class Add_modify_activity extends AppCompatActivity {
     TextView dateText;
     Button save_btn;
     Notes_Activity notes_activity;
+    /**
+     * The above function is the onCreate function. It is called when the activity is created.
+     *
+     * @param savedInstanceState A Bundle object containing the activity's previously saved state. If
+     * the activity has never existed before, the value of the Bundle object is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +71,12 @@ public class Add_modify_activity extends AppCompatActivity {
         }
     }
 
+    /**
+     * It sets the title of the toolbar to "Muokkaa muistutusta" (Edit reminder), sets the text of the
+     * save button to "Päivitä" (Update), makes the delete button visible, gets the reminder from the
+     * database and sets the text of the edit text to the reminder's text, sets the calendar to the
+     * reminder's date and sets the date text to the reminder's date
+     */
     public void modify() {
         toolbar_title.setText("Muokkaa muistutusta");
         save_btn.setText("Päivitä");
@@ -84,6 +96,11 @@ public class Add_modify_activity extends AppCompatActivity {
 
     }
 
+    /**
+     * If the task is not empty, then either update the task or insert a new task
+     *
+     * @param v The view that was clicked.
+     */
     public void saveTask(View v) {
         /*Checking for Empty Task*/
         if (edit_text.getText().toString().trim().length() > 0) {
@@ -102,12 +119,20 @@ public class Add_modify_activity extends AppCompatActivity {
         }
     }
 
+    /**
+     * When the delete button is clicked, delete the task from the database and show a toast message to
+     * the user.
+     *
+     * @param v The view that was clicked.
+     */
     public void deleteTask(View v) {
         mydatabase.deleteTask(task_id);
         Toast.makeText(getApplicationContext(), "Poistu onnistui", Toast.LENGTH_SHORT).show();
         finish();
     }
 
+    // A function that is called when the user clicks the date text. It shows a date picker dialog to
+    // the user.
     public void chooseDate(View view) {
         final View dialogView = View.inflate(this, R.layout.date_picker, null);
         final DatePicker datePicker = dialogView.findViewById(R.id.date_picker);

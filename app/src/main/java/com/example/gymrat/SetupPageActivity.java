@@ -11,12 +11,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import Classes.maxWeight;
+import com.example.gymrat.Classes.maxWeight;
 
 public class SetupPageActivity extends AppCompatActivity {
 
     private EditText maxPenkki, maxKyykky, maxMaastaveto, maxPystyPunnerrus;
-    private Classes.maxWeight maxWeight;
+    private com.example.gymrat.Classes.maxWeight maxWeight;
 
     @SuppressLint("SetTextI18n")
     protected void onCreate(Bundle savedInstanceState) {
