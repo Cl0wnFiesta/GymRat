@@ -1,6 +1,7 @@
 /**
  * @author Henri
  * Luokka joka näyttää vanhan treenin valituista treeneistä
+ * Lataa tietokannasta treenin valitun ListViewin treenin mukaan
  */
 package com.example.gymrat;
 
@@ -8,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.gymrat.Workout.WorkoutDB.Treeni;
@@ -22,6 +25,7 @@ public class OldWorkoutActivity extends AppCompatActivity {
     private double suosittelu;
     private String workoutnimi, paiva;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_old_workout);
@@ -46,6 +50,15 @@ public class OldWorkoutActivity extends AppCompatActivity {
         TextView suositteluValue = findViewById(R.id.lisaysValue);
         toistoValue.setText(Integer.toString(toistot));
         suositteluValue.setText(Double.toString(suosittelu));
+
+        Button takaisinButton = findViewById(R.id.backButton);
+        takaisinButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
 
     }
 }
