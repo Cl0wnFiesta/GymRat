@@ -16,7 +16,7 @@
         <activity
             android:name=".Workout.Workout_selection_activity"
             android:exported="false"
-             />
+            />
         <activity
             android:name=".Muistutukset.Add_modify_activity"
             android:exported="false" />

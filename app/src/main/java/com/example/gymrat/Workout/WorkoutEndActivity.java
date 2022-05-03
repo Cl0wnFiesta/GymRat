@@ -1,5 +1,12 @@
+/**
+ * @author Henri
+ * Activity-luokka joka näyttää käyttäjälle tietoa sen perusteella, mitä treeniä hän on tehnyt ja mitä sen sisällä valinnut
+ * Tallentaa Activityn alussa tiedot tietokantaan treenistä.
+ * Suosittelee treenipainojen nostamista tarvittaessa.
+ */
 package com.example.gymrat.Workout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -20,9 +27,6 @@ import com.example.gymrat.Workout.WorkoutDB.WorkoutDatabase;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * @author Henri
- */
 public class WorkoutEndActivity extends AppCompatActivity {
     SharedPreferences sp;
     private double maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus;
@@ -40,6 +44,9 @@ public class WorkoutEndActivity extends AppCompatActivity {
     private SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yy");
     private String treenipaiva;
 
+    /**
+     * Hakee datan viimeisestä activitystä ja asettaa ne näytölle.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,7 +93,9 @@ public class WorkoutEndActivity extends AppCompatActivity {
 
     }
 
-    //Hakee käyttäjän preferenssit
+    /**
+     * Hakee preferenssit SharedPreferenceistä ja laittaa ne muuttujiin
+     */
     private void fetchPreferences(){
         sp = getSharedPreferences("myKey", MODE_PRIVATE);
         maxPenkki = Double.parseDouble(sp.getString("penkki", "0"));
@@ -95,8 +104,13 @@ public class WorkoutEndActivity extends AppCompatActivity {
         maxPystypunnerrus = Double.parseDouble(sp.getString("pystypunnerrus", "0"));
     }
 
-    //muuttaa tunnisteen sitä vastaavaksi salipäiväksi
-    private String muutaTunniste(String tunniste){
+    /**
+     * Ottaa Treenin tunnisteen ja palauttaa liikkeen nimen
+     *
+     * @param tunniste Treenin tunniste
+     * @return Palauttaa liikkeen nimen
+     */
+    private String muutaTunniste(@NonNull String tunniste){
         String tulkattuTunniste = "";
         switch (tunniste){
             case "WorkoutOne":
@@ -114,7 +128,14 @@ public class WorkoutEndActivity extends AppCompatActivity {
         }
         return tulkattuTunniste;
     }
-
+    /**
+     * Luo uuden Treeni-objektin, asettaa arvot, ja syöttää sen tietokantaan
+     *
+     * @param treenipaiva The date of the workout
+     * @param treeniNimi The name of the exercise
+     * @param toistot number of reps
+     * @param korotus the weight increase in kg
+     */
     private void saveTreeni(String treenipaiva, String treeniNimi, int toistot, double korotus){
         WorkoutDatabase db = WorkoutDatabase.getDBInstance(this.getApplicationContext());
         Treeni treeni = new Treeni();
@@ -124,18 +145,24 @@ public class WorkoutEndActivity extends AppCompatActivity {
         treeni.korotus = korotus;
         db.treeniDAO().insertTreeni(treeni);
     }
+    /**
+     * Jos käyttäjä painaa back buttonia, palauttaa koti-ruutuun
+     */
     @Override
     public void onBackPressed() {
         Log.d("CDA", "onBackPressed Called");
         returnHome();
     }
-
+    //palauttaa kutsuttaessa mainactivityyn
     private void returnHome() {
         Intent setIntent = new Intent(this ,MainActivity.class);
         startActivity(setIntent);
     }
-
-    private void hyvaksyKorotus(String treeniNimi){
+    /**
+     * Ottaa treenin nimen parametrinä ja tallentaa suositellun painonkorotuksen SharedPreferenceihin.
+     * @param treeniNimi String, Treenin nimi
+     */
+    private void hyvaksyKorotus(@NonNull String treeniNimi){
         String treeni = treeniNimi.toLowerCase();
         double tallennettava;
         sp = getSharedPreferences("myKey", MODE_PRIVATE);
