@@ -4,7 +4,9 @@ package com.example.gymrat.Classes;
 import java.util.ArrayList;
 /**
  * @author Henri
- * Singleton luokka joka sisältää treenin tunnisteen ja tiedot.
+ */
+/**
+ * Singleton luokka joka sisältää treenin nimitunnisteen sekä arrayt toistojen määrään ja painokertoimiin.
  */
 public class WorkoutGlobal {
     private ArrayList<WorkoutData> workoutData;
@@ -93,7 +95,7 @@ public class WorkoutGlobal {
         int[] returnArray = {};
         for ( WorkoutData workoutData: workoutData) {
             if (workoutData.getTunniste().equals(tunniste) && workoutData.getTunnistenumero() == tunnisteNumero) {
-                returnArray = workoutData.getSetti();
+                returnArray = workoutData.getToistot();
             }
         }
         return returnArray;

@@ -3,6 +3,8 @@ package com.example.gymrat.Classes;
 import java.lang.Math;
 /**
  * @author Henri
+ */
+/**
  * Luokka joka laskee toistot ja painot treenille.
  * Sisältää metodin joka suosittelee painojen korotusta annetun arvon perusteella.
  */
@@ -14,7 +16,13 @@ public class Workout {
     private int[] liikkeita;
     private double[] painokerroin;
 
-    //ottaa neljä muuttujaa ja asettaa ne treenin maksimiluvuiksi.
+    /**
+     * //ottaa neljä muuttujaa ja asettaa ne treenin maksimiluvuiksi.
+     * @param penkki preferensseistä haettu maksimiarvo penkille
+     * @param kyykky preferensseistä haettu maksimiarvo kyykylle
+     * @param maastaveto preferensseistä haettu maksimiarvo maastavedolle
+     * @param pystypunnerrus preferensseistä haettu maksimiarvo pystypunnerrukselle
+     */
     public Workout(double penkki, double kyykky, double maastaveto, double pystypunnerrus){
         this.maxPenkki = penkki;
         this.maxKyykky = kyykky;
@@ -22,7 +30,12 @@ public class Workout {
         this.maxPystypunnerrus = pystypunnerrus;
     }
 
-    //Asettaa liikkeiden määrän ja painokertoimet.
+    /**
+     * //Asettaa liikkeiden määrän ja painokertoimet.
+     * @param liikemaara Array liikkeiden määrästä setissä
+     * @param painokerroin Array painokertoimet liikkeille
+     * @param treeniNimi Treenin nimi
+     */
     public void startWorkout(int[] liikemaara, double[] painokerroin, String treeniNimi){
         this.liikkeita = liikemaara;
         this.painokerroin = painokerroin;
@@ -31,11 +44,20 @@ public class Workout {
 
     }
 
-    // palauttaa liikkeiden määrät ja painot riippuen missä kohtaa treeniä ollaan
+    /**
+     * palauttaa liikkeiden määrät arraysta liikkeen kohdasta
+     * @param kohta Kohta missä ollaan treenissä
+     * @return Liikkeiden määrä treenin kohdassa
+     */
     public int getLiikkeita(int kohta){
         return liikkeita[kohta];
     }
 
+    /**
+     * Palauttaa liikkeen painon arraysta liikkeen kohdasta
+     * @param kohta Kohta missä ollaan treenissä
+     * @return Paino liikkeen kohdassa
+     */
     public double getPaino( int kohta){
 
         double paino;
@@ -60,31 +82,60 @@ public class Workout {
     }
 
 
-    //hakee treenimaksimin maksimista ja pyöristää lähimpään 2.5kg:seen
+    /**
+     * hakee treenimaksimin maksimista ja pyöristää lähimpään 2.5kg:aan
+     * @param kohta Kohta missä ollaan treenissä
+     * @return paino pyöristettynä lähimpään 2.5kg:aan
+     */
     private double getPenkki(int kohta){
         return Math.round(painokerroin[kohta]*maxPenkki / 2.5) * 2.5;
     }
+    /**
+     * hakee treenimaksimin maksimista ja pyöristää lähimpään 2.5kg:aan
+     * @param kohta Kohta missä ollaan treenissä
+     * @return paino pyöristettynä lähimpään 2.5kg:aan
+     */
     private double getKyykky(int kohta){
         return Math.round(painokerroin[kohta]*maxKyykky / 2.5) * 2.5;
     }
+    /**
+     * hakee treenimaksimin maksimista ja pyöristää lähimpään 2.5kg:aan
+     * @param kohta Kohta missä ollaan treenissä
+     * @return paino pyöristettynä lähimpään 2.5kg:aan
+     */
     private double getMaastaveto(int kohta){
         return Math.round(painokerroin[kohta]*maxMaastaveto / 2.5) * 2.5;
     }
+    /**
+     * hakee treenimaksimin maksimista ja pyöristää lähimpään 2.5kg:aan
+     * @param kohta Kohta missä ollaan treenissä
+     * @return paino pyöristettynä lähimpään 2.5kg:aan
+     */
     private double getPystypunnerrus(int kohta){
         return Math.round(painokerroin[kohta]*maxPystypunnerrus / 2.5) * 2.5;
     }
 
-    //palauttaa liikkeiden pituuden
+    /**
+     * palauttaa liikkeiden arrayn pituuden
+     * @return palauttaa liikkeiden arrayn pituuden
+     */
     public int getPituus(){
         return liikkeita.length;
     }
 
-    //palauttaa treenin nimen
+    /**
+     * Palauttaa treenin nimen
+     * @return palauttaa treenin nimen
+     */
     public String getTreeniNimi(){
         return treeniNimi;
     }
 
-    //Jos painot menee tiettyjen rajojen yli, niin ehdota lisäpainoja
+    /**
+     * Jos toistot ekstrakierroksella menee tiettyjen rajojen yli, niin ehdottaa lisäpainoja.
+     * @param plusKierros Kuinka monta toistoa ekstrakierroksella on saatu.
+     * @return Suositeltu painonkorotus treeniohjelmaan.
+     */
     public double suggestIncrease(int plusKierros){
         double suggestNumber = 0;
         if (plusKierros > 1 && plusKierros <= 3){

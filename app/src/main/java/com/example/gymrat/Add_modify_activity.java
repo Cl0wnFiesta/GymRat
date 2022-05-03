@@ -1,7 +1,6 @@
 package com.example.gymrat;
 /**
  * @author Jonne
- * Activity-luokka jossa käyttäjä voi tallentaa, muokata tai poistaa omia muistutuksia
  */
 
 import android.content.DialogInterface;
@@ -34,6 +33,10 @@ https://www.youtube.com/watch?v=or_pH92l-IQ&ab_channel=EasyTuto
 https://www.youtube.com/watch?v=ASQIvPwQffg&ab_channel=PenguinCoders
 https://www.youtube.com/watch?v=Udk6iaR-RXA&list=PLrnPJCHvNZuCfAe7QK2BoMPkv2TGM_b0E&ab_channel=CodinginFlow
 */
+
+/**
+ * Activity-luokka jossa käyttäjä voi tallentaa, muokata tai poistaa omia muistutuksia
+ */
 public class Add_modify_activity extends AppCompatActivity {
 
     Calendar calendar;

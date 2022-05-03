@@ -20,6 +20,10 @@ import java.util.HashMap;
  * @author Jonne
  *
  */
+
+/**
+ * Tekee jotain adapterihommia jonne selitä paremmin
+ */
 public class ListTaskAdapter extends BaseAdapter {
     private Activity activity;
     private ArrayList<HashMap<String, String>> data;

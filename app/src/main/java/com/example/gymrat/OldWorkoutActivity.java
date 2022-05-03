@@ -17,7 +17,7 @@ import java.util.List;
  * @author Henri
  */
 /**
- * Luokka joka näyttää vanhan treenin valituista treeneistä
+ * Activity-Luokka joka näyttää vanhan treenin valituista treeneistä
  * Lataa tietokannasta treenin valitun ListViewin treenin mukaan
  */
 public class OldWorkoutActivity extends AppCompatActivity {

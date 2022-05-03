@@ -156,7 +156,11 @@ public class WorkoutEndActivity extends AppCompatActivity {
         Log.d("CDA", "onBackPressed Called");
         returnHome();
     }
-    //palauttaa kutsuttaessa mainactivityyn
+
+    /**
+     * Palauttaa käyttäjän koti-ruutuun (MainActivity)
+     * @see MainActivity
+     */
     private void returnHome() {
         Intent setIntent = new Intent(this ,MainActivity.class);
         startActivity(setIntent);

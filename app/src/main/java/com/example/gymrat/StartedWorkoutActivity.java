@@ -18,8 +18,8 @@ import com.example.gymrat.Classes.WorkoutGlobal;
  * @author Henri
  */
  /**
- * Aloitetun treenin Activity luokka.
- * Treeniohjelma latautuu intentin antaman tunnistenimen perusteella.
+ * Activity-luokka, jossa näkyy aloitettu treeni. \n
+ * Treeniohjelman näkymä latautuu intentin antaman tunnistenimen perusteella.
  */
 public class StartedWorkoutActivity extends AppCompatActivity {
     private double maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus;

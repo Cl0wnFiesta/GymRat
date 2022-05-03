@@ -1,9 +1,7 @@
 package com.example.gymrat;
 /**
  * @author Jonne
- * Activity-luokka joka avautuu ensimmäisellä sovelluksen avauskerralla.
- * Activityssä luodaan itselle käyttäjänimi sekä valitaan sukupuoli.
- */
+*/
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,8 +13,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import androidx.appcompat.app.AppCompatActivity;
-
-
+/**
+ * Activity-luokka joka avautuu ensimmäisellä sovelluksen avauskerralla.
+* Activityssä luodaan itselle käyttäjänimi sekä valitaan sukupuoli.
+*/
 public class Create_UserActivity extends AppCompatActivity {
 
     private EditText nameText;

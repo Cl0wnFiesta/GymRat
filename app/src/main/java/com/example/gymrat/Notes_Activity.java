@@ -31,6 +31,8 @@ https://www.youtube.com/watch?v=Udk6iaR-RXA&list=PLrnPJCHvNZuCfAe7QK2BoMPkv2TGM_
 */
 /**
  * @author Jonne
+ */
+/**
  * Activity-luokka jossa käyttäjä kirjoittaa itselleen muistutuksen, valitsee päivämäärän ja tallentaa muistutuksen.
  */
 
