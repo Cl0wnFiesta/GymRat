@@ -1,8 +1,5 @@
 package com.example.gymrat.Muistutukset;
-/**
- * @author Jonne
- *
- */
+
 
 import android.app.Activity;
 import android.text.Html;
@@ -17,7 +14,10 @@ import com.example.gymrat.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
+/**
+ * The ListTaskAdapter class is a class that is used to create a new view for each item in the list
+ * @author Jonne
+ */
 public class ListTaskAdapter extends BaseAdapter {
     private Activity activity;
     private ArrayList<HashMap<String, String>> data;

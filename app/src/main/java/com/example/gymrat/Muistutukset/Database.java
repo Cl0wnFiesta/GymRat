@@ -1,8 +1,5 @@
 package com.example.gymrat.Muistutukset;
-/**
- * @author Jonne
- * Database luokka
- */
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -21,6 +18,12 @@ https://www.youtube.com/watch?v=or_pH92l-IQ&ab_channel=EasyTuto
 https://www.youtube.com/watch?v=ASQIvPwQffg&ab_channel=PenguinCoders
 https://www.youtube.com/watch?v=Udk6iaR-RXA&list=PLrnPJCHvNZuCfAe7QK2BoMPkv2TGM_b0E&ab_channel=CodinginFlow
 */
+
+/**
+ * It creates a database with a table called Muistutukset.
+ * It also has methods to insert, update, delete, and get tasks from the database
+ * @author Jonne
+ */
 public class Database extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Muistutukset";
