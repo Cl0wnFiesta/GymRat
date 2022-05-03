@@ -14,7 +14,7 @@
         android:layout_marginBottom="32dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
-        android:text="@string/valitse_treeni_valikosta_nohjelma_on_nelip_iv_inen_niin_suosittelemme_valitsemaan_jokaisella_urheilukerralla_eri_ohjelman_kuin_viimeksi_n_tekem_ll_tasaisesti_jokaista_ohjelman_treeni_saat_tasaisimman_kehityksen"
+        android:text="@string/popupInfo"
         android:textAlignment="center"
         android:textColor="#fff"
         android:textSize="20sp"

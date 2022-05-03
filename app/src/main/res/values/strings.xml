@@ -13,7 +13,7 @@
     <string name="maxMaastaveto">Maastaveto:</string>
     <string name="maxPystypunnerrus">Pystypunnerrus:</string>
     <string name="KG">kg</string>
-    <string name="paino_inffo_teksti">Anna oma yhden toiston maksimiarvio (paino jonka saisit varmasti vähintään kerran tai kaksi nostettua)</string>
+    <string name="paino_inffo_teksti">Anna oma yhden toiston maksimiarvio (paino jonka saisit varmasti vähintään kerran tai kaksi nostettua).</string>
     <!-- TODO: Remove or change this placeholder text -->
     <!-- Strings used for fragments for navigation -->
     <string name="next">Next</string>
@@ -37,8 +37,7 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_workout_selection">Workout_selection_activity</string>
-    <string name="valitse_treeni_valikosta_nohjelma_on_nelip_iv_inen_niin_suosittelemme_valitsemaan_jokaisella_urheilukerralla_eri_ohjelman_kuin_viimeksi_n_tekem_ll_tasaisesti_jokaista_ohjelman_treeni_saat_tasaisimman_kehityksen">Valitse treeni valikosta. \nOhjelma on nelipäiväinen, niin suosittelemme valitsemaan jokaisella urheilukerralla eri ohjelman kuin viimeksi. \n Tekemällä tasaisesti jokaista ohjelman treeniä, saat tasaisimman kehityksen.</string>
-
+    <string name="popupInfo">Valitse treeni valikosta.\n\nOhjelma on nelipäiväinen, niin suosittelemme valitsemaan jokaisella urheilukerralla eri ohjelman kuin viimeksi.\n\n Tekemällä tasaisesti jokaista ohjelman osiota, saat parhaan kehityksen.\n\nSuosittelemme myös ohjelman lisäksi tekemään muita lihaksia.\n\nHyvää treenaamista!</string>
     <string name="darkmode">DarkMode</string>
     <string name="tallenna">Tallenna</string>
     <string name="muokkaa_tietoja">Muokkaaksesi tietoja paina tästä</string>
@@ -56,4 +55,10 @@
     <string name="trophy_info5">Nosta rautaa tarpeeks :D</string>
     <string name="muokkaa">Muokkaa tietoja</string>
     <string name="valmis_btn">Valmis</string>
+    <string name="suoritus_tallennettu">Suoritus tallennettu!</string>
+    <string name="ekstrasetit">Ekstrasetit:</string>
+    <string name="salipv">Salipäivä:</string>
+    <string name="suositeltu_painonkorotus">Suositeltu painonkorotus:</string>
+    <string name="hyv_ksy_korotus">Hyväksy korotus</string>
+    <string name="palaa_kotiin">Palaa kotiin</string>
 </resources>

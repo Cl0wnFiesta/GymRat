@@ -9,15 +9,15 @@ public class maxWeight extends SetupPageActivity {
     private final Double Npenkki, Nkyykky, Nmaastaveto, Npystypunnerrus ;
 
     public maxWeight(){
-        this.Mpenkki = 20.0;
-        this.Mkyykky = 32.5;
-        this.Mmaastaveto = 6.15;
-        this.Mpystypunnerrus = 200.50;
+        this.Mpenkki = 35.0;
+        this.Mkyykky = 65.0;
+        this.Mmaastaveto = 70.0;
+        this.Mpystypunnerrus = 27.5;
 
-        this.Npenkki = 10.0;
-        this.Nkyykky = 22.5;
-        this.Nmaastaveto = 3.15;
-        this.Npystypunnerrus = 100.50;
+        this.Npenkki = 17.5;
+        this.Nkyykky = 60.0;
+        this.Nmaastaveto = 37.5;
+        this.Npystypunnerrus = 15.0;
     }
     public String Mkyykky(){
        return this.Mkyykky.toString();

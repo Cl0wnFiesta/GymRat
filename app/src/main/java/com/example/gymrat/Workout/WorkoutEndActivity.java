@@ -75,6 +75,9 @@ public class WorkoutEndActivity extends AppCompatActivity {
         if (!tallennettu){
             saveTreeni(treenipaiva, muutaTunniste(tunniste),yksPlus, suosittelu);
         }
+        if (suosittelu == 0){
+            hyvaksyKorotusBtn.setVisibility(View.INVISIBLE);
+        }
 
         palaaKotiinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +89,7 @@ public class WorkoutEndActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 hyvaksyKorotus(muutaTunniste(tunniste));
+                hyvaksyKorotusBtn.setVisibility(View.INVISIBLE);
             }
         });
 
