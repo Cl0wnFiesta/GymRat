@@ -33,7 +33,7 @@ public class SettingsActivity extends AppCompatActivity {
     Switch swDarkMode;
     SharedPreferences prefGet;
     SharedPreferences.Editor prefEdit;
-
+    Boolean isDarkMode = false;
 
 
     @Override
@@ -46,9 +46,11 @@ public class SettingsActivity extends AppCompatActivity {
         tvName = findViewById(R.id.tvName);
         prefGet = getSharedPreferences("myKey", MODE_PRIVATE);
         prefEdit = prefGet.edit();
+        isDarkMode = prefGet.getBoolean("DarkMode",false);
+
         String value = prefGet.getString("value","");
-//        boolean isDarkMode = sharedPreferences.getBoolean("DarkMode", false);
         tvName.setText(value);
+        checkDarkMode();
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
@@ -64,7 +66,7 @@ public class SettingsActivity extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.favorites:
-                        startActivity(new Intent(getApplicationContext(), FavoritesActivity.class));
+                        startActivity(new Intent(getApplicationContext(), TrophyActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.notication:
@@ -142,12 +144,27 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
-    // Changes app to use dark theme
-    public void toggleDarkMode(View view){
-        if(swDarkMode.isChecked()){
+    public void checkDarkMode(){
+
+        if(isDarkMode){
+            swDarkMode.setChecked(true);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
         else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+    }
+
+    // Changes app to use dark theme
+    public void toggleDarkMode(View view){
+        if(swDarkMode.isChecked()){
+            prefEdit.putBoolean("DarkMode",true);
+            prefEdit.apply();
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        else{
+            prefEdit.putBoolean("DarkMode",false);
+            prefEdit.apply();
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
     }

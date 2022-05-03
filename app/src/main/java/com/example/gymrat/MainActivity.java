@@ -3,7 +3,6 @@ package com.example.gymrat;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.NotificationCompat;
@@ -137,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.favorites:
-                        startActivity(new Intent(getApplicationContext(), FavoritesActivity.class));
+                        startActivity(new Intent(getApplicationContext(), TrophyActivity.class));
                         //Poistaa avaus animaation
                         overridePendingTransition(0,0);
                         return true;
@@ -156,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+        checkDarkMode();
     }
     //Tarkistaa aina kun activity aukeaa onko avaus kerta first time
     @Override
@@ -195,6 +195,17 @@ public class MainActivity extends AppCompatActivity {
         startMain.addCategory(Intent.CATEGORY_HOME);
         startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(startMain);
+    }
+
+    //Tarkistaa onko sovelluksen DarkMode asetus laitettu päälle
+    public void checkDarkMode(){
+        prefs = getSharedPreferences("myKey",0);
+        if(prefs.getBoolean("DarkMode",false)){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
     }
 
 }
