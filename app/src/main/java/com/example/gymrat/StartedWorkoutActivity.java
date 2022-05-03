@@ -1,8 +1,4 @@
-/**
- * @author Henri
- * Aloitetun treenin Activity luokka.
- * Treeniohjelma latautuu intentin antaman tunnistenimen perusteella.
- */
+
 package com.example.gymrat;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,13 +14,19 @@ import android.widget.TextView;
 import com.example.gymrat.Classes.Workout;
 import com.example.gymrat.Classes.WorkoutGlobal;
 
-
+/**
+ * @author Henri
+ */
+ /**
+ * Aloitetun treenin Activity luokka.
+ * Treeniohjelma latautuu intentin antaman tunnistenimen perusteella.
+ */
 public class StartedWorkoutActivity extends AppCompatActivity {
     private double maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus;
     private Workout treeni;
-    private SharedPreferences sp;
     private TextView toistot, paino, nimi, treeniPosValue;
-    private Button seuraavaNappi, plusButton, minusButton, takaisinNappi;
+    private Button plusButton;
+    private Button minusButton;
     Intent intent;
 
     //Muuttujat nappien toimintaan
@@ -74,10 +76,10 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         toistot = findViewById(R.id.ToistotNum);
         paino = findViewById(R.id.PainoNum);
         nimi = findViewById(R.id.WorkoutNimi);
-        seuraavaNappi = findViewById(R.id.NextPhase);
+        Button seuraavaNappi = findViewById(R.id.NextPhase);
         plusButton = findViewById(R.id.plusButton);
         minusButton = findViewById(R.id.minusButton);
-        takaisinNappi = findViewById(R.id.prevPhase);
+        Button takaisinNappi = findViewById(R.id.prevPhase);
         treeniPosValue = findViewById(R.id.nytSetti);
 
         //Hakee preferenssit ja aloittaa ensimmäisen treenin
@@ -85,33 +87,17 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         treeni = new Workout(maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus);
         treeni.startWorkout(ekatSetit, ekaPainokerroin, ekaSettiNimi);
 
-        seuraavaNappi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                buttonLogic();
-            }
+        seuraavaNappi.setOnClickListener(view -> buttonLogic());
+        takaisinNappi.setOnClickListener(view -> backButtonLogic());
+        plusButton.setOnClickListener(view -> {
+            yksPlusKierros++;
+            toistot.setText(Integer.toString(yksPlusKierros) + "+");
         });
-        takaisinNappi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                backButtonLogic();
-            }
-        });
-        plusButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                yksPlusKierros++;
-                toistot.setText(Integer.toString(yksPlusKierros) + "+");
-            }
-        });
-        minusButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                    if(yksPlusKierros -1 >= 0){
-                        yksPlusKierros--;
-                        toistot.setText(Integer.toString(yksPlusKierros) + "+");
-                    }
-            }
+        minusButton.setOnClickListener(view -> {
+                if(yksPlusKierros -1 >= 0){
+                    yksPlusKierros--;
+                    toistot.setText(Integer.toString(yksPlusKierros) + "+");
+                }
         });
 
         //asettaa ensimmäisen treenin alkutiedot ja luvut
@@ -158,7 +144,7 @@ public class StartedWorkoutActivity extends AppCompatActivity {
      * Hakee käyttäjän preferenssit
      */
     private void fetchPreferences(){
-        sp = getSharedPreferences("myKey", MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("myKey", MODE_PRIVATE);
         maxPenkki = Double.parseDouble(sp.getString("penkki", "0"));
         maxKyykky = Double.parseDouble(sp.getString("kyykky", "0"));
         maxMaastaveto = Double.parseDouble(sp.getString("maastaveto", "0"));

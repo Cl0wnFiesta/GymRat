@@ -1,11 +1,11 @@
+
+package com.example.gymrat.Classes;
+
+import java.util.ArrayList;
 /**
  * @author Henri
  * Singleton luokka joka sisältää treenin tunnisteen ja tiedot.
  */
-package com.example.gymrat.Classes;
-
-import java.util.ArrayList;
-
 public class WorkoutGlobal {
     private ArrayList<WorkoutData> workoutData;
     private static final WorkoutGlobal ourInstance = new WorkoutGlobal();

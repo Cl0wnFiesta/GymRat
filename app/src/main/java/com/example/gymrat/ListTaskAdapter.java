@@ -1,8 +1,5 @@
 package com.example.gymrat;
-/**
- * @author Jonne
- *
- */
+
 
 import android.app.Activity;
 import android.text.Html;
@@ -19,7 +16,10 @@ import com.example.gymrat.calendarDb.Database;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
+/**
+ * @author Jonne
+ *
+ */
 public class ListTaskAdapter extends BaseAdapter {
     private Activity activity;
     private ArrayList<HashMap<String, String>> data;

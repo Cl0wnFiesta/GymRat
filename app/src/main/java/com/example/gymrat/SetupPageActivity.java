@@ -1,10 +1,6 @@
 package com.example.gymrat;
 
-/**
- * @author Jonne
- * Activity-luokka jossa käyttäjä kertoo sovellukselle maximi painot joilla hän jaksaa nostaa kerran tai kaksi.
- * Ohjelma automaattisesti sukupuolen mukaan ehdottaa max painoja, joita käyttäjä voi sitten muokata.
- */
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,7 +13,14 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gymrat.Classes.maxWeight;
-
+/**
+ * @author Jonne
+ */
+/**
+ * Activity-luokka jossa käyttäjä kertoo sovellukselle maximi painot joilla hän jaksaa nostaa kerran tai kaksi.
+ * Ohjelma automaattisesti sukupuolen mukaan ehdottaa max painoja, joita käyttäjä voi sitten muokata.
+ *
+ */
 public class SetupPageActivity extends AppCompatActivity {
 
     private EditText maxPenkki, maxKyykky, maxMaastaveto, maxPystyPunnerrus;

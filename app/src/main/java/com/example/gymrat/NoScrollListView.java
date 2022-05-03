@@ -1,10 +1,5 @@
 package com.example.gymrat;
 
-/**
- * @author Jonne
- * Activity-luokka joka pitää listViewn ei scrollattavana
- */
-
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
