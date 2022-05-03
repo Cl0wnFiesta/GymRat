@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android studio lab/GymRat/app/src/main/res/drawable-anydpi/ic_star.xml" value="0.1295" />
+        <entry key="..\:/Android studio lab/GymRat/app/src/main/res/drawable-anydpi/ic_trophy.xml" value="0.1295" />
+        <entry key="..\:/Android studio lab/GymRat/app/src/main/res/drawable-xxhdpi/ic_trophy.xml" value="0.1295" />
         <entry key="..\:/Android studio lab/GymRat/app/src/main/res/drawable/button_color.xml" value="0.281" />
         <entry key="..\:/Android studio lab/GymRat/app/src/main/res/drawable/cal.xml" value="0.271" />
         <entry key="..\:/Android studio lab/GymRat/app/src/main/res/drawable/home_icon.xml" value="0.183" />

@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_OLD_WORKOUT = "gymrat.extra_old_workout";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Suoritus = findViewById(R.id.suoritusName);

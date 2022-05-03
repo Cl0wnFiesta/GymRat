@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginBottom="76dp"
+            android:minHeight="48dp"
             android:onClick="toggleDarkMode"
             android:text="@string/darkmode"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -37,17 +38,18 @@
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="168dp"
+            android:hint="Käyttäjätunnus"
+            android:inputType="text"
+            android:minWidth="48dp"
             android:textAlignment="center"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:inputType="text" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -88,26 +90,18 @@
             android:id="@+id/textView3"
             android:layout_width="308dp"
             android:layout_height="52dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/pop_up_info"
+            android:gravity="center"
             android:onClick="popupMenu"
-            android:text="@string/muokkaa_tietoja"
+            android:text="Muokkaa oletusarvojasi:"
             android:textAlignment="center"
+            android:textColor="#fff"
             android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvName" />
-
-        <ImageView
-            android:id="@+id/imageView13"
-            android:layout_width="55dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="24dp"
-            android:onClick="openTrophys"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.073"
-            app:srcCompat="@drawable/ic_trophy" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

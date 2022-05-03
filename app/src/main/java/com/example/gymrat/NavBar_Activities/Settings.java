@@ -22,6 +22,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 import android.view.ViewGroup.LayoutParams;
 import com.example.gymrat.MainActivity;
+import com.example.gymrat.Muistutukset.Notes_Activity;
 import com.example.gymrat.R;
 import com.example.gymrat.TrophyActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -71,7 +72,7 @@ public class Settings extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.notication:
-                        startActivity(new Intent(getApplicationContext(), Notification.class));
+                        startActivity(new Intent(getApplicationContext(), Notes_Activity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.home:

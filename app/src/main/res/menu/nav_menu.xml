@@ -7,8 +7,8 @@
         android:title="Koti"/>
     <item
         android:id="@+id/favorites"
-        android:icon="@drawable/ic_favorite"
-        android:title="Suosikit"/>
+        android:icon="@drawable/ic_baseline_emoji_events_24"
+        android:title="Palkinnot"/>
     <item
         android:id="@+id/notication"
         android:icon="@drawable/ic_baseline_calendar_month_24"
