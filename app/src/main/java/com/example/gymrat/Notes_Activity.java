@@ -1,8 +1,11 @@
 package com.example.gymrat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,7 +14,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.widget.NestedScrollView;
 
 import com.example.gymrat.calendarDb.Database;
@@ -95,6 +101,7 @@ public class Notes_Activity extends AppCompatActivity {
                 return false;
             }
         });
+
         mydatabase = new Database(this);
         empty = findViewById(R.id.empty);
         scrollView = findViewById(R.id.scrollView);
@@ -141,6 +148,7 @@ public class Notes_Activity extends AppCompatActivity {
     /**
      * It fetches data from the database and loads it into the listviews
      */
+
     public void fetchDataFromDataBase() {
         todayLista.clear();
         tomorrowLista.clear();
@@ -167,8 +175,8 @@ public class Notes_Activity extends AppCompatActivity {
             } else {
                 todayContainer.setVisibility(View.VISIBLE);
                 loadListView(taskListToday, todayLista);
-            }
 
+            }
             if (tomorrowLista.isEmpty()) {
                 tomorrowContainer.setVisibility(View.GONE);
             } else {
@@ -219,6 +227,8 @@ public class Notes_Activity extends AppCompatActivity {
         ListTaskAdapter adapter = new ListTaskAdapter(this, dataList, mydatabase);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            // A function that is called when the user clicks on an item in the listview.
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(Notes_Activity.this, Add_modify_activity.class);
                 i.putExtra("isModify", true);

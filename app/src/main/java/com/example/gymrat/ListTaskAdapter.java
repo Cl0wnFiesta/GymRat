@@ -16,9 +16,8 @@ import com.example.gymrat.calendarDb.Database;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
 /**
- * Tekee jotain adapterihommia jonne selitä paremmin
+ * The ListTaskAdapter class is a class that is used to create a new view for each item in the list
  * @author Jonne
  */
 public class ListTaskAdapter extends BaseAdapter {
