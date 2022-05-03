@@ -84,26 +84,35 @@
         app:layout_constraintStart_toEndOf="@+id/prevPhase" />
 
     <TextView
-        android:id="@+id/nytSetti"
+        android:id="@+id/nytToisto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="4dp"
         android:textAlignment="textStart"
-        android:textSize="34sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/textView6"
         app:layout_constraintTop_toTopOf="@+id/textView6" />
 
     <TextView
-        android:id="@+id/setinLoppu"
+        android:id="@+id/nytSetti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/maxToisto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="4dp"
         android:textAlignment="textStart"
-        android:textSize="34sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -111,14 +120,37 @@
         app:layout_constraintTop_toTopOf="@+id/textView6" />
 
     <TextView
+        android:id="@+id/setti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/settimaara"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+    <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="64dp"
         android:text="@string/Slash"
-        android:textSize="48sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/Slash"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -127,7 +159,7 @@
         android:layout_height="54dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="120dp"
-        android:text="+"
+        android:text="@string/plusButton"
         android:textAlignment="center"
         android:textSize="24sp"
         android:visibility="visible"
@@ -140,7 +172,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="120dp"
         android:layout_marginTop="36dp"
-        android:text="-"
+        android:text="@string/minusButton"
         android:textAlignment="center"
         android:textSize="24sp"
         android:visibility="visible"
@@ -155,10 +187,36 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginBottom="44dp"
-        android:text="Edellinen"
+        android:text="@string/edellinen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/NextPhase"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/settiMaaraTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/setti"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toStartOf="@+id/setti"
+        app:layout_constraintStart_toStartOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/toistomaaraTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/toisto"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/textView6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

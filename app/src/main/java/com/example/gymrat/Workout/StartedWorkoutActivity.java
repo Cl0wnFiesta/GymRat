@@ -22,7 +22,7 @@ public class StartedWorkoutActivity extends AppCompatActivity {
     private double maxPenkki, maxKyykky, maxMaastaveto, maxPystypunnerrus;
     private Workout treeni;
     private SharedPreferences sp;
-    private TextView toistot, paino, nimi;
+    private TextView toistot, paino, nimi, treeniPosValue;
     private Button seuraavaNappi, plusButton, minusButton, takaisinNappi;
     Intent intent;
 
@@ -77,6 +77,7 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         plusButton = findViewById(R.id.plusButton);
         minusButton = findViewById(R.id.minusButton);
         takaisinNappi = findViewById(R.id.prevPhase);
+        treeniPosValue = findViewById(R.id.nytSetti);
 
         //Hakee preferenssit ja aloittaa ensimmäisen treenin
         fetchPreferences();
@@ -143,6 +144,13 @@ public class StartedWorkoutActivity extends AppCompatActivity {
         if(treeni.getPituus() == treeniPos +1){
             toistot.setText((treeni.getLiikkeita(treeniPos)) + "+");
         }
+        if (!secondPhase){
+            treeniPosValue.setText("1");
+        }
+        if (secondPhase){
+            treeniPosValue.setText("2");
+        }
+
     }
 
     /**
@@ -244,8 +252,8 @@ public class StartedWorkoutActivity extends AppCompatActivity {
      *asettaa luvut näytön oikeaan yläreunaan treenin kestosta
      */
     private void setCounter(){
-        TextView nytSetti = findViewById(R.id.nytSetti), setinLoppu = findViewById(R.id.setinLoppu);
-        nytSetti.setText(Integer.toString(treeniPos + 1));
+        TextView nytToisto = findViewById(R.id.nytToisto), setinLoppu = findViewById(R.id.maxToisto);
+        nytToisto.setText(Integer.toString(treeniPos + 1));
         setinLoppu.setText(Integer.toString(treeni.getPituus()));
     }
 

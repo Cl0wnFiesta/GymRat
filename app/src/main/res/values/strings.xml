@@ -61,4 +61,10 @@
     <string name="suositeltu_painonkorotus">Suositeltu painonkorotus:</string>
     <string name="hyv_ksy_korotus">Hyväksy korotus</string>
     <string name="palaa_kotiin">Palaa kotiin</string>
+    <string name="plusButton">+</string>
+    <string name="minusButton">-</string>
+    <string name="edellinen">Edellinen</string>
+    <string name="settimaara">2</string>
+    <string name="setti">Setti</string>
+    <string name="toisto">Toisto</string>
 </resources>
