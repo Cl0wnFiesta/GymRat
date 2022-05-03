@@ -1,4 +1,4 @@
-package com.example.gymrat.NavBar_Activities;
+package com.example.gymrat;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -21,13 +20,10 @@ import android.widget.PopupWindow;
 import android.widget.Switch;
 import android.widget.Toast;
 import android.view.ViewGroup.LayoutParams;
-import com.example.gymrat.MainActivity;
-import com.example.gymrat.Muistutukset.Notes_Activity;
-import com.example.gymrat.R;
-import com.example.gymrat.TrophyActivity;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Settings extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
     EditText maxPenkki, maxKyykky, maxMaastaveto, maxPystyPunnerrus;
     Button popupCloseBtn;
     EditText tvName;
@@ -68,7 +64,7 @@ public class Settings extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.favorites:
-                        startActivity(new Intent(getApplicationContext(), Favorites.class));
+                        startActivity(new Intent(getApplicationContext(), FavoritesActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.notication:
@@ -106,7 +102,7 @@ public class Settings extends AppCompatActivity {
 //Creates popupwindow over current activity and allows user to edit values that were inputted on user creation.
 
     public void popupMenu(View view){
-        LayoutInflater layoutInf = (LayoutInflater) Settings.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater layoutInf = (LayoutInflater) SettingsActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View popupView = layoutInf.inflate(R.layout.popup_settings, null);
         if(swDarkMode.isChecked()) {
             popupView = layoutInf.inflate(R.layout.popup_settings_dark, null);

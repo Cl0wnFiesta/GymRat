@@ -3,7 +3,7 @@
  * Luokka, joka tallentaa treenin tiedot.
  * Metodeina palauttaa treenin tiedot.
  */
-package com.example.gymrat.Workout;
+package com.example.gymrat.Classes;
 
 public class WorkoutData {
     private int[] setti;

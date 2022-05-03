@@ -1,4 +1,4 @@
-package com.example.gymrat.Muistutukset;
+package com.example.gymrat;
 /**
  * @author Jonne
  * Activity-luokka jossa käyttäjä kirjoittaa itselleen muistutuksen, valitsee päivämäärän ja tallentaa muistutuksen.
@@ -18,10 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.NestedScrollView;
 
-import com.example.gymrat.MainActivity;
-import com.example.gymrat.NavBar_Activities.Favorites;
-import com.example.gymrat.NavBar_Activities.Settings;
-import com.example.gymrat.R;
+import com.example.gymrat.calendarDb.Database;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -80,7 +77,7 @@ public class Notes_Activity extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.favorites:
-                        startActivity(new Intent(getApplicationContext(), Favorites.class));
+                        startActivity(new Intent(getApplicationContext(), FavoritesActivity.class));
                         //Poistaa avaus animaation
                         overridePendingTransition(0,0);
                         return true;
@@ -90,7 +87,7 @@ public class Notes_Activity extends AppCompatActivity {
                     case R.id.notication:
                         return true;
                     case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

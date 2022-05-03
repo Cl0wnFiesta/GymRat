@@ -2,7 +2,7 @@
  * @author Henri
  * DAO (Data Access Object) jolla haetaan tietokannasta treenin tiedot.
  */
-package com.example.gymrat.Workout.WorkoutDB;
+package com.example.gymrat.workoutDb;
 
 import androidx.room.Dao;
 import androidx.room.Query;

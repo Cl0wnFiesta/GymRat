@@ -27,20 +27,11 @@
 
 
     <string name="Slash">/</string>
-    <string name="no_treeni">Ei treenejä</string>
-    <string name="title_activity_workout_selection_acitivity">workout_selection_acitivity</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="title_activity_workout_selection">Workout_selection_activity</string>
     <string name="popupInfo">Valitse treeni valikosta.\n\nOhjelma on nelipäiväinen, niin suosittelemme valitsemaan jokaisella urheilukerralla eri ohjelman kuin viimeksi.\n\n Tekemällä tasaisesti jokaista ohjelman osiota, saat parhaan kehityksen.\n\nSuosittelemme myös ohjelman lisäksi tekemään muita lihaksia.\n\nHyvää treenaamista!</string>
     <string name="darkmode">DarkMode</string>
     <string name="tallenna">Tallenna</string>
-    <string name="muokkaa_tietoja">Muokkaaksesi tietoja paina tästä</string>
     <string name="name_info">Muokkaa käyttäjätunnusta painamalla</string>
     <string name="trophy_name1">Suutu jo!</string>
     <string name="trophy_info1">Nosta rautaa tarpeeks :D</string>

@@ -13,8 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.gymrat.Workout.WorkoutDB.Treeni;
-import com.example.gymrat.Workout.WorkoutDB.WorkoutDatabase;
+import com.example.gymrat.workoutDb.Treeni;
+import com.example.gymrat.workoutDb.WorkoutDatabase;
 
 import java.util.Collections;
 import java.util.List;

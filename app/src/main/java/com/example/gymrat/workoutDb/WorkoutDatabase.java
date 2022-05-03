@@ -2,7 +2,7 @@
  * @author Henri
  * WorkoutDatabase on Roomdatabase joka tallentaa treenin tiedot.
  */
-package com.example.gymrat.Workout.WorkoutDB;
+package com.example.gymrat.workoutDb;
 
 
 import android.content.Context;

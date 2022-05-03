@@ -35,7 +35,7 @@
                     android:textSize="27sp"
                     android:textStyle="bold" />
 
-                <com.example.gymrat.Muistutukset.NoScrollListView
+                <com.example.gymrat.NoScrollListView
                     android:id="@+id/taskListToday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                     android:textSize="27sp"
                     android:textStyle="bold" />
 
-                <com.example.gymrat.Muistutukset.NoScrollListView
+                <com.example.gymrat.NoScrollListView
                     android:id="@+id/taskListTomorrow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
                     android:textSize="27sp"
                     android:textStyle="bold" />
 
-                <com.example.gymrat.Muistutukset.NoScrollListView
+                <com.example.gymrat.NoScrollListView
                     android:id="@+id/taskListUpcoming"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -1,4 +1,4 @@
-package com.example.gymrat.Muistutukset;
+package com.example.gymrat;
 /**
  * @author Jonne
  * Activity-luokka jossa käyttäjä voi tallentaa, muokata tai poistaa omia muistutuksia
@@ -16,10 +16,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.gymrat.R;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.gymrat.calendarDb.Database;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

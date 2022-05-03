@@ -14,26 +14,23 @@
             android:exported="false"
             />
         <activity
-            android:name=".Workout.Workout_selection_activity"
+            android:name=".Workout_selection_activity"
             android:exported="false"
             />
         <activity
-            android:name=".Muistutukset.Add_modify_activity"
+            android:name=".Add_modify_activity"
             android:exported="false" />
         <activity
-            android:name=".Muistutukset.Notes_Activity"
+            android:name=".Notes_Activity"
             android:exported="false" />
         <activity
-            android:name=".Workout.WorkoutEndActivity"
+            android:name=".WorkoutEndActivity"
             android:exported="false"
             />
         <activity
-            android:name=".Workout.StartedWorkoutActivity"
+            android:name=".StartedWorkoutActivity"
             android:exported="false"  />
 
-        <activity
-            android:name=".TestActivity"
-            android:exported="false" />
         <activity
             android:name=".Create_UserActivity"
             android:exported="false" />
@@ -41,13 +38,13 @@
             android:name=".SetupPageActivity"
             android:exported="false" />
         <activity
-            android:name=".NavBar_Activities.Settings"
+            android:name=".SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".NavBar_Activities.Favorites"
+            android:name=".FavoritesActivity"
             android:exported="false" />
         <activity
-            android:name=".NavBar_Activities.Notification"
+            android:name=".NotificationActivity"
             android:exported="false" />
         <activity android:name=".TrophyActivity"
             android:exported="false"/>

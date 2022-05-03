@@ -1,4 +1,4 @@
-package com.example.gymrat.Muistutukset;
+package com.example.gymrat.calendarDb;
 /**
  * @author Jonne
  * Database luokka

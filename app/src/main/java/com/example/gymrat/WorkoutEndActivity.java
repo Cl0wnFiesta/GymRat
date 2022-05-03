@@ -4,7 +4,7 @@
  * Tallentaa Activityn alussa tiedot tietokantaan treenistä.
  * Suosittelee treenipainojen nostamista tarvittaessa.
  */
-package com.example.gymrat.Workout;
+package com.example.gymrat;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,13 +16,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 
-import com.example.gymrat.MainActivity;
-import com.example.gymrat.R;
-import com.example.gymrat.Workout.WorkoutDB.Treeni;
-import com.example.gymrat.Workout.WorkoutDB.WorkoutDatabase;
+import com.example.gymrat.workoutDb.Treeni;
+import com.example.gymrat.workoutDb.WorkoutDatabase;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -2,7 +2,7 @@
  * @author Henri
  * Singleton luokka joka sisältää treenin tunnisteen ja tiedot.
  */
-package com.example.gymrat.Workout;
+package com.example.gymrat.Classes;
 
 import java.util.ArrayList;
 

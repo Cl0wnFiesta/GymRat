@@ -3,7 +3,7 @@
  * Aloitetun treenin Activity luokka.
  * Treeniohjelma latautuu intentin antaman tunnistenimen perusteella.
  */
-package com.example.gymrat.Workout;
+package com.example.gymrat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +15,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.gymrat.R;
+import com.example.gymrat.Classes.Workout;
+import com.example.gymrat.Classes.WorkoutGlobal;
 
 
 public class StartedWorkoutActivity extends AppCompatActivity {
@@ -47,7 +48,7 @@ public class StartedWorkoutActivity extends AppCompatActivity {
     public static final String EXTRA_TUNNISTENIMI = "EXTRA_TUNNISTENIMI";
 
     /**
-     * @author Jonne & Henri
+     * @author Jonne ja Henri
      *Asettaa treenille tunnistenimen perusteella arvot toistoihin, painokertoimeen ja nimeen.
      */
     private void workoutCode() {

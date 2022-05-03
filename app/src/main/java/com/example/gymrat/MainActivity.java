@@ -4,7 +4,6 @@ import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,13 +22,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 
-import com.example.gymrat.Muistutukset.Notes_Activity;
-import com.example.gymrat.NavBar_Activities.Favorites;
-
-import com.example.gymrat.NavBar_Activities.Settings;
-import com.example.gymrat.Workout.WorkoutDB.Treeni;
-import com.example.gymrat.Workout.WorkoutDB.WorkoutDatabase;
-import com.example.gymrat.Workout.Workout_selection_activity;
+import com.example.gymrat.workoutDb.Treeni;
+import com.example.gymrat.workoutDb.WorkoutDatabase;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Collections;
@@ -128,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.favorites:
-                        startActivity(new Intent(getApplicationContext(), Favorites.class));
+                        startActivity(new Intent(getApplicationContext(), FavoritesActivity.class));
                         //Poistaa avaus animaation
                         overridePendingTransition(0,0);
                         return true;
@@ -139,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

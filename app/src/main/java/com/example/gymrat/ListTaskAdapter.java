@@ -1,4 +1,4 @@
-package com.example.gymrat.Muistutukset;
+package com.example.gymrat;
 /**
  * @author Jonne
  *
@@ -13,7 +13,9 @@ import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
-import com.example.gymrat.R;
+
+import com.example.gymrat.calendarDb.Database;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 

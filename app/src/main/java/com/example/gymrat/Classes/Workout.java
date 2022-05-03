@@ -3,7 +3,7 @@
  * Luokka joka laskee toistot ja painot treenille.
  * Sisältää metodin joka suosittelee painojen korotusta annetun arvon perusteella.
  */
-package com.example.gymrat.Workout;
+package com.example.gymrat.Classes;
 
 import java.lang.Math;
 
