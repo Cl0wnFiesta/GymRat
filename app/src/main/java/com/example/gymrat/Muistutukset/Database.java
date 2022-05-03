@@ -140,6 +140,7 @@ public class Database extends SQLiteOpenHelper {
         Cursor res = database.rawQuery("select * from " + TABLE_NAME + " WHERE date(task_at) = date('now', 'localtime') order by id desc", null);
         Log.d("TAG", "lopuessa??");
         return res;
+
     }
 
     /**

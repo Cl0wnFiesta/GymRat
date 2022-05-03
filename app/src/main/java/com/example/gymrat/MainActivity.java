@@ -3,11 +3,17 @@ package com.example.gymrat;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -137,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.notication:
                         startActivity(new Intent(getApplicationContext(), Notes_Activity.class));
                         overridePendingTransition(0,0);
+
                         return true;
                     case R.id.settings:
                         startActivity(new Intent(getApplicationContext(), Settings.class));
@@ -158,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
 
     //henrin oksan tapahtuma
     public void newGymActivity(View v){
+
         Intent startGym = new Intent(this, Workout_selection_activity.class);
         startActivity(startGym);
     }
