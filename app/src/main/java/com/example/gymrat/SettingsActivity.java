@@ -64,7 +64,7 @@ public class SettingsActivity extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.favorites:
-                        startActivity(new Intent(getApplicationContext(), AchievementsActivity.class));
+                        startActivity(new Intent(getApplicationContext(), TrophyActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.notication:

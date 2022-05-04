@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.favorites:
-                        startActivity(new Intent(getApplicationContext(), AchievementsActivity.class));
+                        startActivity(new Intent(getApplicationContext(), TrophyActivity.class));
                         //Poistaa avaus animaation
                         overridePendingTransition(0,0);
                         return true;
