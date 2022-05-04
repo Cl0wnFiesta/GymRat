@@ -41,10 +41,7 @@
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".FavoritesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".NotificationActivity"
+            android:name=".AchievementsActivity"
             android:exported="false" />
         <activity android:name=".TrophyActivity"
             android:exported="false"/>

@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class FavoritesActivity extends AppCompatActivity {
+public class AchievementsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class FavoritesActivity extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.notication:
-                        startActivity(new Intent(getApplicationContext(), NotificationActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Notes_Activity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.favorites:
