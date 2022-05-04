@@ -58,4 +58,15 @@
     <string name="settimaara">2</string>
     <string name="setti">Setti</string>
     <string name="toisto">Toisto</string>
+    <string name="huomenna">Huomenna</string>
+    <string name="tulossa">Tulossa</string>
+    <string name="sinulla_ei_ole_muistutuksia">Sinulla ei ole muistutuksia</string>
+    <string name="valitse_harjoitus">Valitse harjoitus:</string>
+    <string name="punnerrus">Punnerrus</string>
+    <string name="kyykky">Kyykky</string>
+    <string name="penkki">Penkki</string>
+    <string name="maastaveto">Maastaveto</string>
+    <string name="haluatko_poistaa_treenin">Haluatko poistaa treenin?</string>
+    <string name="kyll">Kyllä</string>
+    <string name="ei">Ei</string>
 </resources>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Author Jonne -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,7 +16,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="1dp"
         android:textColor="#fff"
-        android:text="Haluatko poistaa treenin?"
+        android:text="@string/haluatko_poistaa_treenin"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +31,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginBottom="16dp"
         android:textColor="#F55353"
-        android:text="Kyllä"
+        android:text="@string/kyll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintHorizontal_bias="0.578"
@@ -45,7 +46,7 @@
         android:layout_marginTop="12dp"
         android:textColor="#6EBF8B"
         android:layout_marginBottom="16dp"
-        android:text="Ei"
+        android:text="@string/ei"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />

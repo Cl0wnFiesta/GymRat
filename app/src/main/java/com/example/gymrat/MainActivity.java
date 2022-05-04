@@ -166,7 +166,12 @@ public class MainActivity extends AppCompatActivity {
         checkFirstTime(firstTime);
     }
 
-    //henrin oksan tapahtuma
+
+    /**
+     * When the user clicks the button, start a new activity called Workout_selection_activity.class
+     *
+     * @param v The view that was clicked.
+     */
     public void newGymActivity(View v){
 
         Intent startGym = new Intent(this, Workout_selection_activity.class);

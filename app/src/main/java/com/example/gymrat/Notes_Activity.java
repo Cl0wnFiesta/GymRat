@@ -1,11 +1,10 @@
 package com.example.gymrat;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.os.Build;
+
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,10 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
+
 import androidx.core.widget.NestedScrollView;
 
 import com.example.gymrat.calendarDb.Database;

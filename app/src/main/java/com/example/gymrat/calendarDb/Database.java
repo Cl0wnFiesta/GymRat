@@ -20,6 +20,7 @@ https://www.youtube.com/watch?v=Udk6iaR-RXA&list=PLrnPJCHvNZuCfAe7QK2BoMPkv2TGM_
 */
 
 /**
+ * SQLiten database joka tallentaa käyttäjän muistutukset.
  * It creates a database with a table called Muistutukset.
  * It also has methods to insert, update, delete, and get tasks from the database
  * @author Jonne
