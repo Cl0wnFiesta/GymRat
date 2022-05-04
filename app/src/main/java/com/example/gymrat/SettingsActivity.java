@@ -88,6 +88,12 @@ public class SettingsActivity extends AppCompatActivity {
 
 //Changes username and checks that new username cannot be empty. Creates Toast message after action
 
+    /**
+     * If the user has entered a name, save it to the shared preferences and show a toast message
+     * If entered username is empty method will show a toast message
+     *
+     * @param v The view that was clicked.
+     */
     public void updatePreferences(View v){
         String newName = tvName.getText().toString();
 
@@ -102,7 +108,11 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
 //Creates popupwindow over current activity and allows user to edit values that were inputted on user creation.
-
+    /**
+     * It inflates a popup window over current activity and allows user to edit values that were inputted on user creation.
+     *
+     * @param view The view that was clicked.
+     */
     public void popupMenu(View view){
         LayoutInflater layoutInf = (LayoutInflater) SettingsActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View popupView = layoutInf.inflate(R.layout.popup_settings, null);
@@ -144,6 +154,10 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * If the user has dark mode enabled, then set the switch to checked and set the app's theme to
+     * dark mode. If the user has dark mode disabled, then set the app's theme to light mode
+     */
     public void checkDarkMode(){
 
         if(isDarkMode){
@@ -156,6 +170,12 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     // Changes app to use dark theme
+    /**
+     * If the switch is checked, set the dark mode to true and apply it, else set the dark mode to
+     * false
+     *
+     * @param view The view that was clicked.
+     */
     public void toggleDarkMode(View view){
         if(swDarkMode.isChecked()){
             prefEdit.putBoolean("DarkMode",true);
@@ -170,6 +190,11 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     // Script to open Trophy activity
+    /**
+     * When the user clicks the trophy button, open the TrophyActivity.
+     *
+     * @param v The view that was clicked.
+     */
     public void openTrophys(View v){
         Intent showTrophys = new Intent(this, TrophyActivity.class);
         startActivity(showTrophys);

@@ -14,9 +14,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.example.gymrat.TrophyActivity;
-import com.example.gymrat.OldWorkoutActivity;
-import com.example.gymrat.SettingsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class TrophyActivity extends AppCompatActivity {
@@ -38,7 +35,9 @@ public class TrophyActivity extends AppCompatActivity {
         getPref = getSharedPreferences("myTrophies", MODE_PRIVATE);
         prefEdit = getPref.edit();
         createTrophys();
+        getTrophy(2);
         checkTrophyStatus();
+
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
@@ -97,18 +96,29 @@ public class TrophyActivity extends AppCompatActivity {
     }
 
 
-/*
+    //Avaa saavutuksen
+    /**
+     * If the user has done any exercise with 100kg weight the function will check if the user has already
+     * unlocked the trophy. If not, it will unlock it and show a toast message
+     *
+     * @param id The id of the trophy you want to get.
+     */
     public void getTrophy(int id){
         int i=id;
-        getPref = getSharedPreferences("myTrophies", MODE_PRIVATE);
+        SharedPreferences getPref = getSharedPreferences("myTrophies", MODE_PRIVATE);
+        SharedPreferences getPrefmy = getSharedPreferences("myKey", MODE_PRIVATE);
         prefEdit = getPref.edit();
-        Toast.makeText(getApplicationContext(), "Uusi saavutus avattu", Toast.LENGTH_SHORT).show();
         String trophyNumber = "trophy"+i;
-        prefEdit.putBoolean(String.valueOf(trophyNumber),true);
-        prefEdit.apply();
-
+        if(Double.parseDouble(getPrefmy.getString("maastaveto", "0"))>=100 || Double.parseDouble(getPrefmy.getString("penkki", "0"))>=100 || Double.parseDouble(getPrefmy.getString("kyykky", "0"))>=100){
+         if(getPref.getBoolean("trophy2",false)){
+         }else{
+            Toast.makeText(getApplicationContext(), "Uusi saavutus avattu", Toast.LENGTH_SHORT).show();
+            prefEdit.putBoolean(String.valueOf(trophyNumber),true);
+            prefEdit.apply();
+            }
+        }
     }
-*/
+
 
     /**
      * Creates trophy values for the user for the first time and changes boolean "created" to true, so trophy values wont be created again.
