@@ -12,12 +12,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
+/**
+ * Luokka joka aloittaa neljästä napista kuntosaliohjelman treenit ja avaa infonapista infopopupin
+ * @author Henri
+ */
 public class Workout_selection_activity extends AppCompatActivity {
     public static final String EXTRA_ACTIVITY = "workoutCode";
-    private CardView punnerrusNappi, kyykkyNappi, penkkiNappi, maastavetoNappi;
-    private ImageView info;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        CardView punnerrusNappi, kyykkyNappi, penkkiNappi, maastavetoNappi;
         super.onCreate(savedInstanceState);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_workoutselection);
@@ -25,30 +29,30 @@ public class Workout_selection_activity extends AppCompatActivity {
         kyykkyNappi = findViewById(R.id.kyykky);
         penkkiNappi = findViewById(R.id.penkki);
         maastavetoNappi = findViewById(R.id.maastaveto);
-        info = findViewById(R.id.info);
+        ImageView info = findViewById(R.id.info);
 
         punnerrusNappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startPunnerrus("WorkoutOne");
+                startWorkout("WorkoutOne");
             }
         });
         kyykkyNappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startKyykky("WorkoutTwo");
+                startWorkout("WorkoutTwo");
             }
         });
         penkkiNappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startPenkki("WorkoutThree");
+                startWorkout("WorkoutThree");
             }
         });
         maastavetoNappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startMaastaveto("WorkoutFour");
+                startWorkout("WorkoutFour");
             }
         });
         info.setOnClickListener(new View.OnClickListener() {
@@ -73,28 +77,13 @@ public class Workout_selection_activity extends AppCompatActivity {
         });
     }
 
-    public void startPunnerrus (String alotusTunniste){
+    /**
+     * Aloittaa treenin riippuen annetusta parametristä
+     * @param alotusTunniste String, treenin aloituksen parametri
+     */
+    public void startWorkout (String alotusTunniste){
         Intent intent = new Intent(this, StartedWorkoutActivity.class);
-        String workoutCode = alotusTunniste;
-        intent.putExtra(EXTRA_ACTIVITY, workoutCode);
-        startActivity(intent);
-    }
-    public void startKyykky (String alotusTunniste){
-        Intent intent = new Intent(this, StartedWorkoutActivity.class);
-        String workoutCode = alotusTunniste;
-        intent.putExtra(EXTRA_ACTIVITY, workoutCode);
-        startActivity(intent);
-    }
-    public void startPenkki (String alotusTunniste){
-        Intent intent = new Intent(this, StartedWorkoutActivity.class);
-        String workoutCode = alotusTunniste;
-        intent.putExtra(EXTRA_ACTIVITY, workoutCode);
-        startActivity(intent);
-    }
-    public void startMaastaveto (String alotusTunniste){
-        Intent intent = new Intent(this, StartedWorkoutActivity.class);
-        String workoutCode = alotusTunniste;
-        intent.putExtra(EXTRA_ACTIVITY, workoutCode);
+        intent.putExtra(EXTRA_ACTIVITY, alotusTunniste);
         startActivity(intent);
     }
 
