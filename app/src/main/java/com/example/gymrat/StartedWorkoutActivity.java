@@ -15,8 +15,7 @@ import com.example.gymrat.Classes.Workout;
 import com.example.gymrat.Classes.WorkoutGlobal;
 
  /**
- * Activity-luokka, jossa näkyy aloitettu treeni. \n
- * Treeniohjelman näkymä latautuu intentin antaman tunnistenimen perusteella.
+ * Activity-luokka, jossa näkyy aloitettu treeni. Treeniohjelman näkymä latautuu intentin antaman tunnistenimen perusteella.
   * @author Henri
  */
 public class StartedWorkoutActivity extends AppCompatActivity {
