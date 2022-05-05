@@ -15,14 +15,14 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
+/**
+ * Activity-luokka joka näyttää käyttäjän saadut Saavutukset
+ * @author Axel
+ */
 public class TrophyActivity extends AppCompatActivity {
 
 
-    /**
-     * Activity-luokka joka näyttää käyttäjän saadut Saavutukset
-     * @author Axel
-     */
+
 
     boolean trophy1=false,trophy2=false,trophy3=false,trophy4=false,trophy5=false, created=false;
     SharedPreferences getPref;
