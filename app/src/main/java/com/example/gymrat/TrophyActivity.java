@@ -69,7 +69,16 @@ public class TrophyActivity extends AppCompatActivity {
         });
     }
 
-
+    /**
+     * Pakottaa back buttonin sulkemaan sovelluksen
+     */
+    @Override
+    public void onBackPressed() {
+        Intent startMain = new Intent(Intent.ACTION_MAIN);
+        startMain.addCategory(Intent.CATEGORY_HOME);
+        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(startMain);
+    }
     /**
      * If the trophy is unlocked, the star image is changed to a golden star and the cardview is made
      * visible

@@ -190,7 +190,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //pakottaa taaksepäin nuolen palauttamaan kotiruutuun
+    /**
+     * Pakottaa back buttonin sulkemaan sovelluksen
+     */
     @Override
     public void onBackPressed() {
         Intent startMain = new Intent(Intent.ACTION_MAIN);
