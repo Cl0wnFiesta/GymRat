@@ -72,7 +72,7 @@ public class WorkoutEndActivity extends AppCompatActivity {
         suositteluTxt.setText(Double.toString(suosittelu));
 
         if (!tallennettu){
-            saveTreeni(treenipaiva, muutaTunniste(tunniste),yksPlus, suosittelu);
+            saveTreeni(treenipaiva, muutaTunniste(tunniste),yksPlus, suosittelu, maxPenkki, maxMaastaveto, maxKyykky, maxPystypunnerrus);
         }
         if (suosittelu == 0){
             hyvaksyKorotusBtn.setVisibility(View.INVISIBLE);
@@ -139,13 +139,17 @@ public class WorkoutEndActivity extends AppCompatActivity {
      * @param toistot number of reps
      * @param korotus the weight increase in kg
      */
-    private void saveTreeni(String treenipaiva, String treeniNimi, int toistot, double korotus){
+    private void saveTreeni(String treenipaiva, String treeniNimi, int toistot, double korotus, double maxPenkki, double maxMaastaveto, double maxKyykky, double maxPystypunnerrus){
         WorkoutDatabase db = WorkoutDatabase.getDBInstance(this.getApplicationContext());
         Treeni treeni = new Treeni();
         treeni.paiva = treenipaiva;
         treeni.treeninNimi = treeniNimi;
         treeni.toistot = toistot;
         treeni.korotus = korotus;
+        treeni.kyykkymax = maxKyykky;
+        treeni.penkkimax = maxPenkki;
+        treeni.maastavetomax = maxMaastaveto;
+        treeni.pystypunnerrusmax = maxPystypunnerrus;
         db.treeniDAO().insertTreeni(treeni);
     }
     /**

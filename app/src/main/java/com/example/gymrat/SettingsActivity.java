@@ -23,13 +23,15 @@ import android.view.ViewGroup.LayoutParams;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+/**
+ *Activity-luokka joka antaa käyttäjälle mahdollisuuden muokata omia tietoja, joita käyttäjältä kysyttiin sovelluksen ensimmäisellä käynnistys kerralla. Mahdollistaa "DarkModen" kytkemisen sovellukselle.
+ * @author Axel
+ */
 public class SettingsActivity extends AppCompatActivity {
     EditText maxPenkki, maxKyykky, maxMaastaveto, maxPystyPunnerrus;
     Button popupCloseBtn;
     EditText tvName;
-    LinearLayout LinearLayout;
     FrameLayout FrameLayout;
-    View popupView;
     Switch swDarkMode;
     SharedPreferences prefGet;
     SharedPreferences.Editor prefEdit;

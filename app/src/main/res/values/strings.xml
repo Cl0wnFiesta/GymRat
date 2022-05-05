@@ -34,7 +34,7 @@
     <string name="tallenna">Tallenna</string>
     <string name="name_info">Muokkaa käyttäjätunnusta painamalla</string>
     <string name="trophy_name1">Suutu jo!</string>
-    <string name="trophy_info1">Nosta rautaa tarpeeks :D</string>
+    <string name="trophy_info1">Nosta rautaa tarpeeks</string>
     <string name="trophy_pvm">Palkinto avattu:</string>
     <string name="trophy_info2">Nosta 100kg</string>
     <string name="trophy_name3">Treeniviikko</string>
@@ -62,11 +62,17 @@
     <string name="tulossa">Tulossa</string>
     <string name="sinulla_ei_ole_muistutuksia">Sinulla ei ole muistutuksia</string>
     <string name="valitse_harjoitus">Valitse harjoitus:</string>
-    <string name="punnerrus">Punnerrus</string>
-    <string name="kyykky">Kyykky</string>
-    <string name="penkki">Penkki</string>
-    <string name="maastaveto">Maastaveto</string>
+    <string name="punnerrus">Pystypunnerrus</string>
     <string name="haluatko_poistaa_treenin">Haluatko poistaa treenin?</string>
     <string name="kyll">Kyllä</string>
     <string name="ei">Ei</string>
+    <string name="salip_iv">Salipäivä</string>
+    <string name="takaisinbtn">Takaisin</string>
+    <string name="extratoistot">Extratoistot</string>
+    <string name="suositeltu_painonlis_ys">Suositeltu painonlisäys</string>
+    <string name="treenin_painot">Treenin painot</string>
+    <string name="penkki">Penkki</string>
+    <string name="kyykky">Kyykky</string>
+    <string name="maastaveto">Maastaveto</string>
+    <string name="pystypunnerrus">Pystypunnerrus</string>
 </resources>

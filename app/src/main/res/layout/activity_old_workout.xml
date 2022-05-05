@@ -14,7 +14,7 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="78dp"
         android:layout_marginEnd="137dp"
-        android:text="Salipäivä"
+        android:text="@string/salip_iv"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,6 @@
         android:layout_marginStart="177dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="177dp"
-        android:text="01.01.2030"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,9 +35,9 @@
         android:id="@+id/toistotTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="96dp"
-        android:text="Extratoistot"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/extratoistot"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TitleTxt" />
 
@@ -49,7 +48,7 @@
         android:layout_marginStart="157dp"
         android:layout_marginEnd="150dp"
         android:layout_marginBottom="40dp"
-        android:text="Takaisin"
+        android:text="@string/takaisinbtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -59,7 +58,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
-        android:text="TextView"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/toistotTxt"
         app:layout_constraintStart_toEndOf="@+id/toistotTxt" />
@@ -68,20 +66,110 @@
         android:id="@+id/lisaysValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/suosLisays"
         app:layout_constraintEnd_toEndOf="@+id/toistotValue" />
 
     <TextView
         android:id="@+id/suosLisays"
-        android:layout_width="96dp"
-        android:layout_height="55dp"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="20dp"
-        android:text="Suositeltu painonlisäys"
+        android:text="@string/suositeltu_painonlis_ys"
         app:layout_constraintEnd_toStartOf="@+id/lisaysValue"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/toistotTxt"
         app:layout_constraintTop_toBottomOf="@+id/toistotTxt" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="175dp"
+        android:layout_marginEnd="178dp"
+        android:layout_marginBottom="304dp"
+        android:text="@string/treenin_painot"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TitleTxt"
+        app:layout_constraintVertical_bias="0.829" />
+
+    <TextView
+        android:id="@+id/PenkkiTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/penkki"
+        android:textAlignment="viewStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/KyykkyTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/kyykky"
+        app:layout_constraintStart_toStartOf="@+id/PenkkiTxt"
+        app:layout_constraintTop_toBottomOf="@+id/PenkkiTxt" />
+
+    <TextView
+        android:id="@+id/MaveTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/maastaveto"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@+id/KyykkyTxt"
+        app:layout_constraintTop_toBottomOf="@+id/KyykkyTxt" />
+
+    <TextView
+        android:id="@+id/PystypunnerrusTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/pystypunnerrus"
+        app:layout_constraintStart_toStartOf="@+id/MaveTxt"
+        app:layout_constraintTop_toBottomOf="@+id/MaveTxt" />
+
+    <TextView
+        android:id="@+id/PenkkiValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        app:layout_constraintBottom_toBottomOf="@+id/PenkkiTxt"
+        app:layout_constraintStart_toEndOf="@+id/PenkkiTxt" />
+
+    <TextView
+        android:id="@+id/KyykkyValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        app:layout_constraintBottom_toBottomOf="@+id/KyykkyTxt"
+        app:layout_constraintEnd_toEndOf="@+id/PenkkiValue"
+        app:layout_constraintStart_toEndOf="@+id/KyykkyTxt" />
+
+    <TextView
+        android:id="@+id/MaveValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        app:layout_constraintBottom_toBottomOf="@+id/MaveTxt"
+        app:layout_constraintEnd_toEndOf="@+id/KyykkyValue"
+        app:layout_constraintStart_toEndOf="@+id/MaveTxt" />
+
+    <TextView
+        android:id="@+id/PystypValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/PystypunnerrusTxt"
+        app:layout_constraintEnd_toEndOf="@+id/MaveValue"
+        app:layout_constraintStart_toEndOf="@+id/PystypunnerrusTxt" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

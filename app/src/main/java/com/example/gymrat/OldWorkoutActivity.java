@@ -22,7 +22,9 @@ import java.util.List;
 public class OldWorkoutActivity extends AppCompatActivity {
 
     @Override
-
+/**
+ * Hakee treenistä id:N perusteella datan ja näyttää käyttäjälle
+ */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_old_workout);
@@ -32,13 +34,17 @@ public class OldWorkoutActivity extends AppCompatActivity {
 
         List<Treeni> treeni = db.treeniDAO().getAllTreeni();
         Collections.reverse(treeni);
-
+        //Hakee treenistä datan intentin id:n perusteella
         String workoutnimi = treeni.get(id).getTreeninNimi();
         String paiva = treeni.get(id).getPaiva();
         int toistot = treeni.get(id).getToistot();
         double suosittelu = treeni.get(id).getKorotus();
+        double penkki = treeni.get(id).getPenkkimax();
+        double kyykky = treeni.get(id).getKyykkymax();
+        double mave = treeni.get(id).getMaastavetomax();
+        double pystyp = treeni.get(id).getPystypunnerrusmax();
 
-
+        //asettaa datan näkyville
         TextView titleTxt = findViewById(R.id.TitleTxt);
         titleTxt.setText(workoutnimi);
         TextView paivaTxt = findViewById(R.id.PaivaTxt);
@@ -47,6 +53,16 @@ public class OldWorkoutActivity extends AppCompatActivity {
         TextView suositteluValue = findViewById(R.id.lisaysValue);
         toistoValue.setText(Integer.toString(toistot));
         suositteluValue.setText(Double.toString(suosittelu));
+
+        TextView penkkiValue = findViewById(R.id.PenkkiValue);
+        TextView kyykkyValue = findViewById(R.id.KyykkyValue);
+        TextView maveValue = findViewById(R.id.MaveValue);
+        TextView pystypValue = findViewById(R.id.PystypValue);
+
+        penkkiValue.setText(Double.toString(penkki));
+        kyykkyValue.setText(Double.toString(kyykky));
+        maveValue.setText(Double.toString(mave));
+        pystypValue.setText(Double.toString(pystyp));
 
         Button takaisinButton = findViewById(R.id.backButton);
         takaisinButton.setOnClickListener(view -> onBackPressed());
