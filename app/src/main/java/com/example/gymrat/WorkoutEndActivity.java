@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.gymrat.workoutDb.Treeni;
 import com.example.gymrat.workoutDb.WorkoutDatabase;
@@ -161,6 +162,7 @@ public class WorkoutEndActivity extends AppCompatActivity {
      * @see MainActivity
      */
     private void returnHome() {
+        getTrophy(1);
         Intent setIntent = new Intent(this ,MainActivity.class);
         startActivity(setIntent);
     }
@@ -193,6 +195,25 @@ public class WorkoutEndActivity extends AppCompatActivity {
                 break;
         }
         editor.apply();
+
+    }
+
+    public void getTrophy(int id){
+        int i=id;
+        SharedPreferences getPref = getSharedPreferences("myTrophies", MODE_PRIVATE);
+        SharedPreferences.Editor prefEdit = getPref.edit();
+        String trophyNumber = "trophy"+i;
+        if(getPref.getBoolean(String.valueOf(trophyNumber),false)){
+        } else {
+            if (getPref.getBoolean("trophy4", false)) {
+                Log.d("saavutus", "saavutus on jo avattu");
+            } else {
+                prefEdit.putBoolean("trophy4", true);
+            }
+            Toast.makeText(getApplicationContext(), "Uusi saavutus avattu", Toast.LENGTH_SHORT).show();
+        }
+        prefEdit.putBoolean(String.valueOf(trophyNumber),true);
+        prefEdit.apply();
 
     }
 

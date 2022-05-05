@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.example.gymrat.workoutDb.Treeni;
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         }else {
             Suoritus.setText("Suorituksesi!");
         }
+        getTrophy();
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -149,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+        checkDarkMode();
     }
     //Tarkistaa aina kun activity aukeaa onko avaus kerta first time
     @Override
@@ -195,4 +198,29 @@ public class MainActivity extends AppCompatActivity {
         startActivity(startMain);
     }
 
+    //Tarkistaa onko sovelluksen DarkMode asetus laitettu päälle
+    public void checkDarkMode(){
+        prefs = getSharedPreferences("myKey",0);
+        if(prefs.getBoolean("DarkMode",false)){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+    }
+
+    public void getTrophy(){
+        SharedPreferences getPref = getSharedPreferences("myTrophies", MODE_PRIVATE);
+        SharedPreferences.Editor prefEdit = getPref.edit();
+        int listLength = treeniList.size();
+        String trophyNumber = "trophy5";
+        if(listLength>=10){
+            if(getPref.getBoolean(String.valueOf(trophyNumber),false)){
+            } else {
+                prefEdit.putBoolean("trophy5", true);
+                prefEdit.apply();
+                Toast.makeText(getApplicationContext(), "Uusi saavutus avattu", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
 }
