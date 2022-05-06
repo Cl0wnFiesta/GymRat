@@ -151,6 +151,8 @@ public class WorkoutEndActivity extends AppCompatActivity {
         treeni.maastavetomax = maxMaastaveto;
         treeni.pystypunnerrusmax = maxPystypunnerrus;
         db.treeniDAO().insertTreeni(treeni);
+
+        Log.d("dbTallennus", "Tiedot tallennettu");
     }
     /**
      * Jos käyttäjä painaa back buttonia, palauttaa koti-ruutuun
@@ -169,6 +171,7 @@ public class WorkoutEndActivity extends AppCompatActivity {
         getTrophy(1);
         Intent setIntent = new Intent(this ,MainActivity.class);
         startActivity(setIntent);
+        finish();
     }
     /**
      * Ottaa treenin nimen parametrinä ja tallentaa suositellun painonkorotuksen SharedPreferenceihin.
