@@ -77,7 +77,7 @@ public class WorkoutGlobal {
         workoutData.add(new WorkoutData(workoutTwoSettiKaksi, workoutTwoPainokerroinKaksi, "Sumo-maastaveto", tunnisteKaksi, 2));
 
         workoutData.add(new WorkoutData(workoutThreeSettiYksi, workoutThreePainokerroinYksi, "Penkki", tunnisteKolme, 1));
-        workoutData.add(new WorkoutData(workoutThreeSettiKaksi, workoutThreePainokerroinKaksi, "Kapea penkki", tunnisteKolme, 2));
+        workoutData.add(new WorkoutData(workoutThreeSettiKaksi, workoutThreePainokerroinKaksi, "Kapea Penkki", tunnisteKolme, 2));
 
         workoutData.add(new WorkoutData(workoutFourSettiYksi, workoutFourPainokerroinYksi, "Maastaveto", tunnisteNelja, 1));
         workoutData.add(new WorkoutData(workoutFourSettiKaksi, workoutFourPainokerroinKaksi, "Etukyykky", tunnisteNelja, 2));
